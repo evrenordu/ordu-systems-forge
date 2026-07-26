@@ -14,11 +14,12 @@ export const translations = {
     hero: {
       eyebrow: "Evren Ordu — Frankfurt / Germany",
       title: ["Sistemler Kurarım.", "Dönüşümü Yönetirim.", "Geleceği İnşa Ederim."],
+      role: "Stratejik Lider · Sistem Mimarı · Dijital Dönüşüm Uzmanı",
       sub: "Yönetici, girişimci ve yapay zekâ odaklı dönüşüm lideri.",
       support:
-        "20 yıla yaklaşan operasyon, teknoloji, finansal kontrol ve çok lokasyonlu yönetim deneyimini; yapay zekâ, ERP ve yeni nesil iş modelleriyle birleştiriyorum.",
-      ctaPrimary: "Benimle Çalışın",
-      ctaSecondary: "Hikâyemi Keşfedin",
+        "Yaklaşık 20 yıllık üst düzey yönetim, çok lokasyonlu operasyon ve mühendislik disiplinini; yapay zekâ, ERP ve yeni nesil iş modelleriyle birleştiriyorum.",
+      ctaPrimary: "Beni Tanıyın",
+      ctaSecondary: "Projeleri Keşfedin",
       scroll: "Kaydırın",
     },
     about: {
@@ -55,14 +56,16 @@ export const translations = {
     framework: {
       kicker: "İmza Yaklaşımı",
       title: "ORDU Framework",
-      sub: "Kaosu sisteme, sistemi ölçeğe dönüştüren beş katmanlı disiplin.",
+      sub: "Kaosu sisteme, sistemi ölçeğe dönüştüren dört adımlı disiplin.",
       pillars: [
-        { k: "O", t: "Observe", d: "Sahayı, rakamı ve insanı önyargısız gözlemle." },
-        { k: "R", t: "Reframe", d: "Sorunu yeniden çerçevele; gerçek kısıtı isimlendir." },
-        { k: "D", t: "Design", d: "Süreci, veriyi ve rolleri birlikte tasarla." },
-        { k: "U", t: "Unify", d: "Ekipleri, sistemleri ve hikâyeyi tek bir hizada birleştir." },
-        { k: "S", t: "Scale", d: "Tekrarlanabilir, ölçülebilir ve devredilebilir hâle getir." },
+        { k: "O", t: "Observe", d: "Gerçek durumu ve problemi net bir şekilde gözlemlerim." },
+        { k: "R", t: "Reframe", d: "Problemi doğru açıdan yeniden tanımlar, öncelikleri belirlerim." },
+        { k: "D", t: "Design", d: "İnsan, süreç ve teknolojiyi bir araya getirerek sistemi tasarlarım." },
+        { k: "U", t: "Unify", d: "İnsanları, veriyi, operasyonu ve teknolojiyi tek sistemde birleştiririm." },
       ],
+      outcomeLabel: "The Outcome",
+      outcomeWord: "SCALE",
+      outcomeDesc: "Ölçülebilir, sürdürülebilir ve ölçeklenebilir büyüme.",
     },
     work: {
       kicker: "Seçilmiş Çalışmalar",
@@ -71,10 +74,9 @@ export const translations = {
       items: [
         { t: "BauERP", d: "İnşaat sektörüne özel, sahayı ve finansı tek omurgada birleştiren ERP." },
         { t: "AIOS", d: "İşletmenin karar katmanına gömülen yapay zekâ operasyon sistemi." },
-        { t: "AI-Enabled Construction", d: "İnşaat operasyonunun yapay zekâ ile yeniden tasarlanması." },
-        { t: "Multi-Site Retail Ops", d: "Çok lokasyonlu perakende operasyonunda standardizasyon ve verim." },
-        { t: "International Real Estate", d: "Sınır ötesi gayrimenkul pazarlaması ve satış operasyonu." },
-        { t: "Corporate Governance", d: "Kurumsal süreç, yetki ve raporlama sistemlerinin kurgulanması." },
+        { t: "Digital Transformation", d: "Süreçlerin yapay zekâ ile yeniden tasarlanması ve ölçülebilir verim." },
+        { t: "Multi-Site Operations", d: "Çok lokasyonlu operasyonlarda standardizasyon, hız ve kontrol." },
+        { t: "International Real Estate Marketing", d: "Sınır ötesi gayrimenkul pazarlaması ve satış operasyonu." },
       ],
     },
     ideas: {
@@ -122,11 +124,12 @@ export const translations = {
     hero: {
       eyebrow: "Evren Ordu — Frankfurt / Deutschland",
       title: ["Ich baue Systeme.", "Ich führe Transformation.", "Ich gestalte Zukunft."],
+      role: "Strategischer Leader · System-Architekt · Digital Transformation Experte",
       sub: "Executive, Unternehmer und KI-getriebener Transformationsleader.",
       support:
-        "Fast 20 Jahre Erfahrung in Operations, Technologie, Finanzsteuerung und standortübergreifender Führung — kombiniert mit KI, ERP und neuen Geschäftsmodellen.",
-      ctaPrimary: "Zusammenarbeiten",
-      ctaSecondary: "Meine Geschichte",
+        "Fast 20 Jahre Senior Leadership, standortübergreifende Operations und Ingenieursdisziplin — kombiniert mit KI, ERP und neuen Geschäftsmodellen.",
+      ctaPrimary: "Lernen Sie mich kennen",
+      ctaSecondary: "Projekte entdecken",
       scroll: "Scrollen",
     },
     about: {
@@ -163,14 +166,16 @@ export const translations = {
     framework: {
       kicker: "Signature Approach",
       title: "ORDU Framework",
-      sub: "Fünf Ebenen, die Chaos in System und System in Skalierung verwandeln.",
+      sub: "Vier Schritte, die Chaos in System und System in Skalierung verwandeln.",
       pillars: [
-        { k: "O", t: "Observe", d: "Beobachte Feld, Zahlen und Menschen ohne Vorurteil." },
-        { k: "R", t: "Reframe", d: "Rahmen das Problem neu; benenne die echte Restriktion." },
-        { k: "D", t: "Design", d: "Gestalte Prozess, Daten und Rollen gemeinsam." },
-        { k: "U", t: "Unify", d: "Vereine Teams, Systeme und Story auf eine Linie." },
-        { k: "S", t: "Scale", d: "Mache es wiederholbar, messbar und übertragbar." },
+        { k: "O", t: "Observe", d: "Ich beobachte die tatsächliche Lage und das Problem klar und ohne Filter." },
+        { k: "R", t: "Reframe", d: "Ich rahme das Problem aus dem richtigen Blickwinkel neu und setze Prioritäten." },
+        { k: "D", t: "Design", d: "Ich gestalte das System, indem ich Mensch, Prozess und Technologie zusammenführe." },
+        { k: "U", t: "Unify", d: "Ich vereine Menschen, Daten, Operations und Technologie in einem einzigen System." },
       ],
+      outcomeLabel: "The Outcome",
+      outcomeWord: "SCALE",
+      outcomeDesc: "Messbares, nachhaltiges und skalierbares Wachstum.",
     },
     work: {
       kicker: "Ausgewählte Arbeiten",
@@ -179,10 +184,9 @@ export const translations = {
       items: [
         { t: "BauERP", d: "Bauspezifisches ERP — Baustelle und Finance auf einer Achse." },
         { t: "AIOS", d: "KI-Betriebssystem, eingebettet in die Entscheidungsebene des Unternehmens." },
-        { t: "AI-Enabled Construction", d: "Bauoperations neu gedacht mit künstlicher Intelligenz." },
-        { t: "Multi-Site Retail Ops", d: "Standardisierung und Effizienz im Multi-Site Retail." },
-        { t: "International Real Estate", d: "Grenzüberschreitendes Immobilien-Marketing und Vertrieb." },
-        { t: "Corporate Governance", d: "Prozesse, Verantwortlichkeiten und Reporting neu aufgesetzt." },
+        { t: "Digital Transformation", d: "Prozesse mit KI neu gedacht — für messbare Produktivität." },
+        { t: "Multi-Site Operations", d: "Standardisierung, Tempo und Kontrolle über mehrere Standorte." },
+        { t: "International Real Estate Marketing", d: "Grenzüberschreitendes Immobilien-Marketing und Vertrieb." },
       ],
     },
     ideas: {
@@ -230,11 +234,12 @@ export const translations = {
     hero: {
       eyebrow: "Evren Ordu — Frankfurt / Germany",
       title: ["I build systems.", "I lead transformation.", "I engineer the future."],
+      role: "Strategic Leader · System Architect · Digital Transformation Expert",
       sub: "Executive, entrepreneur and AI-driven transformation leader.",
       support:
-        "Nearly 20 years of operations, technology, financial control and multi-site leadership — combined with AI, ERP and next-generation business models.",
-      ctaPrimary: "Work with me",
-      ctaSecondary: "Discover my story",
+        "Nearly 20 years of senior leadership, multi-site operations and engineering discipline — combined with AI, ERP and next-generation business models.",
+      ctaPrimary: "Get to know me",
+      ctaSecondary: "Explore the projects",
       scroll: "Scroll",
     },
     about: {
@@ -271,14 +276,16 @@ export const translations = {
     framework: {
       kicker: "Signature Approach",
       title: "ORDU Framework",
-      sub: "A five-layer discipline turning chaos into system and system into scale.",
+      sub: "A four-step discipline turning chaos into system and system into scale.",
       pillars: [
-        { k: "O", t: "Observe", d: "See the field, the numbers and the people without bias." },
-        { k: "R", t: "Reframe", d: "Reframe the problem; name the real constraint." },
-        { k: "D", t: "Design", d: "Design process, data and roles together." },
-        { k: "U", t: "Unify", d: "Align teams, systems and story on one axis." },
-        { k: "S", t: "Scale", d: "Make it repeatable, measurable and transferable." },
+        { k: "O", t: "Observe", d: "I observe the real situation and the problem with total clarity." },
+        { k: "R", t: "Reframe", d: "I reframe the problem from the right angle and set the priorities." },
+        { k: "D", t: "Design", d: "I design the system by bringing people, process and technology together." },
+        { k: "U", t: "Unify", d: "I unify people, data, operations and technology into a single system." },
       ],
+      outcomeLabel: "The Outcome",
+      outcomeWord: "SCALE",
+      outcomeDesc: "Measurable, sustainable and scalable growth.",
     },
     work: {
       kicker: "Selected Work",
@@ -287,10 +294,9 @@ export const translations = {
       items: [
         { t: "BauERP", d: "Construction-specific ERP uniting the site and finance on one backbone." },
         { t: "AIOS", d: "AI operating system embedded into the decision layer of the business." },
-        { t: "AI-Enabled Construction", d: "Construction operations re-designed with artificial intelligence." },
-        { t: "Multi-Site Retail Ops", d: "Standardization and efficiency across multi-site retail." },
-        { t: "International Real Estate", d: "Cross-border real estate marketing and sales operations." },
-        { t: "Corporate Governance", d: "Corporate process, authority and reporting systems, redesigned." },
+        { t: "Digital Transformation", d: "Processes redesigned with AI to deliver measurable productivity." },
+        { t: "Multi-Site Operations", d: "Standardization, speed and control across multi-site operations." },
+        { t: "International Real Estate Marketing", d: "Cross-border real estate marketing and sales operations." },
       ],
     },
     ideas: {
