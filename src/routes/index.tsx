@@ -553,24 +553,76 @@ function Focus({ t }: { t: Dict }) {
 function Framework({ t }: { t: Dict }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [activeStep, setActiveStep] = useState(-1);
+  const [outcomeOn, setOutcomeOn] = useState(false);
+  const outcomeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setActiveStep(3);
+      setOutcomeOn(true);
+      return;
+    }
     if (!ref.current) return;
     const items = Array.from(ref.current.querySelectorAll<HTMLElement>("[data-step]"));
+    let maxSeen = -1;
+    const timers: number[] = [];
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             const idx = Number((e.target as HTMLElement).dataset.step);
-            setActiveStep((prev) => (idx > prev ? idx : prev));
+            if (idx > maxSeen) {
+              // Stagger sequential activation from current to target
+              for (let s = maxSeen + 1; s <= idx; s++) {
+                const step = s;
+                timers.push(
+                  window.setTimeout(
+                    () => setActiveStep((prev) => (step > prev ? step : prev)),
+                    (step - (maxSeen + 1)) * 260,
+                  ),
+                );
+              }
+              maxSeen = idx;
+            }
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.55 },
     );
     items.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    let outcomeIO: IntersectionObserver | null = null;
+    if (outcomeRef.current) {
+      outcomeIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting && maxSeen >= 3) {
+              setOutcomeOn(true);
+            }
+          });
+        },
+        { threshold: 0.4 },
+      );
+      outcomeIO.observe(outcomeRef.current);
+    }
+    return () => {
+      io.disconnect();
+      outcomeIO?.disconnect();
+      timers.forEach((t) => clearTimeout(t));
+    };
   }, []);
+
+  // Also trigger outcome once step 4 reached even if already in view
+  useEffect(() => {
+    if (activeStep >= 3) {
+      const id = window.setTimeout(() => setOutcomeOn(true), 500);
+      return () => clearTimeout(id);
+    }
+  }, [activeStep]);
+
 
   return (
     <section
