@@ -6,7 +6,7 @@ export const translations = {
       about: "Manifesto",
       focus: "Ne İnşa Ederim",
       framework: "ORDU",
-      cases: "Sistemler",
+      cases: "Sistemler & Projeler",
       experience: "Deneyim",
       ideas: "Fikirler",
       contact: "İletişim",
