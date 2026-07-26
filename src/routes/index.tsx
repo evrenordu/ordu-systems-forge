@@ -124,11 +124,11 @@ function Index() {
       <main>
         <Hero t={t} />
         <About t={t} />
-        <Trusted t={t} />
-        <Focus t={t} />
         <Framework t={t} />
+        <Focus t={t} />
         <Cases t={t} />
         <Experience t={t} />
+        <Trusted t={t} />
         <Ideas t={t} />
         <Personal t={t} />
         <Contact t={t} />
@@ -148,9 +148,10 @@ function Trusted({ t }: { t: Dict }) {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
           <div>
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-              <span className="h-px w-8 bg-electric" />
-              {t.trusted.kicker}
+            <div className="mb-5 inline-flex items-baseline gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] text-foreground/85">
+              <span className="text-white/55">06</span>
+              <span className="text-white/55" aria-hidden>/</span>
+              <span>{t.trusted.kicker}</span>
             </div>
             <h2 className="font-display text-[clamp(1.75rem,3.6vw,2.75rem)] font-light leading-[1.1] tracking-tight text-foreground">
               {t.trusted.title}
@@ -354,7 +355,7 @@ function Hero({ t }: { t: Dict }) {
   );
 }
 
-/* ---------------- Section header ---------------- */
+/* ---------------- Section headers ---------------- */
 
 function SectionHeader({
   kicker,
@@ -384,6 +385,48 @@ function SectionHeader({
           className={`mt-5 font-display text-[clamp(1.75rem,3.8vw,3rem)] font-light leading-[1.1] tracking-tight ${
             ink ? "text-ink" : "text-foreground"
           }`}
+        >
+          {title}
+        </h2>
+      </Reveal>
+    </div>
+  );
+}
+
+function QuietHeader({
+  num,
+  kicker,
+  title,
+  ink = false,
+  center = false,
+  className = "",
+}: {
+  num?: string;
+  kicker: string;
+  title: string;
+  ink?: boolean;
+  center?: boolean;
+  className?: string;
+}) {
+  const muted = ink ? "text-ink/55" : "text-white/55";
+  const label = ink ? "text-ink/80" : "text-foreground/85";
+  const heading = ink ? "text-ink" : "text-foreground";
+  return (
+    <div className={`mb-14 max-w-3xl ${center ? "mx-auto text-center" : ""} ${className}`}>
+      <Reveal>
+        <div
+          className={`inline-flex items-baseline gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] ${label} ${
+            center ? "justify-center" : ""
+          }`}
+        >
+          {num && <span className={muted}>{num}</span>}
+          {num && <span className={`${muted}`} aria-hidden>/</span>}
+          <span>{kicker}</span>
+        </div>
+      </Reveal>
+      <Reveal delay={100}>
+        <h2
+          className={`mt-4 font-display text-[clamp(1.75rem,3.8vw,3rem)] font-light leading-[1.1] tracking-tight ${heading}`}
         >
           {title}
         </h2>
@@ -448,7 +491,7 @@ function Focus({ t }: { t: Dict }) {
   return (
     <section id="focus" className="relative bg-background py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeader kicker={t.focus.kicker} title={t.focus.title} />
+        <QuietHeader num="03" kicker={t.focus.kicker} title={t.focus.title} />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {t.focus.cards.map((c, i) => {
             const Icon = FOCUS_ICONS[i] ?? Sparkles;
@@ -672,15 +715,7 @@ function Cases({ t }: { t: Dict }) {
   return (
     <section id="cases" className="relative section-light py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-16 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-            <span className="h-px w-8 bg-electric" />
-            {t.cases.kicker}
-          </div>
-          <h2 className="font-display text-[clamp(1.9rem,4.2vw,3.25rem)] font-light leading-[1.08] tracking-tight text-ink">
-            {t.cases.title}
-          </h2>
-        </div>
+        <QuietHeader num="04" kicker={t.cases.kicker} title={t.cases.title} ink />
 
         <div className="space-y-10 lg:space-y-16">
           {t.cases.items.map((c, i) => (
@@ -898,15 +933,7 @@ function Experience({ t }: { t: Dict }) {
     <section id="experience" className="relative bg-background py-28 lg:py-40">
       <div className="absolute inset-0 bg-blueprint opacity-20" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-16 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-            <span className="h-px w-8 bg-electric" />
-            {t.exp.kicker}
-          </div>
-          <h2 className="font-display text-[clamp(1.75rem,3.8vw,3rem)] font-light leading-[1.1] tracking-tight text-foreground">
-            {t.exp.title}
-          </h2>
-        </div>
+        <QuietHeader num="05" kicker={t.exp.kicker} title={t.exp.title} />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {t.exp.items.map((item, i) => (
             <Reveal key={item.t} delay={i * 80}>
@@ -936,20 +963,12 @@ function Ideas({ t }: { t: Dict }) {
     <section id="ideas" className="relative section-sky py-28 lg:py-40">
       <div className="absolute inset-0 bg-blueprint-light opacity-40 pointer-events-none" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-14 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-            <span className="h-px w-8 bg-electric" />
-            {t.ideas.kicker}
-          </div>
-          <h2 className="font-display text-[clamp(1.9rem,4.2vw,3.25rem)] font-light leading-[1.08] tracking-tight text-ink">
-            {t.ideas.title}
-          </h2>
-          <Reveal delay={120}>
-            <p className="mt-6 max-w-2xl text-[15.5px] font-light leading-relaxed text-ink/70">
-              {t.ideas.intro}
-            </p>
-          </Reveal>
-        </div>
+        <QuietHeader num="07" kicker={t.ideas.kicker} title={t.ideas.title} ink />
+        <Reveal delay={120}>
+          <p className="-mt-8 mb-14 max-w-2xl text-[15.5px] font-light leading-relaxed text-ink/70">
+            {t.ideas.intro}
+          </p>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {t.ideas.items.map((it, i) => (
@@ -985,9 +1004,8 @@ function Personal({ t }: { t: Dict }) {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-24">
           <div>
-            <div className="mb-6 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-              <span className="h-px w-8 bg-electric" />
-              {t.personal.kicker}
+            <div className="mb-6 inline-flex items-baseline gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] text-ink/80">
+              <span>{t.personal.kicker}</span>
             </div>
             <h2 className="font-display text-[clamp(1.9rem,4.2vw,3.25rem)] font-light leading-[1.08] tracking-tight text-ink">
               {t.personal.title}
@@ -1076,10 +1094,10 @@ function Contact({ t }: { t: Dict }) {
       <div className="relative mx-auto max-w-6xl px-6 lg:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <div className="inline-flex items-center justify-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-              <span className="h-px w-8 bg-electric" />
-              {t.contact.kicker}
-              <span className="h-px w-8 bg-electric" />
+            <div className="inline-flex items-baseline justify-center gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] text-foreground/85">
+              <span className="text-white/55">08</span>
+              <span className="text-white/55" aria-hidden>/</span>
+              <span>{t.contact.kicker}</span>
             </div>
           </Reveal>
           <Reveal delay={100}>
