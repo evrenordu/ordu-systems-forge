@@ -252,6 +252,7 @@ export const translations = {
         "I turn fragmented organizations into measurable, repeatable and scalable systems.",
         "Decisions fed by data. Execution carried by discipline. Meaning delivered through people.",
       ],
+      principle: "People · Process · Data · Technology — inside the same system.",
     },
     focus: {
       kicker: "Focus Areas",
