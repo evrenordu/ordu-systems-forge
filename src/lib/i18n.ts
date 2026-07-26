@@ -104,7 +104,7 @@ export const translations = {
       outcomeDesc: "Ölçülebilir. Sürdürülebilir. Tekrarlanabilir.",
     },
     cases: {
-      kicker: "Sistemler & Seçili Çalışmalar",
+      kicker: "Sistemler & Projeler",
       title: "Fikirden sisteme, sistemden ölçeğe.",
       problemLabel: "Problem",
       systemLabel: "Sistem",
