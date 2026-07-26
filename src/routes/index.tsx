@@ -932,14 +932,7 @@ function Experience({ t }: { t: Dict }) {
     <section id="experience" className="relative bg-background py-28 lg:py-40">
       <div className="absolute inset-0 bg-blueprint opacity-20" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-16 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-            <span className="h-px w-8 bg-electric" />
-            {t.exp.kicker}
-          </div>
-          <h2 className="font-display text-[clamp(1.75rem,3.8vw,3rem)] font-light leading-[1.1] tracking-tight text-foreground">
-            {t.exp.title}
-          </h2>
+        <QuietHeader num="05" kicker={t.exp.kicker} title={t.exp.title} />
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {t.exp.items.map((item, i) => (
