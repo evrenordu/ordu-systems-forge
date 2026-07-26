@@ -1054,9 +1054,6 @@ function Ideas({ t }: { t: Dict }) {
                   <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-electric">
                     #{it.tag}
                   </span>
-                  <span className="rounded-full border border-electric/40 bg-electric/5 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-widest text-electric">
-                    {t.ideas.soon}
-                  </span>
                 </div>
                 <h3 className="mt-6 font-display text-xl font-medium leading-snug text-ink">
                   {it.t}
@@ -1064,9 +1061,6 @@ function Ideas({ t }: { t: Dict }) {
                 <p className="mt-3 text-[14.5px] font-light leading-relaxed text-ink/70">
                   {it.d}
                 </p>
-                <div className="mt-6 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-ink/40">
-                  Draft
-                </div>
               </article>
             </Reveal>
           ))}
