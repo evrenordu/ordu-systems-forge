@@ -32,16 +32,11 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Evren Ordu — The System Architect | AI, ERP & Operations Leader" },
+      { title: "Evren Ordu — The System Architect · AI, ERP & Operations" },
       {
         name: "description",
         content:
-          "Evren Ordu — Frankfurt merkezli sistem mimarı. İnsanları, süreçleri, veriyi ve teknolojiyi ölçeklenebilir işletim sistemlerine dönüştürür. AI, ERP, çok lokasyonlu operasyon; Almanya · Türkiye · Avrupa.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Evren Ordu, System Architect, AI transformation, ERP, operations leadership, digital transformation, Frankfurt, Germany, multi-site operations, construction technology",
+          "Frankfurt-based system architect turning people, process, data and technology into scalable operating systems. AI · ERP · multi-site transformation.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:title", content: "Evren Ordu — The System Architect" },
@@ -50,8 +45,7 @@ export const Route = createFileRoute("/")({
         content:
           "I build systems that build companies. Strategic Leader · System Architect · AI & Digital Transformation.",
       },
-      { property: "og:url", content: "https://evrenordu.com/" },
-      { property: "og:image", content: "https://evrenordu.com/og-hero.jpg" },
+      { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Evren Ordu — The System Architect" },
       {
@@ -59,9 +53,16 @@ export const Route = createFileRoute("/")({
         content:
           "Strategic Leader · System Architect · AI & Digital Transformation — Frankfurt · Germany.",
       },
-      { name: "twitter:image", content: "https://evrenordu.com/og-hero.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://evrenordu.com/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroScene.url,
+        fetchpriority: "high",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -76,7 +77,6 @@ export const Route = createFileRoute("/")({
             addressLocality: "Frankfurt am Main",
             addressCountry: "DE",
           },
-          url: "https://evrenordu.com",
           knowsAbout: [
             "Digital Transformation",
             "Enterprise Resource Planning",
