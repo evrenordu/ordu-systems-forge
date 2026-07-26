@@ -933,7 +933,6 @@ function Experience({ t }: { t: Dict }) {
       <div className="absolute inset-0 bg-blueprint opacity-20" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <QuietHeader num="05" kicker={t.exp.kicker} title={t.exp.title} />
-        </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {t.exp.items.map((item, i) => (
             <Reveal key={item.t} delay={i * 80}>
