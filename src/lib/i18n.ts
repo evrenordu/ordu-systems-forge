@@ -1348,7 +1348,7 @@ export const translations = {
       outcomeDesc: "Measurable. Sustainable. Repeatable.",
     },
     cases: {
-      kicker: "Systems & Selected Work",
+      kicker: "Systems & Projects",
       title: "From idea to system, from system to scale.",
       problemLabel: "Problem",
       systemLabel: "System",
