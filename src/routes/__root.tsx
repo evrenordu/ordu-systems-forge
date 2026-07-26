@@ -14,19 +14,32 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-background px-6 text-foreground">
+      <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden style={{
+        backgroundImage:
+          "linear-gradient(oklch(0.62 0.19 250 / 0.08) 1px, transparent 1px), linear-gradient(90deg, oklch(0.62 0.19 250 / 0.08) 1px, transparent 1px)",
+        backgroundSize: "56px 56px",
+      }} />
+      <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+        background: "radial-gradient(ellipse at center, oklch(0.24 0.09 245 / 0.4), transparent 60%)",
+      }} />
+      <div className="relative max-w-lg text-center">
+        <div className="mb-5 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.28em] text-electric">
+          <span className="h-px w-8 bg-electric" />
+          404 · Not Found
+        </div>
+        <h1 className="font-display text-[clamp(3rem,10vw,6rem)] font-light leading-none tracking-tight text-white">
+          Signal lost.
+        </h1>
+        <p className="mx-auto mt-6 max-w-md text-[15px] font-light leading-relaxed text-white/75">
+          The page you're looking for doesn't exist — or the system has moved. Let's get you back to the architecture.
         </p>
-        <div className="mt-6">
+        <div className="mt-9">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex min-h-[48px] items-center gap-2 rounded-sm bg-[oklch(0.58_0.24_255)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_oklch(0.55_0.24_255_/_0.7)] transition-all hover:bg-[oklch(0.63_0.25_255)] hover:shadow-[0_0_44px_-6px_oklch(0.7_0.25_255_/_0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            Go home
+            Return home
           </Link>
         </div>
       </div>
