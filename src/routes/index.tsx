@@ -1147,32 +1147,3 @@ function Contact({ t }: { t: Dict }) {
   );
 }
 
-/* ---------------- Footer ---------------- */
-
-function Footer({ t }: { t: Dict }) {
-  const year = new Date().getFullYear();
-  return (
-    <footer className="border-t border-white/10 bg-[oklch(0.11_0.02_250)] py-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 lg:flex-row lg:items-center lg:px-10">
-        <div className="flex items-center gap-4">
-          <span className="grid h-9 w-9 place-items-center rounded-sm border border-electric/40 font-display text-sm text-electric">
-            EO
-          </span>
-          <div>
-            <div className="font-display text-base text-foreground">Evren Ordu</div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <MapPin className="h-3 w-3" aria-hidden />
-              {t.footer.loc}
-            </div>
-          </div>
-        </div>
-        <p className="max-w-md text-xs uppercase tracking-[0.24em] text-muted-foreground lg:text-right">
-          {t.footer.tag}
-        </p>
-        <div className="text-xs text-muted-foreground">
-          © {year} Evren Ordu — {t.footer.rights}
-        </div>
-      </div>
-    </footer>
-  );
-}
