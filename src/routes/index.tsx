@@ -189,9 +189,13 @@ function Nav({
           : "bg-gradient-to-b from-[oklch(0.14_0.03_250/0.75)] via-[oklch(0.14_0.03_250/0.4)] to-transparent backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <a href="#top" className="group flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-sm border border-electric/50 bg-background/30 font-display text-sm font-semibold text-electric transition-all group-hover:border-electric group-hover:ring-electric">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-10">
+        <a
+          href="#top"
+          aria-label="Evren Ordu — Home"
+          className="group flex items-center gap-2.5 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric"
+        >
+          <span className="grid h-9 w-9 place-items-center rounded-sm border border-electric/50 bg-background/30 font-display text-sm font-semibold text-electric transition-all group-hover:border-electric">
             EO
           </span>
           <span className="hidden font-display text-sm tracking-wide text-white/95 sm:inline">
@@ -199,34 +203,38 @@ function Nav({
           </span>
         </a>
 
-        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
+        <nav aria-label="Primary" className="hidden items-center gap-4 lg:flex xl:gap-6">
           {items.map((i) => {
             const on = active === i.id;
             return (
               <a
                 key={i.id}
                 href={`#${i.id}`}
-                className={`group relative whitespace-nowrap text-[12px] font-medium uppercase tracking-[0.13em] transition-colors ${
+                aria-current={on ? "true" : undefined}
+                className={`group relative whitespace-nowrap rounded-sm px-1 py-1 text-[12px] font-medium uppercase tracking-[0.13em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric ${
                   on ? "text-white" : "text-white/70 hover:text-white"
                 }`}
               >
                 {i.label}
                 <span
-                  className={`absolute -bottom-1.5 left-0 h-[2px] bg-electric shadow-[0_0_8px_var(--electric-glow)] transition-all duration-300 ${
-                    on ? "w-full" : "w-0 group-hover:w-1/2"
+                  className={`absolute -bottom-1.5 left-1 h-[2px] bg-electric shadow-[0_0_8px_var(--electric-glow)] transition-all duration-300 ${
+                    on ? "w-[calc(100%-0.5rem)]" : "w-0 group-hover:w-1/2"
                   }`}
+                  aria-hidden
                 />
               </a>
             );
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <LangSwitcher lang={lang} setLang={setLang} />
           <button
-            aria-label="Menu"
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="grid h-11 w-11 place-items-center rounded-sm border border-white/25 bg-background/30 text-white lg:hidden"
+            aria-controls="mobile-nav"
+            className="grid h-11 w-11 place-items-center rounded-sm border border-white/25 bg-background/30 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric lg:hidden"
             onClick={() => setOpen((v) => !v)}
           >
             <div className="flex flex-col gap-1">
@@ -239,14 +247,18 @@ function Nav({
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-[oklch(0.15_0.02_250/0.96)] backdrop-blur-xl lg:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
+        <div
+          id="mobile-nav"
+          className="border-t border-white/10 bg-[oklch(0.15_0.02_250/0.96)] backdrop-blur-xl lg:hidden"
+        >
+          <nav aria-label="Mobile primary" className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
             {items.map((i) => (
               <a
                 key={i.id}
                 href={`#${i.id}`}
                 onClick={() => setOpen(false)}
-                className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
+                aria-current={active === i.id ? "true" : undefined}
+                className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric ${
                   active === i.id
                     ? "bg-white/5 text-white"
                     : "text-white/70 hover:bg-white/5 hover:text-white"
@@ -264,18 +276,25 @@ function Nav({
 
 function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   const langs: Lang[] = ["tr", "de", "en"];
+  const fullNames: Record<Lang, string> = { tr: "Türkçe", de: "Deutsch", en: "English" };
   return (
-    <div className="flex items-center gap-0.5 rounded-full border border-white/20 bg-background/40 p-0.5 text-[11px] font-semibold uppercase tracking-widest backdrop-blur">
+    <div
+      role="group"
+      aria-label="Language"
+      className="flex items-center gap-0.5 rounded-full border border-white/20 bg-background/40 p-0.5 text-[11px] font-semibold uppercase tracking-widest backdrop-blur"
+    >
       {langs.map((l) => (
         <button
           key={l}
+          type="button"
           onClick={() => setLang(l)}
-          className={`rounded-full px-3 py-1.5 transition-all ${
+          aria-label={`Switch language to ${fullNames[l]}`}
+          aria-pressed={lang === l}
+          className={`rounded-full px-3 py-1.5 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric ${
             lang === l
               ? "bg-electric text-primary-foreground shadow-[0_0_18px_-4px_var(--electric-glow)]"
               : "text-white/70 hover:text-white"
           }`}
-          aria-pressed={lang === l}
         >
           {l}
         </button>
