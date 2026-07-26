@@ -1261,7 +1261,7 @@ function Contact({ t }: { t: Dict }) {
                 href={b.href}
                 aria-label={b.aria}
                 {...(b.external
-                  ? { target: "_top" as const, rel: "noopener noreferrer" }
+                  ? { target: "_blank" as const, rel: "noopener noreferrer" }
                   : {})}
                 className={cls}
               >
