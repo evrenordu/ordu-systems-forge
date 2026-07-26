@@ -30,6 +30,7 @@ export const translations = {
         "Parçalanmış organizasyonları ölçülebilir, tekrarlanabilir ve büyütülebilir sistemlere dönüştürürüm.",
         "Kararlarım veriyle beslenir; uygulamam disiplinle yürür; hikâyem insanla anlam kazanır.",
       ],
+      principle: "İnsan · Süreç · Veri · Teknoloji — aynı sistemde.",
     },
     focus: {
       kicker: "Odak Alanları",
@@ -140,6 +141,7 @@ export const translations = {
         "Aus fragmentierten Organisationen werden messbare, wiederholbare und skalierbare Systeme.",
         "Entscheidungen aus Daten, Umsetzung aus Disziplin, Wirkung aus Menschen.",
       ],
+      principle: "Mensch · Prozess · Daten · Technologie — im selben System.",
     },
     focus: {
       kicker: "Fokusbereiche",
@@ -250,6 +252,7 @@ export const translations = {
         "I turn fragmented organizations into measurable, repeatable and scalable systems.",
         "Decisions fed by data. Execution carried by discipline. Meaning delivered through people.",
       ],
+      principle: "People · Process · Data · Technology — inside the same system.",
     },
     focus: {
       kicker: "Focus Areas",
