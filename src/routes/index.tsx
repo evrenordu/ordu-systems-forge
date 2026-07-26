@@ -75,6 +75,7 @@ export const Route = createFileRoute("/")({
           jobTitle: "Entrepreneur · System Architect · AI & Digital Transformation",
           description:
             "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations.",
+          address: {
             "@type": "PostalAddress",
             addressLocality: "Frankfurt am Main",
             addressCountry: "DE",
