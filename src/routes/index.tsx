@@ -266,18 +266,19 @@ function Hero({ t }: { t: Dict }) {
           To swap: replace src/assets/hero-portrait.jpg with Evren's real portrait,
           keeping the same aspect (~2:3) and centered subject. */}
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[54%] max-w-[820px] will-change-transform md:block"
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[48%] max-w-[720px] will-change-transform md:block"
         data-replaceable-asset="hero-portrait"
         style={{ transform: `translate3d(${p.x * -6}px, 0, 0)` }}
       >
         <img
           src={heroPortrait}
-          alt="Placeholder portrait — replace with Evren Ordu's official photograph"
-          className="h-full w-full object-cover object-bottom"
+          alt="Evren Ordu — portrait"
+          className="h-full w-full object-cover object-[center_20%]"
         />
         {/* Left-edge fade so copy stays legible without covering the figure */}
-        <div className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-[oklch(0.14_0.03_250)] via-[oklch(0.14_0.03_250/0.7)] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[oklch(0.14_0.03_250)] to-transparent" />
+        <div className="absolute inset-y-0 left-0 w-[60%] bg-gradient-to-r from-[oklch(0.14_0.03_250)] via-[oklch(0.14_0.03_250/0.75)] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[oklch(0.14_0.03_250)] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[oklch(0.14_0.03_250)] to-transparent" />
       </div>
 
       {/* Copy */}
