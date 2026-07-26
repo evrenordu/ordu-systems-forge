@@ -237,7 +237,7 @@ function Hero({ t }: { t: Dict }) {
         <img
           src={heroScene.url}
           alt="Evren Ordu walking on a Frankfurt rooftop terrace at blue hour, skyline behind him"
-          className="h-full w-full translate-y-[3%] scale-[1.1] object-cover object-[35%_38%] sm:translate-y-[2%] sm:scale-[1.06] sm:object-[45%_40%] md:translate-y-0 md:scale-[1.04] md:object-[60%_center] lg:object-[58%_center]"
+          className="h-full w-full translate-y-[7%] scale-[1.18] object-cover object-[72%_center] sm:translate-y-[4%] sm:scale-[1.1] sm:object-[65%_center] md:translate-y-0 md:scale-[1.04] md:object-[60%_center] lg:object-[58%_center]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
