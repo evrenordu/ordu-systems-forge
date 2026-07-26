@@ -847,9 +847,14 @@ function Cases({ t }: { t: Dict }) {
 
                   {/* Copy side */}
                   <div className="flex flex-col justify-center p-8 lg:p-14">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-electric">
-                      {c.tag}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-electric">
+                        {c.tag}
+                      </span>
+                      <span className="inline-flex items-center rounded-full border border-ink/15 bg-ink/[0.04] px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.18em] text-ink/70">
+                        {c.status}
+                      </span>
+                    </div>
                     <h3 className="mt-3 font-display text-[clamp(1.5rem,2.4vw,2rem)] font-light leading-[1.15] tracking-tight text-ink">
                       {c.t}
                     </h3>
@@ -870,6 +875,26 @@ function Cases({ t }: { t: Dict }) {
                         </div>
                       ))}
                     </dl>
+
+                    {i === 0 && (
+                      <div className="mt-8 rounded-sm border border-ink/10 bg-ink/[0.03] p-5">
+                        <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-electric">
+                          {t.cases.proof.label}
+                        </div>
+                        <dl className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                          {t.cases.proof.items.map((p) => (
+                            <div key={p.t} className="flex flex-col">
+                              <dt className="font-display text-2xl font-light leading-none text-ink">
+                                {p.n}
+                              </dt>
+                              <dd className="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-ink/60">
+                                {p.t}
+                              </dd>
+                            </div>
+                          ))}
+                        </dl>
+                      </div>
+                    )}
                   </div>
                 </div>
               </article>
