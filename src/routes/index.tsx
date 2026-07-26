@@ -1165,7 +1165,7 @@ function Personal({ t }: { t: Dict }) {
 /* ---------------- Contact / Final CTA (cinematic dark) ---------------- */
 
 function Contact({ t }: { t: Dict }) {
-  const mailto = `mailto:hello@evrenordu.com?subject=${encodeURIComponent(
+  const mailto = `mailto:evren.ordu@gmail.com?subject=${encodeURIComponent(
     "Let's build a system",
   )}`;
   const linkedinUrl = "https://www.linkedin.com/in/evrenordu/";
@@ -1178,7 +1178,7 @@ function Contact({ t }: { t: Dict }) {
       label: t.contact.email,
       href: mailto,
       external: false,
-      aria: `${t.contact.email} — hello@evrenordu.com`,
+      aria: `${t.contact.email} — evren.ordu@gmail.com`,
     },
     {
       icon: Linkedin,
