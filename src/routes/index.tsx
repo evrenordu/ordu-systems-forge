@@ -698,11 +698,27 @@ function Framework({ t }: { t: Dict }) {
         </div>
 
         <Reveal delay={220}>
-          <div className="relative mt-14 overflow-hidden rounded-sm border border-electric/50 bg-gradient-to-r from-[oklch(0.2_0.06_250)] via-[oklch(0.28_0.1_250)] to-[oklch(0.2_0.06_250)] px-8 py-12 text-center shadow-card-premium">
+          <div
+            ref={outcomeRef}
+            className={`relative mt-14 overflow-hidden rounded-sm border bg-gradient-to-r from-[oklch(0.2_0.06_250)] via-[oklch(0.28_0.1_250)] to-[oklch(0.2_0.06_250)] px-8 py-12 text-center transition-all duration-1000 ${
+              outcomeOn
+                ? "border-electric/70 shadow-[0_0_80px_-10px_var(--electric-glow)]"
+                : "border-electric/25 opacity-70"
+            }`}
+          >
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric to-transparent transition-opacity duration-700"
+              style={{ opacity: outcomeOn ? 1 : 0 }}
+              aria-hidden
+            />
             <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-electric">
               {t.framework.outcomeLabel}
             </div>
-            <div className="mt-3 font-display text-[clamp(2.4rem,6vw,4.5rem)] font-light tracking-[0.12em] text-gradient">
+            <div
+              className={`mt-3 font-display text-[clamp(2.4rem,6vw,4.5rem)] font-light tracking-[0.12em] text-gradient transition-all duration-1000 ${
+                outcomeOn ? "translate-y-0 opacity-100" : "translate-y-1 opacity-80"
+              }`}
+            >
               {t.framework.outcomeWord}
             </div>
             <p className="mx-auto mt-4 max-w-2xl text-sm font-medium uppercase tracking-[0.24em] text-foreground/80">
