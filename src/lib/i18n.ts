@@ -531,6 +531,9 @@ export const translations = {
         { t: "International Real Estate Marketing", d: "Grenzüberschreitendes Immobilien-Marketing und Vertrieb." },
       ],
       note: "Details auf Anfrage.",
+      bauerpSummary:
+        "Ein produktives Business Operating System, das Finanzen, Projekte, Immobilien, Menschen und Governance über 15+ Gesellschaften verbindet.",
+      viewBauerp: "BauERP ansehen",
     },
     ideas: {
       kicker: "Gedanken in Entwicklung",
