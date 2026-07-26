@@ -185,8 +185,8 @@ function Nav({
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "border-b border-white/10 bg-[oklch(0.15_0.02_250/0.82)] backdrop-blur-xl"
-          : "bg-gradient-to-b from-[oklch(0.15_0.02_250/0.55)] to-transparent backdrop-blur-sm"
+          ? "border-b border-white/10 bg-[oklch(0.15_0.02_250/0.9)] backdrop-blur-2xl shadow-[0_1px_0_0_oklch(1_0_0/0.04)]"
+          : "bg-gradient-to-b from-[oklch(0.14_0.03_250/0.75)] via-[oklch(0.14_0.03_250/0.4)] to-transparent backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
@@ -199,21 +199,21 @@ function Nav({
           </span>
         </a>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
           {items.map((i) => {
             const on = active === i.id;
             return (
               <a
                 key={i.id}
                 href={`#${i.id}`}
-                className={`group relative text-[11px] font-medium uppercase tracking-[0.16em] transition-colors ${
-                  on ? "text-white" : "text-white/60 hover:text-white"
+                className={`group relative whitespace-nowrap text-[12px] font-medium uppercase tracking-[0.13em] transition-colors ${
+                  on ? "text-white" : "text-white/70 hover:text-white"
                 }`}
               >
                 {i.label}
                 <span
-                  className={`absolute -bottom-1.5 left-0 h-px bg-electric transition-all duration-300 ${
-                    on ? "w-full" : "w-0 group-hover:w-full"
+                  className={`absolute -bottom-1.5 left-0 h-[2px] bg-electric shadow-[0_0_8px_var(--electric-glow)] transition-all duration-300 ${
+                    on ? "w-full" : "w-0 group-hover:w-1/2"
                   }`}
                 />
               </a>
