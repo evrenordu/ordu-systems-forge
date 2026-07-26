@@ -238,11 +238,19 @@ function Hero({ t }: { t: Dict }) {
         <img
           src={heroScene.url}
           alt="Evren Ordu walking on a Frankfurt rooftop terrace at blue hour, skyline behind him"
-          className="h-full w-full translate-y-[7%] scale-[1.18] object-cover object-[72%_center] sm:translate-y-[4%] sm:scale-[1.1] sm:object-[65%_center] md:translate-y-0 md:scale-[1.04] md:object-[60%_center] lg:object-[58%_center]"
+          width={1528}
+          height={1029}
+          /* Focal-point-only cropping. No scale/translate stacked with the
+             parent's parallax transform. Vertical bias keeps the head clearly
+             below the fixed navigation on short desktop viewports (e.g. 828h),
+             and horizontal bias keeps the face off the left-side headline on
+             narrow screens. */
+          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_28%]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
         />
+
       </div>
 
       <div className="pointer-events-none absolute inset-0 -z-20 bg-blueprint opacity-15 mix-blend-overlay" />
