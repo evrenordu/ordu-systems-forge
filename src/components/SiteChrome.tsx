@@ -17,6 +17,7 @@ export function SiteNav({
   const location = useLocation();
   const isHome = location.pathname === "/";
   const isAbout = location.pathname === "/about";
+  const isBauerp = location.pathname === "/bauerp";
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -134,6 +135,21 @@ export function SiteNav({
               aria-hidden
             />
           </Link>
+          <Link
+            to="/bauerp"
+            aria-current={isBauerp ? "page" : undefined}
+            className={`group relative whitespace-nowrap rounded-sm px-1 py-1 text-[12px] font-medium uppercase tracking-[0.13em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric ${
+              isBauerp ? "text-white" : "text-white/70 hover:text-white"
+            }`}
+          >
+            {t.nav.bauerp}
+            <span
+              className={`absolute -bottom-1.5 left-1 h-[2px] bg-electric shadow-[0_0_8px_var(--electric-glow)] transition-all duration-300 ${
+                isBauerp ? "w-[calc(100%-0.5rem)]" : "w-0 group-hover:w-1/2"
+              }`}
+              aria-hidden
+            />
+          </Link>
         </nav>
 
         <div className="flex shrink-0 items-center gap-3">
@@ -195,6 +211,15 @@ export function SiteNav({
               }`}
             >
               {t.nav.aboutPage}
+            </Link>
+            <Link
+              to="/bauerp"
+              onClick={() => setOpen(false)}
+              className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
+                isBauerp ? "bg-white/5 text-white" : "text-white/70 hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              {t.nav.bauerp}
             </Link>
           </nav>
         </div>
