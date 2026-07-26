@@ -14,19 +14,32 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-background px-6 text-foreground">
+      <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden style={{
+        backgroundImage:
+          "linear-gradient(oklch(0.62 0.19 250 / 0.08) 1px, transparent 1px), linear-gradient(90deg, oklch(0.62 0.19 250 / 0.08) 1px, transparent 1px)",
+        backgroundSize: "56px 56px",
+      }} />
+      <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+        background: "radial-gradient(ellipse at center, oklch(0.24 0.09 245 / 0.4), transparent 60%)",
+      }} />
+      <div className="relative max-w-lg text-center">
+        <div className="mb-5 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.28em] text-electric">
+          <span className="h-px w-8 bg-electric" />
+          404 · Not Found
+        </div>
+        <h1 className="font-display text-[clamp(3rem,10vw,6rem)] font-light leading-none tracking-tight text-white">
+          Signal lost.
+        </h1>
+        <p className="mx-auto mt-6 max-w-md text-[15px] font-light leading-relaxed text-white/75">
+          The page you're looking for doesn't exist — or the system has moved. Let's get you back to the architecture.
         </p>
-        <div className="mt-6">
+        <div className="mt-9">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex min-h-[48px] items-center gap-2 rounded-sm bg-[oklch(0.58_0.24_255)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_oklch(0.55_0.24_255_/_0.7)] transition-all hover:bg-[oklch(0.63_0.25_255)] hover:shadow-[0_0_44px_-6px_oklch(0.7_0.25_255_/_0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            Go home
+            Return home
           </Link>
         </div>
       </div>
@@ -76,38 +89,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Evren Ordu — Systems. Transformation. Future." },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#0e1a2b" },
+      { name: "color-scheme", content: "dark light" },
+      { name: "format-detection", content: "telephone=no" },
+      { title: "Evren Ordu — The System Architect" },
       {
         name: "description",
         content:
-          "Evren Ordu — executive, entrepreneur and AI-driven transformation leader based in Frankfurt. Operations, ERP, AI and multi-site leadership across Germany, Turkey and Europe.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Evren Ordu, AI transformation, ERP, operations leadership, Germany, Frankfurt, digital transformation, executive, BauERP, AIOS",
+          "Evren Ordu — Frankfurt-based system architect. AI, ERP, operations and multi-site transformation across Germany, Turkey and Europe.",
       },
       { name: "author", content: "Evren Ordu" },
-      { property: "og:title", content: "Evren Ordu — Systems. Transformation. Future." },
-      {
-        property: "og:description",
-        content:
-          "Executive, entrepreneur and AI-driven transformation leader. Systems, ERP and next-generation business models across Germany and Europe.",
-      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Evren Ordu" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Evren Ordu — Systems. Transformation. Future." },
-      {
-        name: "twitter:description",
-        content:
-          "Executive, entrepreneur and AI-driven transformation leader based in Frankfurt.",
-      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -124,11 +122,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <head>
         <HeadContent />
       </head>
       <body>
+        <a
+          href="#top"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-electric focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:outline focus:outline-2 focus:outline-white"
+        >
+          Skip to content
+        </a>
         {children}
         <Scripts />
       </body>
