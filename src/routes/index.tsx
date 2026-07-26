@@ -748,23 +748,34 @@ function Cases({ t }: { t: Dict }) {
                     </dl>
 
                     {i === 0 && (
-                      <div className="mt-8 rounded-sm border border-ink/10 bg-ink/[0.03] p-5">
-                        <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-electric">
-                          {t.cases.proof.label}
+                      <>
+                        <div className="mt-8 rounded-sm border border-ink/10 bg-ink/[0.03] p-5">
+                          <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-electric">
+                            {t.cases.proof.label}
+                          </div>
+                          <dl className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                            {t.cases.proof.items.map((p) => (
+                              <div key={p.t} className="flex flex-col">
+                                <dt className="font-display text-2xl font-light leading-none text-ink">
+                                  {p.n}
+                                </dt>
+                                <dd className="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-ink/60">
+                                  {p.t}
+                                </dd>
+                              </div>
+                            ))}
+                          </dl>
                         </div>
-                        <dl className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                          {t.cases.proof.items.map((p) => (
-                            <div key={p.t} className="flex flex-col">
-                              <dt className="font-display text-2xl font-light leading-none text-ink">
-                                {p.n}
-                              </dt>
-                              <dd className="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-ink/60">
-                                {p.t}
-                              </dd>
-                            </div>
-                          ))}
-                        </dl>
-                      </div>
+                        <div className="mt-6">
+                          <Link
+                            to="/bauerp"
+                            className="inline-flex items-center gap-2 border-b border-electric/60 pb-1 font-mono text-[11px] uppercase tracking-[0.22em] text-ink transition-colors hover:text-electric"
+                          >
+                            {t.cases.viewBauerp}
+                            <ArrowUpRight className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
+                      </>
                     )}
                   </div>
                 </div>
