@@ -33,18 +33,18 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Evren Ordu — The System Architect · AI, ERP & Operations" },
+      { title: "Evren Ordu — The System Architect · AI-powered Business Operating Systems" },
       {
         name: "description",
         content:
-          "Frankfurt-based system architect turning people, process, data and technology into scalable operating systems. AI · ERP · multi-site transformation.",
+          "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:title", content: "Evren Ordu — The System Architect" },
       {
         property: "og:description",
         content:
-          "I build systems that build companies. Strategic Leader · System Architect · AI & Digital Transformation.",
+          "Entrepreneur, system architect and operator building AI-powered operating systems for multi-company groups. Frankfurt · Germany.",
       },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Strategic Leader · System Architect · AI & Digital Transformation — Frankfurt · Germany.",
+          "Entrepreneur · System Architect · AI & Digital Transformation — Frankfurt · Germany.",
       },
     ],
     links: [
@@ -72,7 +72,9 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           name: "Evren Ordu",
           alternateName: "The System Architect",
-          jobTitle: "Strategic Leader · System Architect · Digital Transformation Expert",
+          jobTitle: "Entrepreneur · System Architect · AI & Digital Transformation",
+          description:
+            "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations.",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Frankfurt am Main",
@@ -109,8 +111,32 @@ const SECTION_IDS = [
 ];
 
 function Index() {
-  const [lang, setLang] = useState<Lang>("tr");
+  const [lang, setLangState] = useState<Lang>("en");
   const t = useMemo(() => translations[lang], [lang]);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("evrenordu.lang") as Lang | null;
+      if (stored === "tr" || stored === "de" || stored === "en") {
+        setLangState(stored);
+        return;
+      }
+      const nav = (typeof navigator !== "undefined" ? navigator.language : "en").toLowerCase();
+      const detected: Lang = nav.startsWith("de") ? "de" : nav.startsWith("tr") ? "tr" : "en";
+      setLangState(detected);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const setLang = (l: Lang) => {
+    setLangState(l);
+    try {
+      localStorage.setItem("evrenordu.lang", l);
+    } catch {
+      /* ignore */
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -821,9 +847,14 @@ function Cases({ t }: { t: Dict }) {
 
                   {/* Copy side */}
                   <div className="flex flex-col justify-center p-8 lg:p-14">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-electric">
-                      {c.tag}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-electric">
+                        {c.tag}
+                      </span>
+                      <span className="inline-flex items-center rounded-full border border-ink/15 bg-ink/[0.04] px-2.5 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.18em] text-ink/70">
+                        {c.status}
+                      </span>
+                    </div>
                     <h3 className="mt-3 font-display text-[clamp(1.5rem,2.4vw,2rem)] font-light leading-[1.15] tracking-tight text-ink">
                       {c.t}
                     </h3>
@@ -844,6 +875,26 @@ function Cases({ t }: { t: Dict }) {
                         </div>
                       ))}
                     </dl>
+
+                    {i === 0 && (
+                      <div className="mt-8 rounded-sm border border-ink/10 bg-ink/[0.03] p-5">
+                        <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-electric">
+                          {t.cases.proof.label}
+                        </div>
+                        <dl className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                          {t.cases.proof.items.map((p) => (
+                            <div key={p.t} className="flex flex-col">
+                              <dt className="font-display text-2xl font-light leading-none text-ink">
+                                {p.n}
+                              </dt>
+                              <dd className="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-ink/60">
+                                {p.t}
+                              </dd>
+                            </div>
+                          ))}
+                        </dl>
+                      </div>
+                    )}
                   </div>
                 </div>
               </article>
@@ -1028,9 +1079,6 @@ function Ideas({ t }: { t: Dict }) {
                   <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-electric">
                     #{it.tag}
                   </span>
-                  <span className="rounded-full border border-electric/40 bg-electric/5 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-widest text-electric">
-                    {t.ideas.soon}
-                  </span>
                 </div>
                 <h3 className="mt-6 font-display text-xl font-medium leading-snug text-ink">
                   {it.t}
@@ -1038,9 +1086,6 @@ function Ideas({ t }: { t: Dict }) {
                 <p className="mt-3 text-[14.5px] font-light leading-relaxed text-ink/70">
                   {it.d}
                 </p>
-                <div className="mt-6 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-ink/40">
-                  Draft
-                </div>
               </article>
             </Reveal>
           ))}
