@@ -1,12 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
   Mail,
   MessageCircle,
   Linkedin,
-  MapPin,
   Sparkles,
   Layers,
   Cpu,
@@ -26,9 +25,11 @@ import {
 } from "lucide-react";
 import heroScene from "@/assets/evren-ordu-hero-frankfurt-v2.png.asset.json";
 import multisiteDiagram from "@/assets/multisite-transformation.png.asset.json";
-import { translations, type Lang, type Dict } from "@/lib/i18n";
+import { type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { SiteNav, SiteFooter } from "@/components/SiteChrome";
+import { useSiteLang } from "@/hooks/useSiteLang";
 
 export const Route = createFileRoute("/")({
   head: () => ({
