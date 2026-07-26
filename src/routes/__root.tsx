@@ -76,38 +76,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Evren Ordu — Systems. Transformation. Future." },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#0e1a2b" },
+      { name: "color-scheme", content: "dark light" },
+      { name: "format-detection", content: "telephone=no" },
+      { title: "Evren Ordu — The System Architect" },
       {
         name: "description",
         content:
-          "Evren Ordu — executive, entrepreneur and AI-driven transformation leader based in Frankfurt. Operations, ERP, AI and multi-site leadership across Germany, Turkey and Europe.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Evren Ordu, AI transformation, ERP, operations leadership, Germany, Frankfurt, digital transformation, executive, BauERP, AIOS",
+          "Evren Ordu — Frankfurt-based system architect. AI, ERP, operations and multi-site transformation across Germany, Turkey and Europe.",
       },
       { name: "author", content: "Evren Ordu" },
-      { property: "og:title", content: "Evren Ordu — Systems. Transformation. Future." },
-      {
-        property: "og:description",
-        content:
-          "Executive, entrepreneur and AI-driven transformation leader. Systems, ERP and next-generation business models across Germany and Europe.",
-      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Evren Ordu" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Evren Ordu — Systems. Transformation. Future." },
-      {
-        name: "twitter:description",
-        content:
-          "Executive, entrepreneur and AI-driven transformation leader based in Frankfurt.",
-      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -124,11 +109,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <head>
         <HeadContent />
       </head>
       <body>
+        <a
+          href="#top"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-electric focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:outline focus:outline-2 focus:outline-white"
+        >
+          Skip to content
+        </a>
         {children}
         <Scripts />
       </body>
