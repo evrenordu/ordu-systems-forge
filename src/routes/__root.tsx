@@ -77,21 +77,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Evren Ordu — Systems. Transformation. Future." },
+      {
+        name: "description",
+        content:
+          "Evren Ordu — executive, entrepreneur and AI-driven transformation leader based in Frankfurt. Operations, ERP, AI and multi-site leadership across Germany, Turkey and Europe.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Evren Ordu, AI transformation, ERP, operations leadership, Germany, Frankfurt, digital transformation, executive, BauERP, AIOS",
+      },
+      { name: "author", content: "Evren Ordu" },
+      { property: "og:title", content: "Evren Ordu — Systems. Transformation. Future." },
+      {
+        property: "og:description",
+        content:
+          "Executive, entrepreneur and AI-driven transformation leader. Systems, ERP and next-generation business models across Germany and Europe.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Evren Ordu" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Evren Ordu — Systems. Transformation. Future." },
+      {
+        name: "twitter:description",
+        content:
+          "Executive, entrepreneur and AI-driven transformation leader based in Frankfurt.",
+      },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
