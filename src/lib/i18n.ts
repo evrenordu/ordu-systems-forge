@@ -1251,7 +1251,7 @@ export const translations = {
       about: "Manifesto",
       focus: "What I Build",
       framework: "ORDU",
-      cases: "Systems",
+      cases: "Systems & Projects",
       experience: "Experience",
       ideas: "Ideas",
       contact: "Contact",
