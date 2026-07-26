@@ -490,7 +490,7 @@ function Focus({ t }: { t: Dict }) {
   return (
     <section id="focus" className="relative bg-background py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeader kicker={t.focus.kicker} title={t.focus.title} />
+        <QuietHeader num="03" kicker={t.focus.kicker} title={t.focus.title} />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {t.focus.cards.map((c, i) => {
             const Icon = FOCUS_ICONS[i] ?? Sparkles;
