@@ -202,7 +202,7 @@ export const translations = {
       eyebrow: "EVREN ORDU · FRANKFURT",
       brand: "THE SYSTEM ARCHITECT",
       headline:
-        "Ich baue Betriebssysteme für Unternehmen – und beweise ihre Wirkung in der Praxis.",
+        "Ich entwickle Business Operating Systems für Unternehmen – und beweise ihre Wirkung in der Praxis.",
       role: "Unternehmer · Systemarchitekt · KI & Digitale Transformation",
       support:
         "Mit KI als Entwicklungspartner habe ich das operative Rückgrat einer Unternehmensgruppe mit mehr als 15 Gesellschaften aufgebaut – vom Angebot bis zur E-Rechnung, von der Baustelle bis zur Finanzsteuerung. Ich rede nicht nur über Transformation. Ich setze sie um.",
