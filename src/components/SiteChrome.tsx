@@ -212,6 +212,15 @@ export function SiteNav({
             >
               {t.nav.aboutPage}
             </Link>
+            <Link
+              to="/bauerp"
+              onClick={() => setOpen(false)}
+              className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
+                isBauerp ? "bg-white/5 text-white" : "text-white/70 hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              {t.nav.bauerp}
+            </Link>
           </nav>
         </div>
       )}
