@@ -72,8 +72,9 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           name: "Evren Ordu",
           alternateName: "The System Architect",
-          jobTitle: "Strategic Leader · System Architect · Digital Transformation Expert",
-          address: {
+          jobTitle: "Entrepreneur · System Architect · AI & Digital Transformation",
+          description:
+            "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations.",
             "@type": "PostalAddress",
             addressLocality: "Frankfurt am Main",
             addressCountry: "DE",
