@@ -1166,33 +1166,23 @@ function Contact({ t }: { t: Dict }) {
           </div>
         </div>
 
-        {/* Contact channels */}
+        {/* Contact channels — all active */}
         <div className="mt-14 flex flex-wrap items-center justify-center gap-4">
           {btns.map((b) => {
-            const disabled = !b.href;
-            const cls = `group inline-flex min-h-[48px] items-center gap-2.5 rounded-sm border px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] backdrop-blur transition-all ${
-              disabled
-                ? "cursor-not-allowed border-white/15 bg-background/40 text-white/50"
-                : "border-white/25 bg-background/60 text-foreground hover:border-electric hover:text-electric-glow hover:shadow-[0_0_40px_-12px_var(--electric-glow)]"
-            }`;
-            const content = (
-              <>
+            const cls =
+              "group inline-flex min-h-[48px] items-center gap-2.5 rounded-sm border border-white/25 bg-background/60 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur transition-all hover:border-electric hover:text-electric-glow hover:shadow-[0_0_40px_-12px_var(--electric-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+            return (
+              <a
+                key={b.label}
+                href={b.href}
+                aria-label={b.aria}
+                {...(b.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className={cls}
+              >
                 <b.icon className="h-4 w-4" strokeWidth={1.5} />
                 {b.label}
-                {disabled && (
-                  <span className="ml-1 rounded-full border border-white/20 px-1.5 py-0.5 text-[9px] font-mono uppercase tracking-widest">
-                    {t.ideas.soon}
-                  </span>
-                )}
-              </>
-            );
-            return disabled ? (
-              <span key={b.label} className={cls} aria-disabled="true">
-                {content}
-              </span>
-            ) : (
-              <a key={b.label} href={b.href} className={cls}>
-                {content}
               </a>
             );
           })}
