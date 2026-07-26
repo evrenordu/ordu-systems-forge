@@ -356,7 +356,7 @@ function Hero({ t }: { t: Dict }) {
 
           <Reveal delay={100}>
             <div
-              className="font-display text-[clamp(2.4rem,6.6vw,5.2rem)] font-light leading-[1.02] tracking-[-0.015em] text-white"
+              className="font-display text-[clamp(2.4rem,6.6vw,5.2rem)] font-light leading-[1.02] tracking-[-0.015em] text-white lg:text-[clamp(3rem,6.9vw,5.45rem)]"
               style={{ textShadow: "0 2px 30px oklch(0.08 0.02 250 / 0.5)" }}
             >
               {t.hero.brand}
@@ -553,24 +553,76 @@ function Focus({ t }: { t: Dict }) {
 function Framework({ t }: { t: Dict }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [activeStep, setActiveStep] = useState(-1);
+  const [outcomeOn, setOutcomeOn] = useState(false);
+  const outcomeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setActiveStep(3);
+      setOutcomeOn(true);
+      return;
+    }
     if (!ref.current) return;
     const items = Array.from(ref.current.querySelectorAll<HTMLElement>("[data-step]"));
+    let maxSeen = -1;
+    const timers: number[] = [];
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             const idx = Number((e.target as HTMLElement).dataset.step);
-            setActiveStep((prev) => (idx > prev ? idx : prev));
+            if (idx > maxSeen) {
+              // Stagger sequential activation from current to target
+              for (let s = maxSeen + 1; s <= idx; s++) {
+                const step = s;
+                timers.push(
+                  window.setTimeout(
+                    () => setActiveStep((prev) => (step > prev ? step : prev)),
+                    (step - (maxSeen + 1)) * 260,
+                  ),
+                );
+              }
+              maxSeen = idx;
+            }
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.55 },
     );
     items.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    let outcomeIO: IntersectionObserver | null = null;
+    if (outcomeRef.current) {
+      outcomeIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting && maxSeen >= 3) {
+              setOutcomeOn(true);
+            }
+          });
+        },
+        { threshold: 0.4 },
+      );
+      outcomeIO.observe(outcomeRef.current);
+    }
+    return () => {
+      io.disconnect();
+      outcomeIO?.disconnect();
+      timers.forEach((t) => clearTimeout(t));
+    };
   }, []);
+
+  // Also trigger outcome once step 4 reached even if already in view
+  useEffect(() => {
+    if (activeStep >= 3) {
+      const id = window.setTimeout(() => setOutcomeOn(true), 500);
+      return () => clearTimeout(id);
+    }
+  }, [activeStep]);
+
 
   return (
     <section
@@ -593,7 +645,7 @@ function Framework({ t }: { t: Dict }) {
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute left-8 top-[86px] hidden h-px bg-electric transition-all duration-1000 ease-out lg:block"
+            className="pointer-events-none absolute left-8 top-[86px] hidden h-px bg-gradient-to-r from-electric via-electric to-electric/70 shadow-[0_0_12px_var(--electric-glow)] transition-[width] duration-[1200ms] ease-out lg:block"
             style={{ width: `calc(${Math.max(0, (activeStep + 1) / 4) * 100}% - 4rem)` }}
             aria-hidden
           />
@@ -646,11 +698,27 @@ function Framework({ t }: { t: Dict }) {
         </div>
 
         <Reveal delay={220}>
-          <div className="relative mt-14 overflow-hidden rounded-sm border border-electric/50 bg-gradient-to-r from-[oklch(0.2_0.06_250)] via-[oklch(0.28_0.1_250)] to-[oklch(0.2_0.06_250)] px-8 py-12 text-center shadow-card-premium">
+          <div
+            ref={outcomeRef}
+            className={`relative mt-14 overflow-hidden rounded-sm border bg-gradient-to-r from-[oklch(0.2_0.06_250)] via-[oklch(0.28_0.1_250)] to-[oklch(0.2_0.06_250)] px-8 py-12 text-center transition-all duration-1000 ${
+              outcomeOn
+                ? "border-electric/70 shadow-[0_0_80px_-10px_var(--electric-glow)]"
+                : "border-electric/25 opacity-70"
+            }`}
+          >
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-electric to-transparent transition-opacity duration-700"
+              style={{ opacity: outcomeOn ? 1 : 0 }}
+              aria-hidden
+            />
             <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-electric">
               {t.framework.outcomeLabel}
             </div>
-            <div className="mt-3 font-display text-[clamp(2.4rem,6vw,4.5rem)] font-light tracking-[0.12em] text-gradient">
+            <div
+              className={`mt-3 font-display text-[clamp(2.4rem,6vw,4.5rem)] font-light tracking-[0.12em] text-gradient transition-all duration-1000 ${
+                outcomeOn ? "translate-y-0 opacity-100" : "translate-y-1 opacity-80"
+              }`}
+            >
               {t.framework.outcomeWord}
             </div>
             <p className="mx-auto mt-4 max-w-2xl text-sm font-medium uppercase tracking-[0.24em] text-foreground/80">
@@ -698,6 +766,12 @@ function Cases({ t }: { t: Dict }) {
                     style={{ background: CASE_GRADIENTS[i % CASE_GRADIENTS.length] }}
                     aria-hidden
                   >
+                    {/*
+                      REPLACEABLE MEDIA SLOT — case-media-{i}
+                      To ship real assets, replace <CaseDiagram /> below with an
+                      <img src=".../bauerp-screenshot.jpg" /> or <video />.
+                      Keep the surrounding container for layout + blueprint overlay.
+                    */}
                     <div className="absolute inset-0 bg-blueprint opacity-25" />
                     <CaseDiagram index={i} />
                     <div className="absolute bottom-6 left-6 font-mono text-[10px] uppercase tracking-[0.28em] text-white/80">
@@ -991,10 +1065,32 @@ function Contact({ t }: { t: Dict }) {
   const mailto = `mailto:hello@evrenordu.com?subject=${encodeURIComponent(
     "Let's build a system",
   )}`;
+  const linkedinUrl = "https://www.linkedin.com/in/evrenordu";
+  const whatsappUrl = `https://wa.me/4915251512114?text=${encodeURIComponent(
+    "Hello Evren, I would like to discuss a possible collaboration.",
+  )}`;
   const btns = [
-    { icon: Mail, label: t.contact.email, href: mailto },
-    { icon: Linkedin, label: t.contact.linkedin, href: undefined },
-    { icon: MessageCircle, label: t.contact.whatsapp, href: undefined },
+    {
+      icon: Mail,
+      label: t.contact.email,
+      href: mailto,
+      external: false,
+      aria: `${t.contact.email} — hello@evrenordu.com`,
+    },
+    {
+      icon: Linkedin,
+      label: t.contact.linkedin,
+      href: linkedinUrl,
+      external: true,
+      aria: `${t.contact.linkedin} — linkedin.com/in/evrenordu`,
+    },
+    {
+      icon: MessageCircle,
+      label: t.contact.whatsapp,
+      href: whatsappUrl,
+      external: true,
+      aria: `${t.contact.whatsapp} — WhatsApp`,
+    },
   ] as const;
 
   return (
@@ -1070,33 +1166,23 @@ function Contact({ t }: { t: Dict }) {
           </div>
         </div>
 
-        {/* Contact channels */}
+        {/* Contact channels — all active */}
         <div className="mt-14 flex flex-wrap items-center justify-center gap-4">
           {btns.map((b) => {
-            const disabled = !b.href;
-            const cls = `group inline-flex min-h-[48px] items-center gap-2.5 rounded-sm border px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] backdrop-blur transition-all ${
-              disabled
-                ? "cursor-not-allowed border-white/15 bg-background/40 text-white/50"
-                : "border-white/25 bg-background/60 text-foreground hover:border-electric hover:text-electric-glow hover:shadow-[0_0_40px_-12px_var(--electric-glow)]"
-            }`;
-            const content = (
-              <>
+            const cls =
+              "group inline-flex min-h-[48px] items-center gap-2.5 rounded-sm border border-white/25 bg-background/60 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur transition-all hover:border-electric hover:text-electric-glow hover:shadow-[0_0_40px_-12px_var(--electric-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+            return (
+              <a
+                key={b.label}
+                href={b.href}
+                aria-label={b.aria}
+                {...(b.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className={cls}
+              >
                 <b.icon className="h-4 w-4" strokeWidth={1.5} />
                 {b.label}
-                {disabled && (
-                  <span className="ml-1 rounded-full border border-white/20 px-1.5 py-0.5 text-[9px] font-mono uppercase tracking-widest">
-                    {t.ideas.soon}
-                  </span>
-                )}
-              </>
-            );
-            return disabled ? (
-              <span key={b.label} className={cls} aria-disabled="true">
-                {content}
-              </span>
-            ) : (
-              <a key={b.label} href={b.href} className={cls}>
-                {content}
               </a>
             );
           })}
