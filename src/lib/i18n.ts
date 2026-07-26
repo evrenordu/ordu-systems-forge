@@ -386,6 +386,7 @@ export const translations = {
       ideas: "Ideen",
       contact: "Kontakt",
       aboutPage: "Über mich",
+      bauerp: "BauERP",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
