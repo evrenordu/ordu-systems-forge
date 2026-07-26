@@ -33,18 +33,18 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Evren Ordu — The System Architect · AI, ERP & Operations" },
+      { title: "Evren Ordu — The System Architect · AI-powered Business Operating Systems" },
       {
         name: "description",
         content:
-          "Frankfurt-based system architect turning people, process, data and technology into scalable operating systems. AI · ERP · multi-site transformation.",
+          "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:title", content: "Evren Ordu — The System Architect" },
       {
         property: "og:description",
         content:
-          "I build systems that build companies. Strategic Leader · System Architect · AI & Digital Transformation.",
+          "Entrepreneur, system architect and operator building AI-powered operating systems for multi-company groups. Frankfurt · Germany.",
       },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Strategic Leader · System Architect · AI & Digital Transformation — Frankfurt · Germany.",
+          "Entrepreneur · System Architect · AI & Digital Transformation — Frankfurt · Germany.",
       },
     ],
     links: [
