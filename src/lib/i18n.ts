@@ -6,40 +6,42 @@ export const translations = {
       about: "Manifesto",
       focus: "Ne İnşa Ederim",
       framework: "ORDU",
-      cases: "Vaka Çalışmaları",
+      cases: "Sistemler",
       experience: "Deneyim",
       ideas: "Fikirler",
       contact: "İletişim",
     },
     hero: {
-      eyebrow: "EVREN ORDU · FRANKFURT / GERMANY",
+      eyebrow: "EVREN ORDU · FRANKFURT",
       brand: "THE SYSTEM ARCHITECT",
-      headline: "Şirketleri büyüten sistemler kurarım.",
-      role: "Stratejik Lider · Sistem Mimarı · AI & Dijital Dönüşüm",
+      headline:
+        "Şirketler için işletim sistemleri kurarım — ve etkisini gerçek operasyonlarda kanıtlarım.",
+      role: "Girişimci · Sistem Mimarı · AI & Dijital Dönüşüm",
       support:
-        "İnsanları, süreçleri, veriyi ve teknolojiyi tek bir çalışan sisteme dönüştürüyorum.",
+        "AI’ı geliştirme ortağı olarak kullanarak 15’ten fazla şirketten oluşan bir grubun operasyonel omurgasını kurdum — tekliften e-faturaya, şantiyeden finansal kontrole kadar. Dönüşüm hakkında yalnızca konuşmam. Uygularım.",
       ctaPrimary: "Çalışmalarımı Keşfedin",
       ctaSecondary: "Bir Görüşme Başlatın",
       scroll: "Kaydırın",
     },
     about: {
       kicker: "Manifesto",
-      title: "Başkalarının normal kabul ettiği karmaşayı görürüm.",
+      title:
+        "Mevcut sistemler operasyonun gerçeğini yansıtmayınca yenisini kurdum.",
       blocks: [
         {
-          h: "Başkalarının normal kabul ettiği şeyi görürüm.",
-          t: "Dağınık süreçler. Görünmeyen maliyetler. Birbirinden kopuk ekipler. Veriye dayanmayan kararlar.",
+          h: "Kaosu kabullenmeyen mühendis",
+          t: "Mühendislik eğitimi aldım, yaklaşık yirmi yıllık yönetim deneyimiyle şekillendim. İnşaat, gayrimenkul ve operasyonda aynı sorunla tekrar tekrar karşılaştım: En pahalı maliyet kalemi bilançoda görünmez — insanlar, süreçler ve sistemler arasındaki kaostur.",
         },
         {
-          h: "Sonra karmaşayı berraklığa dönüştürürüm.",
-          t: "İnsanları hizalarım. Süreçleri tanımlarım. Veriyi görünür hâle getiririm. Teknolojiyi sistemin içine yerleştiririm.",
+          h: "Bu yüzden yeni bir sistem kurdum",
+          t: "Standart çözümler operasyonun gerçekliğini karşılamayınca kendim inşa etmeye başladım. AI’ı geliştirme ortağı olarak kullanarak şantiye, gayrimenkul, personel, satış ve finansal kontrolü birleştiren entegre bir ERP ortaya çıktı — tek veri temeli, tek sistem.",
         },
         {
-          h: "Sonuç sadece iyileşme değildir.",
-          t: "Kontrolünü kaybetmeden büyüyebilen, ölçülebilir ve devredilebilir bir sistem.",
+          h: "Bu daha başlangıç",
+          t: "Küçük ve odaklı bir ekip bugün AI ile geçmişte tüm departmanların ihtiyaç duyduğu sistemleri kurabiliyorsa, değişen yalnızca yazılım geliştirme değildir. Şirketlerin nasıl kurulduğu ve yönetildiği de değişir. Ben tam olarak bunun üzerinde çalışıyorum.",
         },
       ],
-      principle: "İnsan · Süreç · Veri · Teknoloji — aynı sistemde.",
+      principle: "İnsan · Süreç · Veri · AI — tek sistemde.",
     },
     focus: {
       kicker: "Ne İnşa Ederim",
@@ -78,21 +80,26 @@ export const translations = {
       outcomeDesc: "Ölçülebilir. Sürdürülebilir. Tekrarlanabilir.",
     },
     cases: {
-      kicker: "Öne Çıkan Vaka Çalışmaları",
+      kicker: "Sistemler & Seçili Çalışmalar",
       title: "Fikirden sisteme, sistemden ölçeğe.",
       problemLabel: "Problem",
       systemLabel: "Sistem",
       impactLabel: "Etki",
       items: [
         {
-          tag: "BauERP",
-          t: "İnşaatın operasyonel omurgası.",
-          problem: "Saha, satın alma, bütçe, sözleşme ve finans birbirinden kopuk çalışıyor.",
-          system: "Tekliften faturaya, şantiyeden yönetime tek veri omurgası.",
-          impact: "Daha fazla görünürlük. Daha hızlı karar. Daha güçlü mali kontrol.",
+          tag: "BauERP · Özel Geliştirme",
+          status: "Aktif Uygulama",
+          t: "Bir şirket grubunun dijital omurgası.",
+          problem:
+            "Şantiye, satın alma, sözleşmeler, bütçeler, muhasebe ve gayrimenkul yönetimi; bir düzineden fazla şirkette, üç dilde ve ortak veri temeli olmadan ayrı silolar hâlinde çalışıyordu.",
+          system:
+            "Yedi ana modül grubu ve 17 otomatik görevden oluşan entegre bir iş işletim sistemi — tekliften e-faturaya, banka mutabakatından kiracı portalına, AI destekli şantiye raporlarından denetime hazır dokümantasyona kadar.",
+          impact:
+            "15’ten fazla GmbH/KG için tek veri temeli. Beş dakikada bir muhasebe senkronizasyonu. 42 GB şantiye medyasının otomatik olarak yapılandırılması ve arşivlenmesi. İzlenebilir denetim kayıtlarıyla rol, şirket ve portal izolasyonu.",
         },
         {
           tag: "AIOS",
+          status: "Framework & Ürün Geliştirme",
           t: "Şirket bilgisini işletim sistemine dönüştürmek.",
           problem: "Bilgi insanlarda ve dağınık dosyalarda kalıyor.",
           system: "Şirket hafızası, AI, SOP, karar desteği ve iş akışları tek yapı içinde.",
@@ -100,23 +107,34 @@ export const translations = {
         },
         {
           tag: "Multi-Site Transformation",
+          status: "Yönetici Deneyimi",
           t: "Bireysel lokasyonlardan tek işletim modeline.",
           problem: "Her lokasyon farklı çalışıyor.",
           system: "KPI, iş gücü planlama, raporlama ve standart operasyon modeli.",
           impact: "Kontrol, karşılaştırılabilirlik ve ölçeklenebilir büyüme.",
         },
       ],
+      proof: {
+        label: "BauERP · Doğrulanmış Ölçek",
+        items: [
+          { n: "7", t: "Ana Modül Grubu" },
+          { n: "17", t: "Otomatik Görev" },
+          { n: "15+", t: "GmbH/KG" },
+          { n: "3", t: "Arayüz Dili" },
+        ],
+      },
       supportingLabel: "Destekleyen Projeler",
       supporting: [
         { t: "Digital Transformation", d: "Süreçlerin AI ile yeniden tasarlanması ve ölçülebilir verim." },
         { t: "International Real Estate Marketing", d: "Sınır ötesi gayrimenkul pazarlaması ve satış operasyonu." },
       ],
-      note: "Detaylı vaka çalışmaları talep üzerine paylaşılır.",
+      note: "Detaylı bilgi talep üzerine paylaşılır.",
     },
     ideas: {
-      kicker: "Düşünce Liderliği",
+      kicker: "Üzerinde Çalıştığım Fikirler",
       title: "Fikirler. Sistemler. Gelecek.",
-      intro: "Gündemi değil, sistemi konuşan yazılar. Pratik, sahadan çıkmış, uygulanabilir düşünce.",
+      intro:
+        "Gündemi değil, sistemi konuşan notlar. Pratik, sahadan çıkmış, uygulanabilir düşünce.",
       items: [
         {
           tag: "AI",
@@ -134,7 +152,6 @@ export const translations = {
           d: "Bilançoda yer almayan ama her ay ödediğiniz gerçek fatura: dağınıklık, kopukluk ve tekrarlanan hata.",
         },
       ],
-      soon: "Yakında",
     },
     personal: {
       kicker: "İnsan Boyutu",
@@ -167,7 +184,7 @@ export const translations = {
     },
     footer: {
       loc: "Frankfurt / Germany",
-      tag: "Built around clarity, courage and systems.",
+      tag: "Berraklık, cesaret ve sistemler üzerine inşa edildi.",
       rights: "Tüm hakları saklıdır.",
     },
   },
@@ -176,40 +193,42 @@ export const translations = {
       about: "Manifest",
       focus: "Was ich baue",
       framework: "ORDU",
-      cases: "Fallstudien",
+      cases: "Systeme",
       experience: "Erfahrung",
       ideas: "Ideen",
       contact: "Kontakt",
     },
     hero: {
-      eyebrow: "EVREN ORDU · FRANKFURT / GERMANY",
+      eyebrow: "EVREN ORDU · FRANKFURT",
       brand: "THE SYSTEM ARCHITECT",
-      headline: "Ich baue Systeme, die Unternehmen wachsen lassen.",
-      role: "Strategischer Leader · Systemarchitekt · KI & Digitale Transformation",
+      headline:
+        "Ich baue Betriebssysteme für Unternehmen – und beweise ihre Wirkung in der Praxis.",
+      role: "Unternehmer · Systemarchitekt · KI & Digitale Transformation",
       support:
-        "Ich verbinde Menschen, Prozesse, Daten und Technologie zu einem funktionierenden System.",
+        "Mit KI als Entwicklungspartner habe ich das operative Rückgrat einer Unternehmensgruppe mit mehr als 15 Gesellschaften aufgebaut – vom Angebot bis zur E-Rechnung, von der Baustelle bis zur Finanzsteuerung. Ich rede nicht nur über Transformation. Ich setze sie um.",
       ctaPrimary: "Projekte entdecken",
       ctaSecondary: "Gespräch starten",
       scroll: "Scrollen",
     },
     about: {
       kicker: "Manifest",
-      title: "Ich sehe die Komplexität, die andere für normal halten.",
+      title:
+        "Als bestehende Systeme unsere Realität nicht abbilden konnten, habe ich ein neues aufgebaut.",
       blocks: [
         {
-          h: "Ich sehe, was andere als normal akzeptieren.",
-          t: "Fragmentierte Prozesse. Unsichtbare Kosten. Getrennte Teams. Entscheidungen ohne Daten.",
+          h: "Der Ingenieur, der Chaos nicht akzeptierte",
+          t: "Ausgebildet als Ingenieur, geprägt durch fast zwei Jahrzehnte im Management. In Bau, Immobilien und Operations begegnete mir immer wieder dasselbe Problem: Der teuerste Kostenblock erscheint in keiner Bilanz – das Chaos zwischen Menschen, Prozessen und Systemen.",
         },
         {
-          h: "Dann verwandle ich Komplexität in Klarheit.",
-          t: "Ich richte Menschen aus. Ich definiere Prozesse. Ich mache Daten sichtbar. Ich verankere Technologie im System.",
+          h: "Also baute ich ein neues System",
+          t: "Als Standardlösungen unsere operative Realität nicht abbilden konnten, begann ich selbst zu bauen. Mit KI als Entwicklungspartner entstand ein integriertes ERP für Baustelle, Immobilien, Personal, Vertrieb und Finanzsteuerung – eine Datenbasis, ein System.",
         },
         {
-          h: "Das Ergebnis ist mehr als Verbesserung.",
-          t: "Ein messbares, übergabefähiges System, das wachsen kann, ohne die Kontrolle zu verlieren.",
+          h: "Das ist erst der Anfang",
+          t: "Wenn heute ein kleines, fokussiertes Team mit KI Systeme entwickeln kann, für die früher ganze Abteilungen notwendig waren, verändert sich nicht nur Softwareentwicklung. Es verändert sich, wie Unternehmen aufgebaut und geführt werden. Genau daran arbeite ich.",
         },
       ],
-      principle: "Mensch · Prozess · Daten · Technologie — im selben System.",
+      principle: "Mensch · Prozess · Daten · KI – in einem System.",
     },
     focus: {
       kicker: "Was ich baue",
@@ -248,21 +267,26 @@ export const translations = {
       outcomeDesc: "Messbar. Nachhaltig. Wiederholbar.",
     },
     cases: {
-      kicker: "Ausgewählte Fallstudien",
+      kicker: "Systeme & ausgewählte Arbeiten",
       title: "Von der Idee zum System, vom System zur Skalierung.",
       problemLabel: "Problem",
       systemLabel: "System",
       impactLabel: "Wirkung",
       items: [
         {
-          tag: "BauERP",
-          t: "Das operative Rückgrat für den Bau.",
-          problem: "Baustelle, Einkauf, Budget, Vertrag und Finance arbeiten getrennt.",
-          system: "Vom Angebot zur Rechnung, von der Baustelle zur Geschäftsführung — ein Datenrückgrat.",
-          impact: "Mehr Sichtbarkeit. Schnellere Entscheidungen. Stärkere Finanzkontrolle.",
+          tag: "BauERP · Eigenentwicklung",
+          status: "Aktive Implementierung",
+          t: "Das digitale Rückgrat einer Unternehmensgruppe.",
+          problem:
+            "Baustelle, Einkauf, Verträge, Budgets, Buchhaltung und Immobilienverwaltung arbeiteten in getrennten Silos – über mehr als ein Dutzend Gesellschaften, in drei Sprachen und ohne gemeinsame Datenbasis.",
+          system:
+            "Ein integriertes Business Operating System mit sieben Hauptmodulgruppen und 17 automatisierten Aufgaben – vom Angebot bis zur E-Rechnung, vom Bankabgleich bis zum Mieterportal und von KI-gestützten Baustellenberichten bis zur revisionsfähigen Dokumentation.",
+          impact:
+            "Eine gemeinsame Datenbasis für mehr als 15 GmbH/KG. Buchhaltungssynchronisation alle fünf Minuten. 42 GB Baustellenmedien automatisch strukturiert und archiviert. Rollen-, Firmen- und Portal-Isolation mit nachvollziehbaren Audit-Trails.",
         },
         {
           tag: "AIOS",
+          status: "Framework & Produktentwicklung",
           t: "Unternehmenswissen wird zum Betriebssystem.",
           problem: "Wissen bleibt in Köpfen und verstreuten Dateien.",
           system: "Unternehmensgedächtnis, KI, SOPs, Entscheidungsunterstützung und Workflows in einer Struktur.",
@@ -270,23 +294,33 @@ export const translations = {
         },
         {
           tag: "Multi-Site Transformation",
+          status: "Executive Experience",
           t: "Von einzelnen Standorten zu einem Betriebsmodell.",
           problem: "Jeder Standort arbeitet anders.",
           system: "KPIs, Personalplanung, Reporting und Standard-Betriebsmodell.",
           impact: "Kontrolle, Vergleichbarkeit und skalierbares Wachstum.",
         },
       ],
+      proof: {
+        label: "BauERP · Verifizierte Skalierung",
+        items: [
+          { n: "7", t: "Hauptmodulgruppen" },
+          { n: "17", t: "Automatisierte Aufgaben" },
+          { n: "15+", t: "GmbH/KG" },
+          { n: "3", t: "Oberflächensprachen" },
+        ],
+      },
       supportingLabel: "Unterstützende Projekte",
       supporting: [
         { t: "Digital Transformation", d: "Prozesse mit KI neu gedacht — für messbare Produktivität." },
         { t: "International Real Estate Marketing", d: "Grenzüberschreitendes Immobilien-Marketing und Vertrieb." },
       ],
-      note: "Detaillierte Fallstudien auf Anfrage.",
+      note: "Details auf Anfrage.",
     },
     ideas: {
-      kicker: "Thought Leadership",
+      kicker: "Gedanken in Entwicklung",
       title: "Ideen. Systeme. Zukunft.",
-      intro: "Texte, die nicht Trends, sondern Systeme behandeln. Praktisch, aus der Praxis, umsetzbar.",
+      intro: "Notizen, die nicht Trends, sondern Systeme behandeln. Praktisch, aus der Praxis, umsetzbar.",
       items: [
         {
           tag: "AI",
@@ -304,7 +338,6 @@ export const translations = {
           d: "Nicht in der Bilanz — aber jeden Monat bezahlt: Fragmentierung, Reibung, wiederholte Fehler.",
         },
       ],
-      soon: "Bald",
     },
     personal: {
       kicker: "Menschliche Dimension",
@@ -337,7 +370,7 @@ export const translations = {
     },
     footer: {
       loc: "Frankfurt / Deutschland",
-      tag: "Built around clarity, courage and systems.",
+      tag: "Gebaut auf Klarheit, Mut und Systemen.",
       rights: "Alle Rechte vorbehalten.",
     },
   },
@@ -346,40 +379,41 @@ export const translations = {
       about: "Manifesto",
       focus: "What I Build",
       framework: "ORDU",
-      cases: "Case Studies",
+      cases: "Systems",
       experience: "Experience",
       ideas: "Ideas",
       contact: "Contact",
     },
     hero: {
-      eyebrow: "EVREN ORDU · FRANKFURT / GERMANY",
+      eyebrow: "EVREN ORDU · FRANKFURT",
       brand: "THE SYSTEM ARCHITECT",
-      headline: "I build systems that build companies.",
-      role: "Strategic Leader · System Architect · AI & Digital Transformation",
+      headline:
+        "I build operating systems for companies — and prove their impact in practice.",
+      role: "Entrepreneur · System Architect · AI & Digital Transformation",
       support:
-        "I turn people, process, data and technology into one operating system.",
+        "With AI as a development partner, I built the operating backbone for a group of more than 15 companies — from quote to e-invoice, from the construction site to financial control. I do not just talk about transformation. I implement it.",
       ctaPrimary: "Explore My Work",
       ctaSecondary: "Start a Conversation",
       scroll: "Scroll",
     },
     about: {
       kicker: "Manifesto",
-      title: "I see the complexity that others accept as normal.",
+      title: "When existing systems could not reflect our reality, I built a new one.",
       blocks: [
         {
-          h: "I see what others accept as normal.",
-          t: "Fragmented processes. Invisible costs. Disconnected teams. Decisions without data.",
+          h: "The engineer who refused to accept chaos",
+          t: "Trained as an engineer and shaped by nearly two decades in management, I kept seeing the same problem across construction, real estate and operations: the most expensive cost center never appears on the balance sheet — the chaos between people, processes and systems.",
         },
         {
-          h: "Then I turn complexity into clarity.",
-          t: "I align people. I define processes. I make data visible. I embed technology inside the system.",
+          h: "So I built a new system",
+          t: "When standard solutions could not reflect operational reality, I started building. With AI as a development partner, an integrated ERP emerged for construction sites, real estate, people, sales and financial control — one data foundation, one system.",
         },
         {
-          h: "The result is not just improvement.",
-          t: "A measurable, transferable system that can grow without losing control.",
+          h: "This is only the beginning",
+          t: "When a small, focused team can now build with AI what once required entire departments, it changes more than software development. It changes how companies are built and led. That is the work I am pursuing.",
         },
       ],
-      principle: "People · Process · Data · Technology — inside the same system.",
+      principle: "People · Process · Data · AI — in one system.",
     },
     focus: {
       kicker: "What I Build",
@@ -418,21 +452,26 @@ export const translations = {
       outcomeDesc: "Measurable. Sustainable. Repeatable.",
     },
     cases: {
-      kicker: "Featured Case Studies",
+      kicker: "Systems & Selected Work",
       title: "From idea to system, from system to scale.",
       problemLabel: "Problem",
       systemLabel: "System",
       impactLabel: "Impact",
       items: [
         {
-          tag: "BauERP",
-          t: "The operating backbone for construction.",
-          problem: "Site, procurement, budget, contract and finance run in disconnected silos.",
-          system: "From quote to invoice, from site to management — one data backbone.",
-          impact: "More visibility. Faster decisions. Stronger financial control.",
+          tag: "BauERP · Proprietary Development",
+          status: "Active Implementation",
+          t: "The digital backbone of a multi-company group.",
+          problem:
+            "Construction sites, procurement, contracts, budgets, accounting and property management operated in disconnected silos — across more than a dozen companies, in three languages and without a shared data foundation.",
+          system:
+            "An integrated business operating system with seven core module groups and 17 automated jobs — from quote to e-invoice, bank reconciliation and tenant portals to AI-assisted site reports and audit-ready documentation.",
+          impact:
+            "One shared data foundation for more than 15 GmbH/KG entities. Accounting synchronization every five minutes. 42 GB of construction media automatically structured and archived. Role, company and portal isolation with traceable audit trails.",
         },
         {
           tag: "AIOS",
+          status: "Framework & Product in Development",
           t: "Turning company knowledge into an operating system.",
           problem: "Knowledge lives in people's heads and scattered files.",
           system: "Company memory, AI, SOPs, decision support and workflows inside one structure.",
@@ -440,23 +479,33 @@ export const translations = {
         },
         {
           tag: "Multi-Site Transformation",
+          status: "Executive Experience",
           t: "From individual locations to one operating model.",
           problem: "Every location works differently.",
           system: "KPIs, workforce planning, reporting and a standard operating model.",
           impact: "Control, comparability and scalable growth.",
         },
       ],
+      proof: {
+        label: "BauERP · Verified Scale",
+        items: [
+          { n: "7", t: "Core Module Groups" },
+          { n: "17", t: "Automated Jobs" },
+          { n: "15+", t: "GmbH/KG" },
+          { n: "3", t: "Interface Languages" },
+        ],
+      },
       supportingLabel: "Supporting Projects",
       supporting: [
         { t: "Digital Transformation", d: "Processes redesigned with AI to deliver measurable productivity." },
         { t: "International Real Estate Marketing", d: "Cross-border real estate marketing and sales operations." },
       ],
-      note: "Detailed case studies available upon request.",
+      note: "Further details available on request.",
     },
     ideas: {
-      kicker: "Thought Leadership",
+      kicker: "Ideas I’m Exploring",
       title: "Ideas. Systems. Future.",
-      intro: "Writing that discusses systems, not trends. Practical thinking, grounded in operations.",
+      intro: "Notes that discuss systems, not trends. Practical thinking, grounded in operations.",
       items: [
         {
           tag: "AI",
@@ -474,7 +523,6 @@ export const translations = {
           d: "It isn't on the balance sheet, but you pay it every month: fragmentation, friction and repeated mistakes.",
         },
       ],
-      soon: "Soon",
     },
     personal: {
       kicker: "Human Dimension",
