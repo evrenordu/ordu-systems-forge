@@ -320,46 +320,72 @@ function Hero({ t }: { t: Dict }) {
         <img
           src={heroScene}
           alt="Evren Ordu on a Frankfurt blue-hour rooftop terrace"
-          className="h-full w-full object-cover object-[62%_center]"
+          className="h-full w-full object-cover object-[68%_center] sm:object-[62%_center]"
           fetchPriority="high"
         />
       </div>
 
       <div className="pointer-events-none absolute inset-0 -z-20 bg-blueprint opacity-15 mix-blend-overlay" />
 
-      {/* Localized left-side gradient */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-full max-w-[880px] bg-gradient-to-r from-[oklch(0.11_0.03_250/0.88)] via-[oklch(0.14_0.03_250/0.55)] to-transparent md:w-[68%]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[oklch(0.14_0.03_250/0.45)] to-transparent" />
+      {/* Localized left-side gradient — narrower to reveal more skyline */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-full max-w-[760px] bg-gradient-to-r from-[oklch(0.11_0.03_250/0.9)] via-[oklch(0.13_0.03_250/0.55)] to-transparent md:w-[58%]" />
+      {/* Subtle grounding shadow beneath the walking figure */}
+      <div
+        className="pointer-events-none absolute -z-10 hidden md:block"
+        style={{
+          left: "58%",
+          right: "18%",
+          bottom: "6%",
+          height: "80px",
+          background:
+            "radial-gradient(ellipse at center, oklch(0.05 0.02 250 / 0.55), transparent 70%)",
+          filter: "blur(6px)",
+        }}
+        aria-hidden
+      />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-[oklch(0.14_0.03_250/0.35)] to-transparent" />
 
       <div className="relative mx-auto w-full max-w-7xl px-6 pt-28 pb-24 lg:px-10 lg:pt-32">
         <div className="max-w-[42rem]">
           <Reveal>
-            <div className="mb-6 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/85 sm:text-[11px]">
+            <div className="mb-6 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90 sm:text-[11px]">
               <span className="h-px w-10 bg-electric" />
               {t.hero.eyebrow}
             </div>
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="font-display text-[clamp(2.4rem,6.6vw,5.2rem)] font-light leading-[0.98] tracking-[-0.02em] text-white">
+            <div
+              className="font-display text-[clamp(2.4rem,6.6vw,5.2rem)] font-light leading-[1.02] tracking-[-0.015em] text-white"
+              style={{ textShadow: "0 2px 30px oklch(0.08 0.02 250 / 0.5)" }}
+            >
               {t.hero.brand}
             </div>
           </Reveal>
 
           <Reveal delay={220}>
-            <h1 className="mt-6 max-w-2xl font-display text-[clamp(1.35rem,2.6vw,2.05rem)] font-light leading-[1.2] tracking-tight text-white">
-              <span className="text-gradient">{t.hero.headline}</span>
+            <h1
+              className="mt-7 max-w-2xl font-display text-[clamp(1.45rem,2.75vw,2.15rem)] font-light leading-[1.2] tracking-tight text-white"
+              style={{ textShadow: "0 2px 24px oklch(0.08 0.02 250 / 0.75), 0 1px 2px oklch(0.05 0.02 250 / 0.6)" }}
+            >
+              {t.hero.headline}
             </h1>
           </Reveal>
 
           <Reveal delay={360}>
-            <p className="mt-6 text-[12.5px] font-semibold uppercase tracking-[0.22em] text-electric-glow sm:text-[13px]">
+            <p
+              className="mt-6 text-[13px] font-semibold uppercase tracking-[0.2em] text-[oklch(0.82_0.16_240)] sm:text-[13.5px]"
+              style={{ textShadow: "0 1px 12px oklch(0.08 0.02 250 / 0.6)" }}
+            >
               {t.hero.role}
             </p>
           </Reveal>
 
           <Reveal delay={460}>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/85 sm:text-base">
+            <p
+              className="mt-5 max-w-xl text-[16px] leading-[1.65] text-white/95 sm:text-[17px]"
+              style={{ textShadow: "0 1px 14px oklch(0.08 0.02 250 / 0.55)" }}
+            >
               {t.hero.support}
             </p>
           </Reveal>
@@ -375,7 +401,7 @@ function Hero({ t }: { t: Dict }) {
               </a>
               <a
                 href="#contact"
-                className="group inline-flex min-h-[48px] items-center gap-2 rounded-sm border border-white/40 bg-white/5 px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur transition-all hover:border-electric hover:text-electric-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="group inline-flex min-h-[48px] items-center gap-2 rounded-sm border border-white/45 bg-white/10 px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur transition-all hover:border-electric hover:text-electric-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 <span>{t.hero.ctaSecondary}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -388,7 +414,7 @@ function Hero({ t }: { t: Dict }) {
       <a
         href="#about"
         aria-label={t.hero.scroll}
-        className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.3em] text-white/70 hover:text-electric"
+        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.3em] text-white/80 hover:text-electric sm:flex"
       >
         {t.hero.scroll}
         <ChevronDown className="h-4 w-4 animate-float" />
