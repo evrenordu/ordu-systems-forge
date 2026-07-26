@@ -1,12 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
   Mail,
   MessageCircle,
   Linkedin,
-  MapPin,
   Sparkles,
   Layers,
   Cpu,
@@ -26,9 +25,11 @@ import {
 } from "lucide-react";
 import heroScene from "@/assets/evren-ordu-hero-frankfurt-v2.png.asset.json";
 import multisiteDiagram from "@/assets/multisite-transformation.png.asset.json";
-import { translations, type Lang, type Dict } from "@/lib/i18n";
+import { type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { SiteNav, SiteFooter } from "@/components/SiteChrome";
+import { useSiteLang } from "@/hooks/useSiteLang";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -113,58 +114,17 @@ const SECTION_IDS = [
 ];
 
 function Index() {
-  const [lang, setLangState] = useState<Lang>("en");
-  const t = useMemo(() => translations[lang], [lang]);
-
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem("evrenordu.lang") as Lang | null;
-      if (stored === "tr" || stored === "de" || stored === "en") {
-        setLangState(stored);
-        return;
-      }
-      const candidates: string[] =
-        typeof navigator !== "undefined"
-          ? [
-              ...((navigator.languages as readonly string[] | undefined) ?? []),
-              navigator.language ?? "",
-            ].filter(Boolean)
-          : [];
-      const first = candidates.find((c) => {
-        const l = c.toLowerCase();
-        return l.startsWith("tr") || l.startsWith("de") || l.startsWith("en");
-      });
-      const l = (first ?? "en").toLowerCase();
-      const detected: Lang = l.startsWith("tr") ? "tr" : l.startsWith("de") ? "de" : "en";
-      setLangState(detected);
-    } catch {
-      /* ignore */
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      document.documentElement.lang = lang;
-    }
-  }, [lang]);
-
-  const setLang = (l: Lang) => {
-    setLangState(l);
-    try {
-      localStorage.setItem("evrenordu.lang", l);
-    } catch {
-      /* ignore */
-    }
-  };
+  const { lang, setLang, t } = useSiteLang();
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <ScrollProgress />
-      <Nav lang={lang} setLang={setLang} t={t} />
+      <SiteNav lang={lang} setLang={setLang} t={t} />
 
       <main>
         <Hero t={t} />
         <About t={t} />
+        <Trusted t={t} />
         <Focus t={t} />
         <Framework t={t} />
         <Cases t={t} />
@@ -174,180 +134,72 @@ function Index() {
         <Contact t={t} />
       </main>
 
-      <Footer t={t} />
+      <SiteFooter t={t} />
     </div>
   );
 }
 
-/* ---------------- Navigation ---------------- */
+/* ---------------- Trusted Through Leadership ---------------- */
 
-function Nav({
-  lang,
-  setLang,
-  t,
-}: {
-  lang: Lang;
-  setLang: (l: Lang) => void;
-  t: Dict;
-}) {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<string>("about");
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
-    );
-    SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) io.observe(el);
-    });
-    return () => io.disconnect();
-  }, []);
-
-  const items = [
-    { id: "about", label: t.nav.about },
-    { id: "focus", label: t.nav.focus },
-    { id: "framework", label: t.nav.framework },
-    { id: "cases", label: t.nav.cases },
-    { id: "experience", label: t.nav.experience },
-    { id: "ideas", label: t.nav.ideas },
-    { id: "contact", label: t.nav.contact },
-  ];
-
+function Trusted({ t }: { t: Dict }) {
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "border-b border-white/10 bg-[oklch(0.15_0.02_250/0.9)] backdrop-blur-2xl shadow-[0_1px_0_0_oklch(1_0_0/0.04)]"
-          : "bg-gradient-to-b from-[oklch(0.14_0.03_250/0.75)] via-[oklch(0.14_0.03_250/0.4)] to-transparent backdrop-blur-md"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-10">
-        <a
-          href="#top"
-          aria-label="Evren Ordu — Home"
-          className="group flex items-center gap-2.5 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric"
-        >
-          <span className="grid h-9 w-9 place-items-center rounded-sm border border-electric/50 bg-background/30 font-display text-sm font-semibold text-electric transition-all group-hover:border-electric">
-            EO
-          </span>
-          <span className="hidden font-display text-sm tracking-wide text-white/95 sm:inline">
-            Evren Ordu
-          </span>
-        </a>
-
-        <nav aria-label="Primary" className="hidden items-center gap-4 lg:flex xl:gap-6">
-          {items.map((i) => {
-            const on = active === i.id;
-            return (
-              <a
-                key={i.id}
-                href={`#${i.id}`}
-                aria-current={on ? "true" : undefined}
-                className={`group relative whitespace-nowrap rounded-sm px-1 py-1 text-[12px] font-medium uppercase tracking-[0.13em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric ${
-                  on ? "text-white" : "text-white/70 hover:text-white"
-                }`}
-              >
-                {i.label}
-                <span
-                  className={`absolute -bottom-1.5 left-1 h-[2px] bg-electric shadow-[0_0_8px_var(--electric-glow)] transition-all duration-300 ${
-                    on ? "w-[calc(100%-0.5rem)]" : "w-0 group-hover:w-1/2"
-                  }`}
-                  aria-hidden
-                />
-              </a>
-            );
-          })}
-        </nav>
-
-        <div className="flex shrink-0 items-center gap-3">
-          <LangSwitcher lang={lang} setLang={setLang} />
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            className="grid h-11 w-11 place-items-center rounded-sm border border-white/25 bg-background/30 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric lg:hidden"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <div className="flex flex-col gap-1">
-              <span className={`h-px w-4 bg-current transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`} />
-              <span className={`h-px w-4 bg-current transition-opacity ${open ? "opacity-0" : ""}`} />
-              <span className={`h-px w-4 bg-current transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
+    <section className="relative bg-background py-24 lg:py-32">
+      <div className="absolute inset-0 bg-blueprint opacity-15" aria-hidden />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+          <div>
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
+              <span className="h-px w-8 bg-electric" />
+              {t.trusted.kicker}
             </div>
-          </button>
+            <h2 className="font-display text-[clamp(1.75rem,3.6vw,2.75rem)] font-light leading-[1.1] tracking-tight text-foreground">
+              {t.trusted.title}
+            </h2>
+            <p className="mt-6 max-w-xl text-[15.5px] font-light leading-[1.7] text-muted-foreground">
+              {t.trusted.sub}
+            </p>
+            <div className="mt-8">
+              <Link
+                to="/about"
+                className="group inline-flex min-h-[48px] items-center gap-2 rounded-sm border border-electric/60 bg-[oklch(0.14_0.03_250/0.55)] px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-white transition-all hover:border-electric hover:bg-[oklch(0.14_0.03_250/0.8)] hover:shadow-[0_0_36px_-10px_var(--electric-glow)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric"
+              >
+                {t.trusted.cta}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-4 border-y border-white/10 py-6 sm:grid-cols-3">
+              {t.trusted.companies.map((c) => (
+                <div
+                  key={c}
+                  className="font-display text-[14.5px] font-medium tracking-tight text-white/90"
+                >
+                  {c}
+                </div>
+              ))}
+            </div>
+
+            <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3">
+              {t.trusted.metrics.map((m) => (
+                <div key={m.t} className="flex flex-col">
+                  <dt className="font-display text-[clamp(1.5rem,2.4vw,2rem)] font-light leading-none text-electric">
+                    {m.n}
+                  </dt>
+                  <dd className="mt-2 text-[11.5px] uppercase tracking-[0.16em] text-muted-foreground">
+                    {m.t}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </div>
-
-      {open && (
-        <div
-          id="mobile-nav"
-          className="border-t border-white/10 bg-[oklch(0.15_0.02_250/0.96)] backdrop-blur-xl lg:hidden"
-        >
-          <nav aria-label="Mobile primary" className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
-            {items.map((i) => (
-              <a
-                key={i.id}
-                href={`#${i.id}`}
-                onClick={() => setOpen(false)}
-                aria-current={active === i.id ? "true" : undefined}
-                className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric ${
-                  active === i.id
-                    ? "bg-white/5 text-white"
-                    : "text-white/70 hover:bg-white/5 hover:text-white"
-                }`}
-              >
-                {i.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
-    </header>
+    </section>
   );
 }
 
-function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
-  const langs: Lang[] = ["tr", "de", "en"];
-  const fullNames: Record<Lang, string> = { tr: "Türkçe", de: "Deutsch", en: "English" };
-  return (
-    <div
-      role="group"
-      aria-label="Language"
-      className="flex items-center gap-0.5 rounded-full border border-white/20 bg-background/40 p-0.5 text-[11px] font-semibold uppercase tracking-widest backdrop-blur"
-    >
-      {langs.map((l) => (
-        <button
-          key={l}
-          type="button"
-          onClick={() => setLang(l)}
-          aria-label={`Switch language to ${fullNames[l]}`}
-          aria-pressed={lang === l}
-          className={`rounded-full px-3 py-1.5 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric ${
-            lang === l
-              ? "bg-electric text-primary-foreground shadow-[0_0_18px_-4px_var(--electric-glow)]"
-              : "text-white/70 hover:text-white"
-          }`}
-        >
-          {l}
-        </button>
-      ))}
-    </div>
-  );
-}
 
 /* ---------------- Hero — one unified cinematic scene ---------------- */
 
@@ -1295,32 +1147,3 @@ function Contact({ t }: { t: Dict }) {
   );
 }
 
-/* ---------------- Footer ---------------- */
-
-function Footer({ t }: { t: Dict }) {
-  const year = new Date().getFullYear();
-  return (
-    <footer className="border-t border-white/10 bg-[oklch(0.11_0.02_250)] py-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 lg:flex-row lg:items-center lg:px-10">
-        <div className="flex items-center gap-4">
-          <span className="grid h-9 w-9 place-items-center rounded-sm border border-electric/40 font-display text-sm text-electric">
-            EO
-          </span>
-          <div>
-            <div className="font-display text-base text-foreground">Evren Ordu</div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <MapPin className="h-3 w-3" aria-hidden />
-              {t.footer.loc}
-            </div>
-          </div>
-        </div>
-        <p className="max-w-md text-xs uppercase tracking-[0.24em] text-muted-foreground lg:text-right">
-          {t.footer.tag}
-        </p>
-        <div className="text-xs text-muted-foreground">
-          © {year} Evren Ordu — {t.footer.rights}
-        </div>
-      </div>
-    </footer>
-  );
-}
