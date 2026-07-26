@@ -1003,9 +1003,8 @@ function Personal({ t }: { t: Dict }) {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-24">
           <div>
-            <div className="mb-6 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-              <span className="h-px w-8 bg-electric" />
-              {t.personal.kicker}
+            <div className="mb-6 inline-flex items-baseline gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] text-ink/80">
+              <span>{t.personal.kicker}</span>
             </div>
             <h2 className="font-display text-[clamp(1.9rem,4.2vw,3.25rem)] font-light leading-[1.08] tracking-tight text-ink">
               {t.personal.title}
