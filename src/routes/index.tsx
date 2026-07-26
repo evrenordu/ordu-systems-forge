@@ -40,19 +40,19 @@ export const Route = createFileRoute("/")({
           "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
       },
       { property: "og:type", content: "profile" },
-      { property: "og:title", content: "Evren Ordu — The System Architect" },
+      { property: "og:title", content: "Evren Ordu — The System Architect · AI-powered Business Operating Systems" },
       {
         property: "og:description",
         content:
-          "Entrepreneur, system architect and operator building AI-powered operating systems for multi-company groups. Frankfurt · Germany.",
+          "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
       },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Evren Ordu — The System Architect" },
+      { name: "twitter:title", content: "Evren Ordu — The System Architect · AI-powered Business Operating Systems" },
       {
         name: "twitter:description",
         content:
-          "Entrepreneur · System Architect · AI & Digital Transformation — Frankfurt · Germany.",
+          "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
       },
     ],
     links: [
