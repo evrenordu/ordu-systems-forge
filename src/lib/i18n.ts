@@ -325,6 +325,6 @@ export const translations = {
       rights: "All rights reserved.",
     },
   },
-} as const;
+};
 
 export type Dict = (typeof translations)["tr"];

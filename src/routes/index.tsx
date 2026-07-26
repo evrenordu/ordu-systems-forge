@@ -81,7 +81,7 @@ function Nav({
 }: {
   lang: Lang;
   setLang: (l: Lang) => void;
-  t: (typeof translations)["tr"];
+  t: Dict;
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -194,7 +194,7 @@ function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => voi
 
 /* ---------------- Hero ---------------- */
 
-function Hero({ t }: { t: (typeof translations)["tr"] }) {
+function Hero({ t }: { t: Dict }) {
   return (
     <section
       id="top"
@@ -345,7 +345,7 @@ function SectionHeader({
 
 /* ---------------- About ---------------- */
 
-function About({ t }: { t: (typeof translations)["tr"] }) {
+function About({ t }: { t: Dict }) {
   return (
     <section id="about" className="relative border-t border-border/40 py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -371,7 +371,7 @@ function About({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- Focus cards ---------------- */
 
-function Focus({ t }: { t: (typeof translations)["tr"] }) {
+function Focus({ t }: { t: Dict }) {
   return (
     <section id="focus" className="relative border-t border-border/40 bg-card/30 py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -409,7 +409,7 @@ function Focus({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- Experience timeline ---------------- */
 
-function Experience({ t }: { t: (typeof translations)["tr"] }) {
+function Experience({ t }: { t: Dict }) {
   return (
     <section id="experience" className="relative border-t border-border/40 py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -454,7 +454,7 @@ function Experience({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- ORDU Framework ---------------- */
 
-function Framework({ t }: { t: (typeof translations)["tr"] }) {
+function Framework({ t }: { t: Dict }) {
   return (
     <section
       id="framework"
@@ -493,7 +493,7 @@ function Framework({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- Work ---------------- */
 
-function Work({ t }: { t: (typeof translations)["tr"] }) {
+function Work({ t }: { t: Dict }) {
   return (
     <section id="work" className="relative border-t border-border/40 bg-card/30 py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -531,7 +531,7 @@ function Work({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- Ideas ---------------- */
 
-function Ideas({ t }: { t: (typeof translations)["tr"] }) {
+function Ideas({ t }: { t: Dict }) {
   return (
     <section id="ideas" className="relative border-t border-border/40 py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -568,7 +568,7 @@ function Ideas({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- Personal ---------------- */
 
-function Personal({ t }: { t: (typeof translations)["tr"] }) {
+function Personal({ t }: { t: Dict }) {
   return (
     <section className="relative border-t border-border/40 bg-card/30 py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -603,7 +603,7 @@ function Personal({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- Contact ---------------- */
 
-function Contact({ t }: { t: (typeof translations)["tr"] }) {
+function Contact({ t }: { t: Dict }) {
   const btns = [
     { icon: Linkedin, label: t.contact.linkedin, href: "#" },
     { icon: Mail, label: t.contact.email, href: "mailto:hello@evrenordu.com" },
@@ -656,7 +656,7 @@ function Contact({ t }: { t: (typeof translations)["tr"] }) {
 
 /* ---------------- Footer ---------------- */
 
-function Footer({ t }: { t: (typeof translations)["tr"] }) {
+function Footer({ t }: { t: Dict }) {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-border/60 bg-background py-12">
