@@ -346,7 +346,7 @@ function Hero({ t }: { t: Dict }) {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-[oklch(0.14_0.03_250/0.35)] to-transparent" />
 
       <div className="relative mx-auto w-full max-w-7xl px-6 pt-28 pb-24 lg:px-10 lg:pt-32">
-        <div className="max-w-[42rem]">
+        <div className="relative max-w-[42rem]">
           <Reveal>
             <div className="mb-6 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90 sm:text-[11px]">
               <span className="h-px w-10 bg-electric" />
@@ -356,58 +356,70 @@ function Hero({ t }: { t: Dict }) {
 
           <Reveal delay={100}>
             <div
-              className="font-display text-[clamp(2.4rem,6.6vw,5.2rem)] font-light leading-[1.02] tracking-[-0.015em] text-white lg:text-[clamp(3rem,6.9vw,5.45rem)]"
+              className="font-display text-[clamp(2.3rem,6.25vw,4.95rem)] font-light leading-[1.06] tracking-[-0.015em] text-white lg:text-[clamp(2.85rem,6.55vw,5.18rem)]"
               style={{ textShadow: "0 2px 30px oklch(0.08 0.02 250 / 0.5)" }}
             >
               {t.hero.brand}
             </div>
           </Reveal>
 
-          <Reveal delay={220}>
-            <h1
-              className="mt-7 max-w-2xl font-display text-[clamp(1.45rem,2.75vw,2.15rem)] font-light leading-[1.2] tracking-tight text-white"
-              style={{ textShadow: "0 2px 24px oklch(0.08 0.02 250 / 0.75), 0 1px 2px oklch(0.05 0.02 250 / 0.6)" }}
-            >
-              {t.hero.headline}
-            </h1>
-          </Reveal>
-
-          <Reveal delay={360}>
-            <p
-              className="mt-6 text-[13px] font-semibold uppercase tracking-[0.2em] text-[oklch(0.82_0.16_240)] sm:text-[13.5px]"
-              style={{ textShadow: "0 1px 12px oklch(0.08 0.02 250 / 0.6)" }}
-            >
-              {t.hero.role}
-            </p>
-          </Reveal>
-
-          <Reveal delay={460}>
-            <p
-              className="mt-5 max-w-xl text-[16px] leading-[1.65] text-white/95 sm:text-[17px]"
-              style={{ textShadow: "0 1px 14px oklch(0.08 0.02 250 / 0.55)" }}
-            >
-              {t.hero.support}
-            </p>
-          </Reveal>
-
-          <Reveal delay={580}>
-            <div className="mt-9 flex flex-wrap items-center gap-3.5 sm:gap-4">
-              <a
-                href="#cases"
-                className="group relative inline-flex min-h-[48px] items-center gap-2 overflow-hidden rounded-sm bg-electric px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white transition-all hover:shadow-[0_0_40px_-8px_var(--electric-glow)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          {/* Localized soft readability veil behind role/support/CTA — organic blob, not a card */}
+          <div className="relative mt-7">
+            <div
+              className="pointer-events-none absolute -inset-x-8 -inset-y-6 -z-10"
+              aria-hidden
+              style={{
+                background:
+                  "radial-gradient(60% 65% at 30% 55%, oklch(0.08 0.03 250 / 0.55) 0%, oklch(0.08 0.03 250 / 0.28) 45%, transparent 78%)",
+                filter: "blur(14px)",
+              }}
+            />
+            <Reveal delay={220}>
+              <h1
+                className="max-w-2xl font-display text-[clamp(1.45rem,2.75vw,2.15rem)] font-light leading-[1.2] tracking-tight text-white"
+                style={{ textShadow: "0 2px 24px oklch(0.08 0.02 250 / 0.75), 0 1px 2px oklch(0.05 0.02 250 / 0.6)" }}
               >
-                <span>{t.hero.ctaPrimary}</span>
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#contact"
-                className="group inline-flex min-h-[48px] items-center gap-2 rounded-sm border border-white/45 bg-white/10 px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur transition-all hover:border-electric hover:text-electric-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                {t.hero.headline}
+              </h1>
+            </Reveal>
+
+            <Reveal delay={360}>
+              <p
+                className="mt-6 text-[13px] font-semibold uppercase tracking-[0.2em] text-[oklch(0.86_0.17_240)] sm:text-[13.5px]"
+                style={{ textShadow: "0 1px 12px oklch(0.08 0.02 250 / 0.6)" }}
               >
-                <span>{t.hero.ctaSecondary}</span>
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-            </div>
-          </Reveal>
+                {t.hero.role}
+              </p>
+            </Reveal>
+
+            <Reveal delay={460}>
+              <p
+                className="mt-5 max-w-xl text-[16px] leading-[1.65] text-white/95 sm:text-[17px]"
+                style={{ textShadow: "0 1px 14px oklch(0.08 0.02 250 / 0.55)" }}
+              >
+                {t.hero.support}
+              </p>
+            </Reveal>
+
+            <Reveal delay={580}>
+              <div className="mt-11 flex flex-wrap items-center gap-3.5 sm:gap-4">
+                <a
+                  href="#cases"
+                  className="group relative inline-flex min-h-[50px] items-center gap-2 overflow-hidden rounded-sm bg-[oklch(0.58_0.24_255)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_oklch(0.55_0.24_255_/_0.7)] transition-all hover:bg-[oklch(0.63_0.25_255)] hover:shadow-[0_0_44px_-6px_oklch(0.7_0.25_255_/_0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  <span>{t.hero.ctaPrimary}</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <a
+                  href="#contact"
+                  className="group inline-flex min-h-[50px] items-center gap-2 rounded-sm border border-white/70 bg-[oklch(0.14_0.03_250/0.55)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:border-white hover:bg-[oklch(0.14_0.03_250/0.7)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  <span>{t.hero.ctaSecondary}</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </div>
 
@@ -650,47 +662,45 @@ function Framework({ t }: { t: Dict }) {
             aria-hidden
           />
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {t.framework.pillars.map((p, i) => {
               const Icon = ORDU_ICONS[i] ?? Sparkles;
               const on = activeStep >= i;
               return (
-                <div key={p.k} data-step={i}>
-                  <Reveal delay={i * 100}>
-                    <div
-                      className={`group relative flex h-full flex-col rounded-sm border p-7 backdrop-blur transition-all duration-700 ${
-                        on
-                          ? "border-electric/60 bg-card/80 shadow-card-premium"
-                          : "border-white/10 bg-card/40"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div
-                          className={`font-display text-6xl font-light transition-colors duration-700 ${
-                            on ? "text-electric" : "text-electric/30"
-                          }`}
-                        >
-                          {p.k}
-                        </div>
-                        <span
-                          className={`grid h-10 w-10 place-items-center rounded-sm border transition-all duration-700 ${
-                            on ? "border-electric/60 text-electric" : "border-white/15 text-white/50"
-                          }`}
-                        >
-                          <Icon className="h-4 w-4" strokeWidth={1.5} />
-                        </span>
+                <div key={p.k} data-step={i} className="h-full">
+                  <div
+                    className={`group relative flex h-full flex-col rounded-sm border p-7 backdrop-blur transition-[background-color,border-color,box-shadow,opacity] duration-700 ${
+                      on
+                        ? "border-electric/60 bg-card/80 opacity-100 shadow-card-premium"
+                        : "border-white/10 bg-card/40 opacity-90"
+                    }`}
+                  >
+                    <div className="flex h-14 items-center justify-between">
+                      <div
+                        className={`font-display text-6xl font-light leading-none transition-colors duration-700 ${
+                          on ? "text-electric" : "text-electric/30"
+                        }`}
+                      >
+                        {p.k}
                       </div>
-                      <div className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                        step 0{i + 1}
-                      </div>
-                      <h3 className="mt-2 font-display text-xl font-medium text-foreground">
-                        {p.t}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                        {p.d}
-                      </p>
+                      <span
+                        className={`grid h-10 w-10 place-items-center rounded-sm border transition-colors duration-700 ${
+                          on ? "border-electric/60 text-electric" : "border-white/15 text-white/50"
+                        }`}
+                      >
+                        <Icon className="h-4 w-4" strokeWidth={1.5} />
+                      </span>
                     </div>
-                  </Reveal>
+                    <div className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                      step 0{i + 1}
+                    </div>
+                    <h3 className="mt-2 font-display text-xl font-medium text-foreground">
+                      {p.t}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {p.d}
+                    </p>
+                  </div>
                 </div>
               );
             })}
