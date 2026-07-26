@@ -604,7 +604,7 @@ function Framework({ t }: { t: Dict }) {
                       </div>
                       <span
                         className={`grid h-10 w-10 place-items-center rounded-sm border transition-colors duration-700 ${
-                          on ? "border-electric/60 text-electric" : "border-white/15 text-white/50"
+                          on ? "border-electric/60 text-electric" : "border-white/30 text-white/75"
                         }`}
                       >
                         <Icon className="h-4 w-4" strokeWidth={1.5} />
