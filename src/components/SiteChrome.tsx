@@ -165,50 +165,54 @@ export function SiteNav({
           className="border-t border-white/10 bg-[oklch(0.15_0.02_250/0.96)] backdrop-blur-xl lg:hidden"
         >
           <nav aria-label="Mobile primary" className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
-            {anchorItems.map((i) =>
-              isHome ? (
-                <a
-                  key={i.id}
-                  href={`#${i.id}`}
-                  onClick={() => setOpen(false)}
-                  className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
-                    active === i.id
-                      ? "bg-white/5 text-white"
-                      : "text-white/70 hover:bg-white/5 hover:text-white"
-                  }`}
-                >
-                  {i.label}
-                </a>
-              ) : (
-                <Link
-                  key={i.id}
-                  to="/"
-                  hash={i.id}
-                  onClick={() => setOpen(false)}
-                  className="rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-                >
-                  {i.label}
-                </Link>
-              ),
-            )}
-            <Link
-              to="/about"
-              onClick={() => setOpen(false)}
-              className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
-                isAbout ? "bg-white/5 text-white" : "text-white/70 hover:bg-white/5 hover:text-white"
-              }`}
-            >
-              {t.nav.aboutPage}
-            </Link>
-            <Link
-              to="/bauerp"
-              onClick={() => setOpen(false)}
-              className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
-                isBauerp ? "bg-white/5 text-white" : "text-white/70 hover:bg-white/5 hover:text-white"
-              }`}
-            >
-              {t.nav.bauerp}
-            </Link>
+            {(() => {
+              const mobileItems: Array<{ kind: "anchor" | "route"; id: string; label: string; to?: string }> = [
+                ...anchorItems.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
+                { kind: "route", id: "aboutPage", label: t.nav.aboutPage, to: "/about" },
+                ...anchorItemsTail.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
+              ];
+              return mobileItems.map((i) => {
+                if (i.kind === "route") {
+                  const on = i.to === "/about" ? isAbout : false;
+                  return (
+                    <Link
+                      key={i.id}
+                      to={i.to!}
+                      onClick={() => setOpen(false)}
+                      className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
+                        on ? "bg-white/5 text-white" : "text-white/70 hover:bg-white/5 hover:text-white"
+                      }`}
+                    >
+                      {i.label}
+                    </Link>
+                  );
+                }
+                return isHome ? (
+                  <a
+                    key={i.id}
+                    href={`#${i.id}`}
+                    onClick={() => setOpen(false)}
+                    className={`rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
+                      active === i.id
+                        ? "bg-white/5 text-white"
+                        : "text-white/70 hover:bg-white/5 hover:text-white"
+                    }`}
+                  >
+                    {i.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={i.id}
+                    to="/"
+                    hash={i.id}
+                    onClick={() => setOpen(false)}
+                    className="rounded-sm px-2 py-3 text-sm uppercase tracking-[0.16em] text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    {i.label}
+                  </Link>
+                );
+              });
+            })()}
           </nav>
         </div>
       )}
