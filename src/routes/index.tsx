@@ -494,6 +494,9 @@ function Experience({ t }: { t: Dict }) {
 /* ---------------- ORDU Framework ---------------- */
 
 function Framework({ t }: { t: Dict }) {
+  const outcomeLabel = (t.framework as any).outcomeLabel ?? "The Outcome";
+  const outcomeWord = (t.framework as any).outcomeWord ?? "SCALE";
+  const outcomeDesc = (t.framework as any).outcomeDesc ?? "";
   return (
     <section
       id="framework"
@@ -508,12 +511,17 @@ function Framework({ t }: { t: Dict }) {
             {t.framework.sub}
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {t.framework.pillars.map((p, i) => (
             <Reveal key={p.k} delay={i * 100}>
               <div className="group relative flex h-full flex-col rounded-sm border border-border bg-card/60 p-7 backdrop-blur transition-all hover:-translate-y-1 hover:border-electric/60 hover:shadow-card-premium">
-                <div className="font-display text-6xl font-light text-electric/30 transition-colors group-hover:text-electric">
-                  {p.k}
+                <div className="flex items-baseline gap-3">
+                  <div className="font-display text-6xl font-light text-electric/40 transition-colors group-hover:text-electric">
+                    {p.k}
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    step 0{i + 1}
+                  </span>
                 </div>
                 <h3 className="mt-4 font-display text-xl font-medium text-foreground">
                   {p.t}
@@ -525,6 +533,21 @@ function Framework({ t }: { t: Dict }) {
             </Reveal>
           ))}
         </div>
+
+        {/* Outcome band — deliberately separate, NOT a fifth pillar */}
+        <Reveal delay={200}>
+          <div className="relative mt-12 overflow-hidden rounded-sm border border-electric/50 bg-gradient-to-r from-[oklch(0.2_0.06_250)] via-[oklch(0.26_0.09_250)] to-[oklch(0.2_0.06_250)] px-8 py-10 text-center shadow-card-premium">
+            <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-electric">
+              {outcomeLabel}
+            </div>
+            <div className="mt-3 font-display text-[clamp(2.4rem,6vw,4.5rem)] font-light tracking-[0.06em] text-gradient">
+              {outcomeWord}
+            </div>
+            <p className="mx-auto mt-3 max-w-2xl text-sm font-light text-foreground/80">
+              {outcomeDesc}
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
