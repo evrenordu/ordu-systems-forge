@@ -17,7 +17,7 @@ export function SiteNav({
   const location = useLocation();
   const isHome = location.pathname === "/";
   const isAbout = location.pathname === "/about";
-  const isBauerp = location.pathname === "/bauerp";
+  
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
