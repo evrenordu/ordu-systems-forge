@@ -195,73 +195,140 @@ function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => voi
 /* ---------------- Hero ---------------- */
 
 function Hero({ t }: { t: Dict }) {
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const setPref = () => setReduced(mq.matches);
+    setPref();
+    mq.addEventListener("change", setPref);
+    const onMove = (e: MouseEvent) => {
+      if (mq.matches || window.innerWidth < 768) return;
+      const nx = (e.clientX / window.innerWidth - 0.5) * 2;
+      const ny = (e.clientY / window.innerHeight - 0.5) * 2;
+      setParallax({ x: nx, y: ny });
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => {
+      mq.removeEventListener("change", setPref);
+      window.removeEventListener("mousemove", onMove);
+    };
+  }, []);
+
+  const p = reduced ? { x: 0, y: 0 } : parallax;
+
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-screen items-center overflow-hidden bg-hero"
+      className="relative isolate flex min-h-screen items-end overflow-hidden bg-[oklch(0.86_0.04_240)]"
     >
-      {/* Backdrop */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+      {/* Skyline layer (deepest parallax) */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-30 will-change-transform"
+        style={{ transform: `translate3d(${p.x * -14}px, ${p.y * -8}px, 0) scale(1.06)` }}
+      >
         <img
           src={heroBg}
           alt=""
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-blueprint opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
-        {/* floating dots */}
-        <div className="absolute right-[10%] top-[18%] h-1.5 w-1.5 rounded-full bg-electric animate-pulse-dot" />
-        <div className="absolute left-[15%] top-[60%] h-1 w-1 rounded-full bg-electric animate-pulse-dot" style={{ animationDelay: "0.6s" }} />
-        <div className="absolute right-[22%] bottom-[20%] h-1 w-1 rounded-full bg-electric animate-pulse-dot" style={{ animationDelay: "1.2s" }} />
       </div>
 
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 px-6 pt-32 pb-20 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:px-10 lg:pt-40">
-        {/* Copy */}
-        <div className="flex flex-col justify-center">
+      {/* Blueprint overlay (mid parallax) */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-20 bg-blueprint opacity-30 mix-blend-overlay will-change-transform"
+        style={{ transform: `translate3d(${p.x * 10}px, ${p.y * 6}px, 0)` }}
+      />
+
+      {/* AI network + code flow accents (front parallax) */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 will-change-transform"
+        style={{ transform: `translate3d(${p.x * 22}px, ${p.y * 14}px, 0)` }}
+      >
+        <div className="absolute right-[8%] top-[14%] h-1.5 w-1.5 rounded-full bg-electric animate-pulse-dot" />
+        <div className="absolute left-[12%] top-[52%] h-1 w-1 rounded-full bg-electric animate-pulse-dot" style={{ animationDelay: "0.6s" }} />
+        <div className="absolute right-[24%] bottom-[26%] h-1 w-1 rounded-full bg-electric animate-pulse-dot" style={{ animationDelay: "1.2s" }} />
+        <div className="absolute left-6 top-24 hidden font-mono text-[10px] leading-relaxed text-electric/70 md:block">
+          <div>{"// system.init()"}</div>
+          <div>{"observe → reframe"}</div>
+          <div>{"design → unify"}</div>
+          <div>{"→ scale"}</div>
+        </div>
+      </div>
+
+      {/* Bottom gradient to seat the text on a darker navy base */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-[5] h-[70%] bg-gradient-to-t from-[oklch(0.14_0.03_250)] via-[oklch(0.14_0.03_250/0.85)] to-transparent" />
+
+      {/* Executive figure — REPLACEABLE ASSET
+          To swap: replace src/assets/hero-portrait.jpg with Evren's real portrait,
+          keeping the same aspect (~2:3) and centered subject. */}
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[54%] max-w-[820px] will-change-transform md:block"
+        data-replaceable-asset="hero-portrait"
+        style={{ transform: `translate3d(${p.x * -6}px, 0, 0)` }}
+      >
+        <img
+          src={heroPortrait}
+          alt="Placeholder portrait — replace with Evren Ordu's official photograph"
+          className="h-full w-full object-cover object-bottom"
+        />
+        {/* Left-edge fade so copy stays legible without covering the figure */}
+        <div className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-[oklch(0.14_0.03_250)] via-[oklch(0.14_0.03_250/0.7)] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[oklch(0.14_0.03_250)] to-transparent" />
+      </div>
+
+      {/* Copy */}
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 px-6 pt-32 pb-24 lg:pt-40 lg:pb-32 lg:px-10">
+        <div className="max-w-2xl">
           <Reveal>
-            <div className="mb-8 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground">
+            <div className="mb-6 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.28em] text-foreground/80">
               <span className="h-px w-10 bg-electric" />
               {t.hero.eyebrow}
             </div>
           </Reveal>
 
-          <h1 className="font-display text-[clamp(2.4rem,6vw,5rem)] font-light leading-[1.02] tracking-tight">
+          <Reveal delay={80}>
+            <div className="font-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-medium tracking-[-0.02em] text-white leading-[1.02]">
+              EVREN ORDU
+            </div>
+          </Reveal>
+
+          <h1 className="mt-4 font-display text-[clamp(1.6rem,3.4vw,2.6rem)] font-light leading-[1.15] tracking-tight text-white/95">
             {t.hero.title.map((line, i) => (
-              <Reveal key={i} delay={i * 120}>
+              <Reveal key={i} delay={180 + i * 120}>
                 <span className="block">
-                  <span className={i === 2 ? "text-gradient" : "text-foreground"}>
-                    {line}
-                  </span>
+                  <span className={i === 2 ? "text-gradient" : ""}>{line}</span>
                 </span>
               </Reveal>
             ))}
           </h1>
 
-          <Reveal delay={480}>
-            <p className="mt-8 max-w-xl text-lg font-light text-foreground/85 sm:text-xl">
-              {t.hero.sub}
+          <Reveal delay={560}>
+            <p className="mt-6 max-w-xl text-sm font-medium uppercase tracking-[0.22em] text-electric">
+              {t.hero.role}
             </p>
           </Reveal>
 
-          <Reveal delay={580}>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+          <Reveal delay={640}>
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/75">
               {t.hero.support}
             </p>
           </Reveal>
 
-          <Reveal delay={700}>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+          <Reveal delay={760}>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                href="#contact"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-sm bg-electric px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-primary-foreground transition-all hover:shadow-[0_0_40px_-8px_var(--electric-glow)]"
+                href="#about"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-sm bg-electric px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-white transition-all hover:shadow-[0_0_40px_-8px_var(--electric-glow)]"
               >
                 <span>{t.hero.ctaPrimary}</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="#about"
-                className="group inline-flex items-center gap-2 rounded-sm border border-border px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-foreground transition-all hover:border-electric hover:text-electric"
+                href="#work"
+                className="group inline-flex items-center gap-2 rounded-sm border border-white/40 bg-white/5 px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-white backdrop-blur transition-all hover:border-electric hover:text-electric"
               >
                 <span>{t.hero.ctaSecondary}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -269,40 +336,12 @@ function Hero({ t }: { t: Dict }) {
             </div>
           </Reveal>
         </div>
-
-        {/* Portrait */}
-        <Reveal delay={200} className="relative">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-            <div className="absolute -inset-3 rounded-sm border border-electric/30" />
-            <div className="absolute -inset-6 rounded-sm border border-border/60" />
-            <div className="absolute inset-0 overflow-hidden rounded-sm shadow-card-premium">
-              <img
-                src={heroPortrait}
-                alt="Portrait of Evren Ordu"
-                width={1280}
-                height={1600}
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
-              {/* corner ticks */}
-              <span className="absolute left-3 top-3 h-4 w-4 border-l border-t border-electric" />
-              <span className="absolute right-3 top-3 h-4 w-4 border-r border-t border-electric" />
-              <span className="absolute left-3 bottom-3 h-4 w-4 border-l border-b border-electric" />
-              <span className="absolute right-3 bottom-3 h-4 w-4 border-r border-b border-electric" />
-            </div>
-            {/* metadata label */}
-            <div className="absolute -bottom-6 -right-2 flex items-center gap-2 rounded-sm bg-background/90 px-3 py-1.5 text-[10px] font-mono uppercase tracking-widest text-muted-foreground backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-electric animate-pulse-dot" />
-              EO · FFM · 2026
-            </div>
-          </div>
-        </Reveal>
       </div>
 
       {/* scroll cue */}
       <a
         href="#about"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground hover:text-electric"
+        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-[0.3em] text-white/70 hover:text-electric"
       >
         {t.hero.scroll}
         <ChevronDown className="h-4 w-4 animate-float" />
@@ -347,13 +386,20 @@ function SectionHeader({
 
 function About({ t }: { t: Dict }) {
   return (
-    <section id="about" className="relative border-t border-border/40 py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section id="about" className="relative section-sky py-28 lg:py-40">
+      <div className="absolute inset-0 bg-blueprint-light opacity-60 pointer-events-none" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
           <div>
-            <SectionHeader kicker={t.about.kicker} title={t.about.title} />
+            <div className="mb-6 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.28em] text-electric">
+              <span className="h-px w-8 bg-electric" />
+              {t.about.kicker}
+            </div>
+            <h2 className="font-display text-[clamp(1.8rem,4vw,3.25rem)] font-light leading-tight tracking-tight text-ink">
+              {t.about.title}
+            </h2>
           </div>
-          <div className="space-y-6 text-lg font-light leading-relaxed text-foreground/85">
+          <div className="space-y-6 text-lg font-light leading-relaxed text-ink/85">
             {t.about.body.map((p, i) => (
               <Reveal key={i} delay={i * 120}>
                 <p>{p}</p>
@@ -455,6 +501,9 @@ function Experience({ t }: { t: Dict }) {
 /* ---------------- ORDU Framework ---------------- */
 
 function Framework({ t }: { t: Dict }) {
+  const outcomeLabel = (t.framework as any).outcomeLabel ?? "The Outcome";
+  const outcomeWord = (t.framework as any).outcomeWord ?? "SCALE";
+  const outcomeDesc = (t.framework as any).outcomeDesc ?? "";
   return (
     <section
       id="framework"
@@ -469,12 +518,17 @@ function Framework({ t }: { t: Dict }) {
             {t.framework.sub}
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {t.framework.pillars.map((p, i) => (
             <Reveal key={p.k} delay={i * 100}>
               <div className="group relative flex h-full flex-col rounded-sm border border-border bg-card/60 p-7 backdrop-blur transition-all hover:-translate-y-1 hover:border-electric/60 hover:shadow-card-premium">
-                <div className="font-display text-6xl font-light text-electric/30 transition-colors group-hover:text-electric">
-                  {p.k}
+                <div className="flex items-baseline gap-3">
+                  <div className="font-display text-6xl font-light text-electric/40 transition-colors group-hover:text-electric">
+                    {p.k}
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    step 0{i + 1}
+                  </span>
                 </div>
                 <h3 className="mt-4 font-display text-xl font-medium text-foreground">
                   {p.t}
@@ -486,6 +540,21 @@ function Framework({ t }: { t: Dict }) {
             </Reveal>
           ))}
         </div>
+
+        {/* Outcome band — deliberately separate, NOT a fifth pillar */}
+        <Reveal delay={200}>
+          <div className="relative mt-12 overflow-hidden rounded-sm border border-electric/50 bg-gradient-to-r from-[oklch(0.2_0.06_250)] via-[oklch(0.26_0.09_250)] to-[oklch(0.2_0.06_250)] px-8 py-10 text-center shadow-card-premium">
+            <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-electric">
+              {outcomeLabel}
+            </div>
+            <div className="mt-3 font-display text-[clamp(2.4rem,6vw,4.5rem)] font-light tracking-[0.06em] text-gradient">
+              {outcomeWord}
+            </div>
+            <p className="mx-auto mt-3 max-w-2xl text-sm font-light text-foreground/80">
+              {outcomeDesc}
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
