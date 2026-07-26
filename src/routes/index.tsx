@@ -1094,10 +1094,10 @@ function Contact({ t }: { t: Dict }) {
       <div className="relative mx-auto max-w-6xl px-6 lg:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <div className="inline-flex items-center justify-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-              <span className="h-px w-8 bg-electric" />
-              {t.contact.kicker}
-              <span className="h-px w-8 bg-electric" />
+            <div className="inline-flex items-baseline justify-center gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] text-foreground/85">
+              <span className="text-white/55">08</span>
+              <span className="text-white/55" aria-hidden>/</span>
+              <span>{t.contact.kicker}</span>
             </div>
           </Reveal>
           <Reveal delay={100}>
