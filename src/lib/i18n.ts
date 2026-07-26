@@ -153,6 +153,9 @@ export const translations = {
         { t: "International Real Estate Marketing", d: "Sınır ötesi gayrimenkul pazarlaması ve satış operasyonu." },
       ],
       note: "Detaylı bilgi talep üzerine paylaşılır.",
+      bauerpSummary:
+        "Finans, projeler, gayrimenkul, insan ve yönetişimi 15+ şirket yapısında birleştiren canlı Business Operating System.",
+      viewBauerp: "BauERP'yi İncele",
     },
     ideas: {
       kicker: "Üzerinde Çalıştığım Fikirler",
