@@ -1104,8 +1104,8 @@ function Contact({ t }: { t: Dict }) {
   const mailto = `mailto:hello@evrenordu.com?subject=${encodeURIComponent(
     "Let's build a system",
   )}`;
-  const linkedinUrl = "https://www.linkedin.com/in/evrenordu";
-  const whatsappUrl = `https://wa.me/4915251512114?text=${encodeURIComponent(
+  const linkedinUrl = "https://www.linkedin.com/in/evrenordu/";
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=4915251512114&text=${encodeURIComponent(
     "Hello Evren, I would like to discuss a possible collaboration.",
   )}`;
   const btns = [
