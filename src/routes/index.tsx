@@ -111,8 +111,32 @@ const SECTION_IDS = [
 ];
 
 function Index() {
-  const [lang, setLang] = useState<Lang>("tr");
+  const [lang, setLangState] = useState<Lang>("en");
   const t = useMemo(() => translations[lang], [lang]);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("evrenordu.lang") as Lang | null;
+      if (stored === "tr" || stored === "de" || stored === "en") {
+        setLangState(stored);
+        return;
+      }
+      const nav = (typeof navigator !== "undefined" ? navigator.language : "en").toLowerCase();
+      const detected: Lang = nav.startsWith("de") ? "de" : nav.startsWith("tr") ? "tr" : "en";
+      setLangState(detected);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const setLang = (l: Lang) => {
+    setLangState(l);
+    try {
+      localStorage.setItem("evrenordu.lang", l);
+    } catch {
+      /* ignore */
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
