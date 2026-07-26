@@ -645,7 +645,7 @@ function Framework({ t }: { t: Dict }) {
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute left-8 top-[86px] hidden h-px bg-electric transition-all duration-1000 ease-out lg:block"
+            className="pointer-events-none absolute left-8 top-[86px] hidden h-px bg-gradient-to-r from-electric via-electric to-electric/70 shadow-[0_0_12px_var(--electric-glow)] transition-[width] duration-[1200ms] ease-out lg:block"
             style={{ width: `calc(${Math.max(0, (activeStep + 1) / 4) * 100}% - 4rem)` }}
             aria-hidden
           />
