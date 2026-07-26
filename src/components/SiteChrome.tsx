@@ -237,12 +237,12 @@ export function SiteFooter({ t }: { t: Dict }) {
   return (
     <footer className="border-t border-white/10 bg-[oklch(0.11_0.02_250)] py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 lg:flex-row lg:items-center lg:px-10">
-        <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.28em] text-white/60">
+        <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.28em] text-white/80">
           <MapPin className="h-3.5 w-3.5" />
           {t.footer.loc}
         </div>
-        <p className="max-w-md text-sm font-light leading-relaxed text-white/60">{t.footer.tag}</p>
-        <div className="font-mono text-[10px] uppercase tracking-widest text-white/40">
+        <p className="max-w-md text-sm font-light leading-relaxed text-white/85">{t.footer.tag}</p>
+        <div className="font-mono text-[10px] uppercase tracking-widest text-white/70">
           © {year} Evren Ordu · {t.footer.rights}
         </div>
       </div>
