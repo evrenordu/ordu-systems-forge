@@ -1065,10 +1065,32 @@ function Contact({ t }: { t: Dict }) {
   const mailto = `mailto:hello@evrenordu.com?subject=${encodeURIComponent(
     "Let's build a system",
   )}`;
+  const linkedinUrl = "https://www.linkedin.com/in/evrenordu";
+  const whatsappUrl = `https://wa.me/4915251512114?text=${encodeURIComponent(
+    "Hello Evren, I would like to discuss a possible collaboration.",
+  )}`;
   const btns = [
-    { icon: Mail, label: t.contact.email, href: mailto },
-    { icon: Linkedin, label: t.contact.linkedin, href: undefined },
-    { icon: MessageCircle, label: t.contact.whatsapp, href: undefined },
+    {
+      icon: Mail,
+      label: t.contact.email,
+      href: mailto,
+      external: false,
+      aria: `${t.contact.email} — hello@evrenordu.com`,
+    },
+    {
+      icon: Linkedin,
+      label: t.contact.linkedin,
+      href: linkedinUrl,
+      external: true,
+      aria: `${t.contact.linkedin} — linkedin.com/in/evrenordu`,
+    },
+    {
+      icon: MessageCircle,
+      label: t.contact.whatsapp,
+      href: whatsappUrl,
+      external: true,
+      aria: `${t.contact.whatsapp} — WhatsApp`,
+    },
   ] as const;
 
   return (
