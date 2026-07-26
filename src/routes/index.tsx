@@ -662,47 +662,45 @@ function Framework({ t }: { t: Dict }) {
             aria-hidden
           />
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {t.framework.pillars.map((p, i) => {
               const Icon = ORDU_ICONS[i] ?? Sparkles;
               const on = activeStep >= i;
               return (
-                <div key={p.k} data-step={i}>
-                  <Reveal delay={i * 100}>
-                    <div
-                      className={`group relative flex h-full flex-col rounded-sm border p-7 backdrop-blur transition-all duration-700 ${
-                        on
-                          ? "border-electric/60 bg-card/80 shadow-card-premium"
-                          : "border-white/10 bg-card/40"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div
-                          className={`font-display text-6xl font-light transition-colors duration-700 ${
-                            on ? "text-electric" : "text-electric/30"
-                          }`}
-                        >
-                          {p.k}
-                        </div>
-                        <span
-                          className={`grid h-10 w-10 place-items-center rounded-sm border transition-all duration-700 ${
-                            on ? "border-electric/60 text-electric" : "border-white/15 text-white/50"
-                          }`}
-                        >
-                          <Icon className="h-4 w-4" strokeWidth={1.5} />
-                        </span>
+                <div key={p.k} data-step={i} className="h-full">
+                  <div
+                    className={`group relative flex h-full flex-col rounded-sm border p-7 backdrop-blur transition-[background-color,border-color,box-shadow,opacity] duration-700 ${
+                      on
+                        ? "border-electric/60 bg-card/80 opacity-100 shadow-card-premium"
+                        : "border-white/10 bg-card/40 opacity-90"
+                    }`}
+                  >
+                    <div className="flex h-14 items-center justify-between">
+                      <div
+                        className={`font-display text-6xl font-light leading-none transition-colors duration-700 ${
+                          on ? "text-electric" : "text-electric/30"
+                        }`}
+                      >
+                        {p.k}
                       </div>
-                      <div className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                        step 0{i + 1}
-                      </div>
-                      <h3 className="mt-2 font-display text-xl font-medium text-foreground">
-                        {p.t}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                        {p.d}
-                      </p>
+                      <span
+                        className={`grid h-10 w-10 place-items-center rounded-sm border transition-colors duration-700 ${
+                          on ? "border-electric/60 text-electric" : "border-white/15 text-white/50"
+                        }`}
+                      >
+                        <Icon className="h-4 w-4" strokeWidth={1.5} />
+                      </span>
                     </div>
-                  </Reveal>
+                    <div className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                      step 0{i + 1}
+                    </div>
+                    <h3 className="mt-2 font-display text-xl font-medium text-foreground">
+                      {p.t}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {p.d}
+                    </p>
+                  </div>
                 </div>
               );
             })}
