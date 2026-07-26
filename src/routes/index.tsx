@@ -124,11 +124,11 @@ function Index() {
       <main>
         <Hero t={t} />
         <About t={t} />
-        <Trusted t={t} />
-        <Focus t={t} />
         <Framework t={t} />
+        <Focus t={t} />
         <Cases t={t} />
         <Experience t={t} />
+        <Trusted t={t} />
         <Ideas t={t} />
         <Personal t={t} />
         <Contact t={t} />
