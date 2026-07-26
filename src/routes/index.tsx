@@ -962,20 +962,12 @@ function Ideas({ t }: { t: Dict }) {
     <section id="ideas" className="relative section-sky py-28 lg:py-40">
       <div className="absolute inset-0 bg-blueprint-light opacity-40 pointer-events-none" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-14 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-            <span className="h-px w-8 bg-electric" />
-            {t.ideas.kicker}
-          </div>
-          <h2 className="font-display text-[clamp(1.9rem,4.2vw,3.25rem)] font-light leading-[1.08] tracking-tight text-ink">
-            {t.ideas.title}
-          </h2>
-          <Reveal delay={120}>
-            <p className="mt-6 max-w-2xl text-[15.5px] font-light leading-relaxed text-ink/70">
-              {t.ideas.intro}
-            </p>
-          </Reveal>
-        </div>
+        <QuietHeader num="07" kicker={t.ideas.kicker} title={t.ideas.title} ink />
+        <Reveal delay={120}>
+          <p className="-mt-8 mb-14 max-w-2xl text-[15.5px] font-light leading-relaxed text-ink/70">
+            {t.ideas.intro}
+          </p>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {t.ideas.items.map((it, i) => (
