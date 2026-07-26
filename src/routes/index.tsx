@@ -318,7 +318,7 @@ function Hero({ t }: { t: Dict }) {
         data-replaceable-asset="hero-scene"
       >
         <img
-          src={heroScene}
+          src={heroScene.url}
           alt="Evren Ordu on a Frankfurt blue-hour rooftop terrace"
           className="h-full w-full object-cover object-[68%_center] sm:object-[62%_center]"
           fetchPriority="high"
