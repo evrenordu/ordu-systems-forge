@@ -766,6 +766,12 @@ function Cases({ t }: { t: Dict }) {
                     style={{ background: CASE_GRADIENTS[i % CASE_GRADIENTS.length] }}
                     aria-hidden
                   >
+                    {/*
+                      REPLACEABLE MEDIA SLOT — case-media-{i}
+                      To ship real assets, replace <CaseDiagram /> below with an
+                      <img src=".../bauerp-screenshot.jpg" /> or <video />.
+                      Keep the surrounding container for layout + blueprint overlay.
+                    */}
                     <div className="absolute inset-0 bg-blueprint opacity-25" />
                     <CaseDiagram index={i} />
                     <div className="absolute bottom-6 left-6 font-mono text-[10px] uppercase tracking-[0.28em] text-white/80">
