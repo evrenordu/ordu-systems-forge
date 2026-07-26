@@ -49,10 +49,12 @@ export function SiteNav({
 
   const anchorItems = [
     { id: "about", label: t.nav.about },
-    { id: "focus", label: t.nav.focus },
     { id: "framework", label: t.nav.framework },
+    { id: "focus", label: t.nav.focus },
     { id: "cases", label: t.nav.cases },
     { id: "experience", label: t.nav.experience },
+  ];
+  const anchorItemsTail = [
     { id: "ideas", label: t.nav.ideas },
     { id: "contact", label: t.nav.contact },
   ];
