@@ -714,15 +714,7 @@ function Cases({ t }: { t: Dict }) {
   return (
     <section id="cases" className="relative section-light py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-16 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-electric">
-            <span className="h-px w-8 bg-electric" />
-            {t.cases.kicker}
-          </div>
-          <h2 className="font-display text-[clamp(1.9rem,4.2vw,3.25rem)] font-light leading-[1.08] tracking-tight text-ink">
-            {t.cases.title}
-          </h2>
-        </div>
+        <QuietHeader num="04" kicker={t.cases.kicker} title={t.cases.title} ink />
 
         <div className="space-y-10 lg:space-y-16">
           {t.cases.items.map((c, i) => (
