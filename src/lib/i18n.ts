@@ -907,6 +907,9 @@ export const translations = {
         { t: "International Real Estate Marketing", d: "Cross-border real estate marketing and sales operations." },
       ],
       note: "Further details available on request.",
+      bauerpSummary:
+        "A live Business Operating System connecting finance, projects, property, people and governance across 15+ companies.",
+      viewBauerp: "View BauERP",
     },
     ideas: {
       kicker: "Ideas I’m Exploring",
