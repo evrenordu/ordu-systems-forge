@@ -230,14 +230,14 @@ function Hero({ t }: { t: Dict }) {
       className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[oklch(0.18_0.03_248)]"
     >
       <div
-        className="pointer-events-none absolute inset-0 -z-30 scale-[1.12] will-change-transform sm:scale-[1.08] md:scale-[1.04]"
+        className="pointer-events-none absolute inset-0 -z-30 will-change-transform"
         style={{ transform: `translate3d(0, ${p * 0.1}px, 0)` }}
         data-replaceable-asset="hero-scene"
       >
         <img
           src={heroScene.url}
           alt="Evren Ordu walking on a Frankfurt rooftop terrace at blue hour, skyline behind him"
-          className="h-full w-full translate-y-[6%] object-cover object-[72%_35%] sm:translate-y-[3%] sm:object-[65%_40%] md:translate-y-0 md:object-[60%_center] lg:object-[58%_center]"
+          className="h-full w-full translate-y-[6%] scale-[1.14] object-cover object-[72%_35%] sm:translate-y-[3%] sm:scale-[1.08] sm:object-[65%_40%] md:translate-y-0 md:scale-[1.04] md:object-[60%_center] lg:object-[58%_center]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
