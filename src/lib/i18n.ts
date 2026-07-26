@@ -30,6 +30,7 @@ export const translations = {
         "Parçalanmış organizasyonları ölçülebilir, tekrarlanabilir ve büyütülebilir sistemlere dönüştürürüm.",
         "Kararlarım veriyle beslenir; uygulamam disiplinle yürür; hikâyem insanla anlam kazanır.",
       ],
+      principle: "İnsan · Süreç · Veri · Teknoloji — aynı sistemde.",
     },
     focus: {
       kicker: "Odak Alanları",
