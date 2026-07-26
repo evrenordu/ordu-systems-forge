@@ -121,13 +121,30 @@ function Index() {
         setLangState(stored);
         return;
       }
-      const nav = (typeof navigator !== "undefined" ? navigator.language : "en").toLowerCase();
-      const detected: Lang = nav.startsWith("de") ? "de" : nav.startsWith("tr") ? "tr" : "en";
+      const candidates: string[] =
+        typeof navigator !== "undefined"
+          ? [
+              ...((navigator.languages as readonly string[] | undefined) ?? []),
+              navigator.language ?? "",
+            ].filter(Boolean)
+          : [];
+      const first = candidates.find((c) => {
+        const l = c.toLowerCase();
+        return l.startsWith("tr") || l.startsWith("de") || l.startsWith("en");
+      });
+      const l = (first ?? "en").toLowerCase();
+      const detected: Lang = l.startsWith("tr") ? "tr" : l.startsWith("de") ? "de" : "en";
       setLangState(detected);
     } catch {
       /* ignore */
     }
   }, []);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lang;
+    }
+  }, [lang]);
 
   const setLang = (l: Lang) => {
     setLangState(l);
