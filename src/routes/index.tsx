@@ -53,7 +53,8 @@ export const Route = createFileRoute("/")({
         name: "twitter:description",
         content:
           "Frankfurt-based entrepreneur and system architect building AI-powered business operating systems for multi-company operations.",
-      },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/5a8fcedd-4bd9-4d04-b32f-2cb868142283" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/5a8fcedd-4bd9-4d04-b32f-2cb868142283" },
     ],
     links: [
       { rel: "canonical", href: "https://ordu-systems-forge.lovable.app/" },
