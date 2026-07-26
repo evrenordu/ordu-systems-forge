@@ -1013,7 +1013,6 @@ function Ideas({ t }: { t: Dict }) {
           {t.ideas.items.map((it, i) => (
             <Reveal key={it.t} delay={i * 100}>
               <article
-                aria-disabled="true"
                 className="group flex h-full flex-col rounded-sm border border-ink/10 bg-white p-7 transition-all hover:-translate-y-0.5 hover:border-electric/60 hover:shadow-card-premium"
               >
                 <div className="flex items-center justify-between">
