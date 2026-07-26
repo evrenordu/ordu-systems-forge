@@ -10,6 +10,7 @@ export const translations = {
       experience: "Deneyim",
       ideas: "Fikirler",
       contact: "İletişim",
+      aboutPage: "Ben Kimim?",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
@@ -22,6 +23,28 @@ export const translations = {
       ctaPrimary: "Çalışmalarımı Keşfedin",
       ctaSecondary: "Bir Görüşme Başlatın",
       scroll: "Kaydırın",
+    },
+    trusted: {
+      kicker: "Kanıt",
+      title: "Liderlikle İnşa Edilen Güven",
+      sub: "Perakende, franchise, teknoloji, inşaat ve uluslararası hizmet operasyonlarında 20+ yıllık sistem kurma ve liderlik deneyimi.",
+      companies: [
+        "Dogru Cosmetic Germany",
+        "EM Europe",
+        "Rhainer GmbH",
+        "Forte Management",
+        "Vendeka ITS",
+        "Soon Light & Project",
+      ],
+      metrics: [
+        { n: "20+", t: "Yıl Deneyim" },
+        { n: "5M€+", t: "P&L Sorumluluğu" },
+        { n: "400+", t: "Yönetilen Çalışan" },
+        { n: "14", t: "Uluslararası Lokasyon" },
+        { n: "22+", t: "Franchise Sözleşmesi" },
+        { n: "+22%", t: "Brüt Marj Artışı" },
+      ],
+      cta: "Hikâyemi ve sonuçları görün",
     },
     about: {
       kicker: "Manifesto",
@@ -187,6 +210,170 @@ export const translations = {
       tag: "Berraklık, cesaret ve sistemler üzerine inşa edildi.",
       rights: "Tüm hakları saklıdır.",
     },
+    aboutPage: {
+      meta: {
+        title: "Evren Ordu | Yönetici, Sistem Mimarı & Business Operating Systems",
+        description:
+          "Evren Ordu — mühendislik eğitimi, yönetici deneyimi ve sistem mimarı bakışıyla operasyon, finans, insan ve teknolojiyi tek işletim sisteminde birleştirir.",
+      },
+      hero: {
+        eyebrow: "EVREN ORDU",
+        title:
+          "Mühendislik eğitimiyle başladım. Yönetici olarak büyüdüm. Sistem mimarlığını seçtim.",
+        support:
+          "Şirketleri yalnızca yönetmiyorum. Operasyon, finans, insanlar ve teknolojiyi birlikte çalıştıran sistemler kuruyorum.",
+        ctaWork: "Sistemleri gör",
+        ctaContact: "İletişime geç",
+      },
+      story: {
+        kicker: "Kısa Hikâye",
+        title: "Bir mühendisin yönetici, bir yöneticinin sistem mimarı olma yolu.",
+        paragraphs: [
+          "Kariyerime kalite yönetimi ve Ar-Ge projelerinde başladım. Elektrik ve Elektronik Mühendisliği altyapım bana sistemleri parçalar halinde değil, birbirine bağlı yapılar olarak görmeyi öğretti.",
+          "Zaman içinde proje yönetimi, teknoloji, uluslararası operasyonlar, finans, franchise, perakende, inşaat ve şirket yönetimi alanlarında sorumluluk üstlendim. Çok farklı sektörlerde aynı problemi tekrar tekrar gördüm: şirketler çoğu zaman insan eksikliğinden değil, sistem eksikliğinden zorlanıyordu.",
+          "Bu nedenle yalnızca sorunları çözmek yerine, sorunların tekrar oluşmasını engelleyen yapılar kurmaya odaklandım. Bugün operasyon, finans, yönetişim, yapay zekâ ve yazılımı bir araya getiren Business Operating Systems geliştiriyorum.",
+        ],
+      },
+      timeline: {
+        kicker: "Kariyer Yolculuğu",
+        title: "Sahadan sisteme uzanan bir çizgi.",
+        items: [
+          { y: "2010–2012", t: "Kalite Yönetimi & Ar-Ge" },
+          { y: "2012–2014", t: "Proje Müdürü / Teknik Lider" },
+          { y: "2014–2018", t: "COO / Ar-Ge Proje Yöneticisi" },
+          { y: "2018–Bugün", t: "Finans Direktörü & Ortak" },
+          { y: "2020–2023", t: "Bölge Operasyon Yöneticisi" },
+          { y: "2020–2025", t: "Kurucu & Yönetici Ortak" },
+          { y: "2023–2026", t: "Almanya Genel Müdürü" },
+          { y: "Bugün", t: "Business Operating Systems" },
+        ],
+      },
+      orgs: {
+        kicker: "Kurumsal Etki",
+        title: "Ölçeklendirilmesine Katkı Sağladığım Yapılar",
+        sub: "Farklı sektörlerde, farklı ülkelerde — aynı disiplinle.",
+        items: [
+          {
+            name: "MAD Parfüm / Dogru Cosmetic Germany GmbH",
+            role: "Almanya Genel Müdürü",
+            context: "Perakende & Franchise · Almanya",
+            metrics: [
+              "5M€+ yıllık P&L / ciro sorumluluğu",
+              "50+ çalışan",
+              "Perakende ağı: 2 → 8 mağaza",
+              "Franchise ortakları: 2 → 11",
+              "+22% brüt marj",
+            ],
+          },
+          {
+            name: "Çiğköftem / EM Europe GmbH",
+            role: "Bölge Operasyon Yöneticisi",
+            context: "Franchise & Gıda Perakendesi · Avrupa",
+            metrics: [
+              "22+ franchise sözleşmesi",
+              "Almanya bölgesel açılım",
+              "KPI odaklı operasyon yapıları",
+              "Çok lokasyonlu franchise operasyonu",
+            ],
+          },
+          {
+            name: "Rhainer GmbH",
+            role: "%36 Ortak & Finans Direktörü",
+            context: "Uluslararası Hizmet Operasyonu · DE / DK / CH",
+            metrics: [
+              "14 uluslararası lokasyon",
+              "400+ çalışan",
+              "18 ayda sürdürülebilir pozitif P&L’e dönüş",
+              "Uluslararası raporlama ve KPMG denetim koordinasyonu",
+            ],
+          },
+          {
+            name: "Forte Management GmbH",
+            role: "Kurucu & Yönetici Ortak",
+            context: "İnşaat, Varlık & Gayrimenkul Yönetimi",
+            metrics: [
+              "İnşaat yönetimi",
+              "Varlık ve gayrimenkul yönetimi",
+              "Uluslararası yatırımcıya pazara giriş danışmanlığı",
+              "Veggie 2 Go konseptinin kuruluşu ve çıkışı",
+            ],
+          },
+          {
+            name: "Vendeka ITS",
+            role: "COO / Ar-Ge Proje Yöneticisi",
+            context: "RFID & Akıllı Ulaşım Sistemleri",
+            metrics: [
+              "Ulusal otoyol geçiş altyapı projeleri",
+              "10+ TÜBİTAK destekli Ar-Ge projesi",
+              "Teknik sistemlerin ürünleştirilmesi",
+            ],
+          },
+          {
+            name: "Soon Light & Project",
+            role: "Proje Müdürü / Teknik Lider",
+            context: "Aydınlatma & Enerji Verimliliği · TR / EU",
+            metrics: [
+              "Çok lokasyonlu LED dönüşüm projeleri",
+              "Uluslararası tedarik ve yüklenici koordinasyonu",
+              "Enerji verimli aydınlatma ve Ar-Ge",
+            ],
+          },
+        ],
+      },
+      numbers: {
+        kicker: "Rakamlarla",
+        title: "Sayılarla kanıt.",
+        items: [
+          { n: "20+", t: "Yıl deneyim" },
+          { n: "5M€+", t: "P&L sorumluluğu" },
+          { n: "400+", t: "Yönetilen çalışan" },
+          { n: "14", t: "Uluslararası lokasyon" },
+          { n: "22+", t: "Franchise sözleşmesi" },
+          { n: "2 → 8", t: "Mağaza büyümesi" },
+          { n: "2 → 11", t: "Franchise ortak büyümesi" },
+          { n: "+22%", t: "Brüt marj iyileşmesi" },
+          { n: "+20%", t: "Ciro artışı" },
+          { n: "+20%", t: "Net kârlılık" },
+          { n: "600–900", t: "Aylık optimize iş gücü saati" },
+          { n: "10+", t: "Ar-Ge projesi" },
+          { n: "3", t: "Çalışma dili" },
+        ],
+      },
+      industries: {
+        kicker: "Sektörler",
+        title: "Farklı sektörler, aynı sistem disiplini.",
+        items: [
+          "Perakende",
+          "Franchise",
+          "İnşaat",
+          "Gayrimenkul & Varlık Yönetimi",
+          "Havacılık Hizmetleri",
+          "Teknoloji & RFID",
+          "Yapay Zekâ",
+          "ERP / Business Operating Systems",
+        ],
+      },
+      philosophy: {
+        kicker: "Liderlik Felsefesi",
+        title: "Observe → Reframe → Design → Unify → Scale",
+        body:
+          "Önce sistemi gözlemlerim. Problemi yeniden çerçevelerim. Çözümü tasarlar, insanları ve süreçleri birleştirir, ardından ölçeklenebilir hale getiririm.",
+      },
+      today: {
+        kicker: "Bugün",
+        title: "Şu anda üzerinde çalıştığım şey.",
+        items: [
+          { t: "BauERP", d: "Aktif uygulama · Business Operating System." },
+          { t: "AIOS", d: "Framework ve ürün geliştirme." },
+          { t: "Executive Advisory", d: "Ölçekleme, dönüşüm ve işletim sistemleri." },
+          { t: "Konuşma & İçgörü", d: "Liderlik, AI ve operasyon." },
+        ],
+      },
+      cta: {
+        title: "Kalıcı bir şey inşa edelim.",
+        body: "Ne inşa etmek istediğinizi anlatın — sizinle konuşayım.",
+      },
+    },
   },
   de: {
     nav: {
@@ -197,6 +384,7 @@ export const translations = {
       experience: "Erfahrung",
       ideas: "Ideen",
       contact: "Kontakt",
+      aboutPage: "Über mich",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
@@ -209,6 +397,28 @@ export const translations = {
       ctaPrimary: "Projekte entdecken",
       ctaSecondary: "Gespräch starten",
       scroll: "Scrollen",
+    },
+    trusted: {
+      kicker: "Nachweis",
+      title: "Vertrauen durch Führung",
+      sub: "Über 20 Jahre Erfahrung im Aufbau und in der Führung von Systemen in Einzelhandel, Franchise, Technologie, Bau und internationalen Service-Operationen.",
+      companies: [
+        "Dogru Cosmetic Germany",
+        "EM Europe",
+        "Rhainer GmbH",
+        "Forte Management",
+        "Vendeka ITS",
+        "Soon Light & Project",
+      ],
+      metrics: [
+        { n: "20+", t: "Jahre Erfahrung" },
+        { n: "5M€+", t: "P&L-Verantwortung" },
+        { n: "400+", t: "Mitarbeitende geführt" },
+        { n: "14", t: "Internationale Standorte" },
+        { n: "22+", t: "Franchiseverträge" },
+        { n: "+22%", t: "Bruttomarge" },
+      ],
+      cta: "Meine Laufbahn und Ergebnisse ansehen",
     },
     about: {
       kicker: "Manifest",
@@ -373,6 +583,170 @@ export const translations = {
       tag: "Gebaut auf Klarheit, Mut und Systemen.",
       rights: "Alle Rechte vorbehalten.",
     },
+    aboutPage: {
+      meta: {
+        title: "Evren Ordu | Executive, Systemarchitekt & Business Operating Systems",
+        description:
+          "Evren Ordu — Ingenieur, Executive und Systemarchitekt. Ich entwickle Business Operating Systems, die Operations, Finanzen, Menschen und Technologie verbinden.",
+      },
+      hero: {
+        eyebrow: "EVREN ORDU",
+        title:
+          "Ingenieur durch Ausbildung. Executive durch Erfahrung. Systemarchitekt aus Überzeugung.",
+        support:
+          "Ich führe Unternehmen nicht nur. Ich entwickle Systeme, die Operations, Finanzen, Menschen und Technologie miteinander verbinden.",
+        ctaWork: "Systeme ansehen",
+        ctaContact: "Kontakt aufnehmen",
+      },
+      story: {
+        kicker: "Kurze Geschichte",
+        title: "Vom Ingenieur zum Executive – vom Executive zum Systemarchitekten.",
+        paragraphs: [
+          "Meine Laufbahn begann im Qualitätsmanagement und in Forschungs- und Entwicklungsprojekten. Mein Studium der Elektro- und Elektroniktechnik hat mich gelehrt, Systeme nicht als einzelne Teile, sondern als miteinander verbundene Strukturen zu betrachten.",
+          "Im Laufe meiner Karriere übernahm ich Verantwortung in Projektmanagement, Technologie, internationalen Operations, Finanzen, Franchise, Einzelhandel, Bau und Unternehmensführung. In sehr unterschiedlichen Branchen begegnete mir immer wieder dasselbe Problem: Unternehmen scheitern häufig nicht an fehlenden Menschen, sondern an fehlenden Systemen.",
+          "Deshalb konzentriere ich mich nicht nur darauf, Probleme zu lösen, sondern Strukturen zu entwickeln, die verhindern, dass dieselben Probleme erneut entstehen. Heute entwickle ich Business Operating Systems, die Operations, Finanzen, Governance, künstliche Intelligenz und Software miteinander verbinden.",
+        ],
+      },
+      timeline: {
+        kicker: "Karriereverlauf",
+        title: "Eine Linie von der Praxis zum System.",
+        items: [
+          { y: "2010–2012", t: "Qualitätsmanagement & F&E" },
+          { y: "2012–2014", t: "Projektmanager / Technischer Leiter" },
+          { y: "2014–2018", t: "COO / F&E-Projektmanager" },
+          { y: "2018–heute", t: "Finanzdirektor & Gesellschafter" },
+          { y: "2020–2023", t: "Regional Operations Manager" },
+          { y: "2020–2025", t: "Gründer & geschäftsführender Gesellschafter" },
+          { y: "2023–2026", t: "Geschäftsführer Deutschland" },
+          { y: "Heute", t: "Business Operating Systems" },
+        ],
+      },
+      orgs: {
+        kicker: "Unternehmerische Wirkung",
+        title: "Organisationen, die ich mitentwickelt und skaliert habe",
+        sub: "Verschiedene Branchen, verschiedene Länder — dieselbe Disziplin.",
+        items: [
+          {
+            name: "MAD Parfüm / Dogru Cosmetic Germany GmbH",
+            role: "Geschäftsführer Deutschland",
+            context: "Einzelhandel & Franchise · Deutschland",
+            metrics: [
+              "5M€+ jährliche P&L-/Umsatzverantwortung",
+              "50+ Mitarbeitende",
+              "Retail-Netz: 2 → 8 Stores",
+              "Franchise-Partner: 2 → 11",
+              "+22% Bruttomarge",
+            ],
+          },
+          {
+            name: "Çiğköftem / EM Europe GmbH",
+            role: "Regional Operations Manager",
+            context: "Franchise & Food-Retail · Europa",
+            metrics: [
+              "22+ Franchiseverträge",
+              "Regionale Expansion Deutschland",
+              "KPI-gesteuerte Betriebsstrukturen",
+              "Multi-Site-Franchise-Operations",
+            ],
+          },
+          {
+            name: "Rhainer GmbH",
+            role: "Gesellschafter (36 %) & Finanzdirektor",
+            context: "Internationale Serviceoperationen · DE / DK / CH",
+            metrics: [
+              "14 internationale Standorte",
+              "400+ Mitarbeitende",
+              "Turnaround zu nachhaltigem positivem P&L in 18 Monaten",
+              "Internationales Reporting und KPMG-Auditkoordination",
+            ],
+          },
+          {
+            name: "Forte Management GmbH",
+            role: "Gründer & geschäftsführender Gesellschafter",
+            context: "Bau, Asset & Property Management",
+            metrics: [
+              "Baumanagement",
+              "Asset- und Property-Management",
+              "Markteintrittsberatung für internationale Investoren",
+              "Aufbau und Exit des Konzepts Veggie 2 Go",
+            ],
+          },
+          {
+            name: "Vendeka ITS",
+            role: "COO / F&E-Projektmanager",
+            context: "RFID & Intelligente Verkehrssysteme",
+            metrics: [
+              "Nationale Mautinfrastrukturprojekte",
+              "10+ TÜBİTAK-geförderte F&E-Projekte",
+              "Produktisierung technischer Systeme",
+            ],
+          },
+          {
+            name: "Soon Light & Project",
+            role: "Projektmanager / Technischer Leiter",
+            context: "Beleuchtung & Energieeffizienz · TR / EU",
+            metrics: [
+              "Multi-Standort-LED-Transformationsprojekte",
+              "Internationale Supply Chain- und Nachunternehmer-Koordination",
+              "Energieeffiziente Beleuchtung und F&E",
+            ],
+          },
+        ],
+      },
+      numbers: {
+        kicker: "In Zahlen",
+        title: "Nachweis in Zahlen.",
+        items: [
+          { n: "20+", t: "Jahre Erfahrung" },
+          { n: "5M€+", t: "P&L-Verantwortung" },
+          { n: "400+", t: "Mitarbeitende geführt" },
+          { n: "14", t: "Internationale Standorte" },
+          { n: "22+", t: "Franchiseverträge" },
+          { n: "2 → 8", t: "Retail-Wachstum" },
+          { n: "2 → 11", t: "Franchise-Partner-Wachstum" },
+          { n: "+22%", t: "Bruttomarge" },
+          { n: "+20%", t: "Umsatzwachstum" },
+          { n: "+20%", t: "Netto-Profitabilität" },
+          { n: "600–900", t: "Optimierte Personalstunden / Monat" },
+          { n: "10+", t: "F&E-Projekte" },
+          { n: "3", t: "Arbeitssprachen" },
+        ],
+      },
+      industries: {
+        kicker: "Branchen",
+        title: "Unterschiedliche Branchen, dieselbe Systemdisziplin.",
+        items: [
+          "Einzelhandel",
+          "Franchise",
+          "Bau",
+          "Property & Asset Management",
+          "Aviation Services",
+          "Technologie & RFID",
+          "Künstliche Intelligenz",
+          "ERP / Business Operating Systems",
+        ],
+      },
+      philosophy: {
+        kicker: "Führungsphilosophie",
+        title: "Observe → Reframe → Design → Unify → Scale",
+        body:
+          "Ich beobachte zuerst das System, rahme das Problem neu, entwerfe die Lösung, verbinde Menschen und Prozesse und mache das Ergebnis anschließend skalierbar.",
+      },
+      today: {
+        kicker: "Heute",
+        title: "Woran ich aktuell arbeite.",
+        items: [
+          { t: "BauERP", d: "Aktive Implementierung · Business Operating System." },
+          { t: "AIOS", d: "Framework- und Produktentwicklung." },
+          { t: "Executive Advisory", d: "Skalierung, Transformation und Betriebssysteme." },
+          { t: "Speaking & Insights", d: "Leadership, KI und Operations." },
+        ],
+      },
+      cta: {
+        title: "Lassen Sie uns etwas schaffen, das Bestand hat.",
+        body: "Erzählen Sie, was Sie aufbauen wollen — sprechen wir.",
+      },
+    },
   },
   en: {
     nav: {
@@ -383,6 +757,7 @@ export const translations = {
       experience: "Experience",
       ideas: "Ideas",
       contact: "Contact",
+      aboutPage: "Who I Am",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
@@ -395,6 +770,28 @@ export const translations = {
       ctaPrimary: "Explore My Work",
       ctaSecondary: "Start a Conversation",
       scroll: "Scroll",
+    },
+    trusted: {
+      kicker: "Proof",
+      title: "Trusted Through Leadership",
+      sub: "20+ years of building and leading systems across retail, franchise, technology, construction and international service operations.",
+      companies: [
+        "Dogru Cosmetic Germany",
+        "EM Europe",
+        "Rhainer GmbH",
+        "Forte Management",
+        "Vendeka ITS",
+        "Soon Light & Project",
+      ],
+      metrics: [
+        { n: "20+", t: "Years" },
+        { n: "5M€+", t: "P&L" },
+        { n: "400+", t: "Employees" },
+        { n: "14", t: "International Locations" },
+        { n: "22+", t: "Franchise Agreements" },
+        { n: "+22%", t: "Gross Margin" },
+      ],
+      cta: "View My Journey and Results",
     },
     about: {
       kicker: "Manifesto",
@@ -557,6 +954,170 @@ export const translations = {
       loc: "Frankfurt / Germany",
       tag: "Built around clarity, courage and systems.",
       rights: "All rights reserved.",
+    },
+    aboutPage: {
+      meta: {
+        title: "Evren Ordu | Executive, System Architect & Business Operating Systems",
+        description:
+          "Evren Ordu — engineer, executive and system architect building Business Operating Systems that connect operations, finance, people and technology.",
+      },
+      hero: {
+        eyebrow: "EVREN ORDU",
+        title:
+          "Engineer by education. Executive by experience. System Architect by choice.",
+        support:
+          "I do not only manage companies. I build systems that connect operations, finance, people and technology.",
+        ctaWork: "See the systems",
+        ctaContact: "Get in touch",
+      },
+      story: {
+        kicker: "Short Story",
+        title: "From engineer to executive — from executive to system architect.",
+        paragraphs: [
+          "My career began in quality management and research and development projects. My background in Electrical and Electronics Engineering taught me to see systems not as isolated parts, but as connected structures.",
+          "Over time, I took responsibility across project management, technology, international operations, finance, franchise, retail, construction and company leadership. Across very different industries, I repeatedly saw the same problem: companies often struggle not because they lack people, but because they lack systems.",
+          "That is why I moved beyond solving individual problems and focused on building structures that prevent the same problems from returning. Today, I develop Business Operating Systems that connect operations, finance, governance, artificial intelligence and software.",
+        ],
+      },
+      timeline: {
+        kicker: "Career Journey",
+        title: "A single line from field to system.",
+        items: [
+          { y: "2010–2012", t: "Quality Management & R&D" },
+          { y: "2012–2014", t: "Project Manager / Technical Lead" },
+          { y: "2014–2018", t: "COO / R&D Project Manager" },
+          { y: "2018–Present", t: "Finance Director & Partner" },
+          { y: "2020–2023", t: "Regional Operations Manager" },
+          { y: "2020–2025", t: "Founder & Managing Partner" },
+          { y: "2023–2026", t: "General Manager Germany" },
+          { y: "Today", t: "Business Operating Systems" },
+        ],
+      },
+      orgs: {
+        kicker: "Organizational Impact",
+        title: "Organizations I Have Helped Scale",
+        sub: "Different sectors, different countries — the same discipline.",
+        items: [
+          {
+            name: "MAD Parfüm / Dogru Cosmetic Germany GmbH",
+            role: "General Manager Germany",
+            context: "Retail & Franchise · Germany",
+            metrics: [
+              "5M€+ annual P&L / revenue responsibility",
+              "50+ employees",
+              "Retail network: 2 → 8 stores",
+              "Franchise partners: 2 → 11",
+              "+22% gross margin",
+            ],
+          },
+          {
+            name: "Çiğköftem / EM Europe GmbH",
+            role: "Regional Operations Manager",
+            context: "Franchise & Food Retail · Europe",
+            metrics: [
+              "22+ franchise agreements",
+              "Germany regional expansion",
+              "KPI-driven operating structures",
+              "Multi-site franchise operations",
+            ],
+          },
+          {
+            name: "Rhainer GmbH",
+            role: "Partner (36% Shareholder) & Finance Director",
+            context: "International Service Operations · DE / DK / CH",
+            metrics: [
+              "14 international locations",
+              "400+ employees",
+              "Turnaround to sustainable positive P&L within 18 months",
+              "International reporting and KPMG audit coordination",
+            ],
+          },
+          {
+            name: "Forte Management GmbH",
+            role: "Founder & Managing Partner",
+            context: "Construction, Asset & Property Management",
+            metrics: [
+              "Construction management",
+              "Asset and property management",
+              "International investor market-entry advisory",
+              "Built and exited the Veggie 2 Go concept",
+            ],
+          },
+          {
+            name: "Vendeka ITS",
+            role: "COO / R&D Project Manager",
+            context: "RFID & Intelligent Transportation Systems",
+            metrics: [
+              "National highway toll infrastructure projects",
+              "10+ TÜBİTAK-funded R&D projects",
+              "Productization of technical systems",
+            ],
+          },
+          {
+            name: "Soon Light & Project",
+            role: "Project Manager / Technical Lead",
+            context: "Lighting & Energy Efficiency · TR / EU",
+            metrics: [
+              "Multi-location LED transformation projects",
+              "International supply chain and contractor coordination",
+              "Energy-efficient lighting and R&D",
+            ],
+          },
+        ],
+      },
+      numbers: {
+        kicker: "By the Numbers",
+        title: "Proof in numbers.",
+        items: [
+          { n: "20+", t: "Years of experience" },
+          { n: "5M€+", t: "P&L responsibility" },
+          { n: "400+", t: "Employees led" },
+          { n: "14", t: "International locations" },
+          { n: "22+", t: "Franchise agreements" },
+          { n: "2 → 8", t: "Retail store growth" },
+          { n: "2 → 11", t: "Franchise partner growth" },
+          { n: "+22%", t: "Gross margin" },
+          { n: "+20%", t: "Revenue growth" },
+          { n: "+20%", t: "Net profitability" },
+          { n: "600–900", t: "Workforce hours optimized / month" },
+          { n: "10+", t: "R&D projects" },
+          { n: "3", t: "Working languages" },
+        ],
+      },
+      industries: {
+        kicker: "Industries",
+        title: "Different industries, the same system discipline.",
+        items: [
+          "Retail",
+          "Franchise",
+          "Construction",
+          "Property & Asset Management",
+          "Aviation Services",
+          "Technology & RFID",
+          "Artificial Intelligence",
+          "ERP / Business Operating Systems",
+        ],
+      },
+      philosophy: {
+        kicker: "Leadership Philosophy",
+        title: "Observe → Reframe → Design → Unify → Scale",
+        body:
+          "I first observe the system, reframe the problem, design the solution, unify people and processes, and then make the result scalable.",
+      },
+      today: {
+        kicker: "Today",
+        title: "What I am building right now.",
+        items: [
+          { t: "BauERP", d: "Active implementation · Business Operating System." },
+          { t: "AIOS", d: "Framework & product development." },
+          { t: "Executive Advisory", d: "Scaling, transformation and operating systems." },
+          { t: "Speaking & Insights", d: "Leadership, AI and operations." },
+        ],
+      },
+      cta: {
+        title: "Let’s Build Something That Lasts.",
+        body: "Tell me what you want to build — let’s talk.",
+      },
     },
   },
 };
