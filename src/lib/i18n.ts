@@ -141,6 +141,7 @@ export const translations = {
         "Aus fragmentierten Organisationen werden messbare, wiederholbare und skalierbare Systeme.",
         "Entscheidungen aus Daten, Umsetzung aus Disziplin, Wirkung aus Menschen.",
       ],
+      principle: "Mensch · Prozess · Daten · Technologie — im selben System.",
     },
     focus: {
       kicker: "Fokusbereiche",
