@@ -354,7 +354,7 @@ function Hero({ t }: { t: Dict }) {
   );
 }
 
-/* ---------------- Section header ---------------- */
+/* ---------------- Section headers ---------------- */
 
 function SectionHeader({
   kicker,
@@ -384,6 +384,48 @@ function SectionHeader({
           className={`mt-5 font-display text-[clamp(1.75rem,3.8vw,3rem)] font-light leading-[1.1] tracking-tight ${
             ink ? "text-ink" : "text-foreground"
           }`}
+        >
+          {title}
+        </h2>
+      </Reveal>
+    </div>
+  );
+}
+
+function QuietHeader({
+  num,
+  kicker,
+  title,
+  ink = false,
+  center = false,
+  className = "",
+}: {
+  num?: string;
+  kicker: string;
+  title: string;
+  ink?: boolean;
+  center?: boolean;
+  className?: string;
+}) {
+  const muted = ink ? "text-ink/55" : "text-white/55";
+  const label = ink ? "text-ink/80" : "text-foreground/85";
+  const heading = ink ? "text-ink" : "text-foreground";
+  return (
+    <div className={`mb-14 max-w-3xl ${center ? "mx-auto text-center" : ""} ${className}`}>
+      <Reveal>
+        <div
+          className={`inline-flex items-baseline gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] ${label} ${
+            center ? "justify-center" : ""
+          }`}
+        >
+          {num && <span className={muted}>{num}</span>}
+          {num && <span className={`${muted}`} aria-hidden>/</span>}
+          <span>{kicker}</span>
+        </div>
+      </Reveal>
+      <Reveal delay={100}>
+        <h2
+          className={`mt-4 font-display text-[clamp(1.75rem,3.8vw,3rem)] font-light leading-[1.1] tracking-tight ${heading}`}
         >
           {title}
         </h2>
