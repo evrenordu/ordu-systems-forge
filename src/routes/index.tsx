@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
-import { translations, type Lang } from "@/lib/i18n";
+import { translations, type Lang, type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
