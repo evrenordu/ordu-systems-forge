@@ -245,7 +245,7 @@ function Hero({ t }: { t: Dict }) {
              below the fixed navigation on short desktop viewports (e.g. 828h),
              and horizontal bias keeps the face off the left-side headline on
              narrow screens. */
-          className="h-full w-full object-cover object-[74%_top] sm:object-[70%_15%] md:object-[62%_22%] lg:object-[60%_28%]"
+          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_28%]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
