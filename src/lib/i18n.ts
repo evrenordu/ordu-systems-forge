@@ -629,7 +629,7 @@ export const translations = {
       about: "Manifest",
       focus: "Was ich baue",
       framework: "ORDU",
-      cases: "Systeme",
+      cases: "Systeme & Projekte",
       experience: "Erfahrung",
       ideas: "Ideen",
       contact: "Kontakt",
