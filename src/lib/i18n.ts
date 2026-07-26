@@ -727,7 +727,7 @@ export const translations = {
       outcomeDesc: "Messbar. Nachhaltig. Wiederholbar.",
     },
     cases: {
-      kicker: "Systeme & ausgewählte Arbeiten",
+      kicker: "Systeme & Projekte",
       title: "Von der Idee zum System, vom System zur Skalierung.",
       problemLabel: "Problem",
       systemLabel: "System",
