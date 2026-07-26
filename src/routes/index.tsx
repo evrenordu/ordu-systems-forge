@@ -33,30 +33,32 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Evren Ordu — The System Architect · AI-powered Business Operating Systems" },
+      { title: "Evren Ordu — The System Architect" },
       {
         name: "description",
         content:
-          "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
+          "Frankfurt-based entrepreneur and system architect building AI-powered business operating systems for multi-company operations.",
       },
       { property: "og:type", content: "profile" },
-      { property: "og:title", content: "Evren Ordu — The System Architect · AI-powered Business Operating Systems" },
+      { property: "og:title", content: "Evren Ordu — The System Architect" },
       {
         property: "og:description",
         content:
-          "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
+          "Frankfurt-based entrepreneur and system architect building AI-powered business operating systems for multi-company operations.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://ordu-systems-forge.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Evren Ordu — The System Architect · AI-powered Business Operating Systems" },
+      { name: "twitter:title", content: "Evren Ordu — The System Architect" },
       {
         name: "twitter:description",
         content:
-          "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations — from quote to e-invoice, from site to financial control.",
+          "Frankfurt-based entrepreneur and system architect building AI-powered business operating systems for multi-company operations.",
       },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/5a8fcedd-4bd9-4d04-b32f-2cb868142283" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/5a8fcedd-4bd9-4d04-b32f-2cb868142283" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: "https://ordu-systems-forge.lovable.app/" },
       {
         rel: "preload",
         as: "image",

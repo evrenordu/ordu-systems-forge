@@ -1,0 +1,9 @@
+# Evren Ordu — The System Architect
+
+> Frankfurt-based entrepreneur and system architect building AI-powered business operating systems for multi-company operations.
+
+Evren Ordu is a Frankfurt-based entrepreneur, executive leader, and system architect. His work focuses on designing and operating end-to-end business operating systems — from quote to e-invoice, from construction site to financial control — across multi-company groups. Signature initiatives include BauERP (active implementation), AIOS (framework and product in development), and multi-site transformation programs led as an executive.
+
+## Pages
+
+- [Home](/): Personal brand, positioning, ORDU Framework (Observe · Reframe · Design · Unify → Scale), selected work (BauERP, AIOS, Multi-Site Transformation), executive experience, ideas, and contact.
