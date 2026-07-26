@@ -386,13 +386,20 @@ function SectionHeader({
 
 function About({ t }: { t: Dict }) {
   return (
-    <section id="about" className="relative border-t border-border/40 py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section id="about" className="relative section-sky py-28 lg:py-40">
+      <div className="absolute inset-0 bg-blueprint-light opacity-60 pointer-events-none" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
           <div>
-            <SectionHeader kicker={t.about.kicker} title={t.about.title} />
+            <div className="mb-6 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.28em] text-electric">
+              <span className="h-px w-8 bg-electric" />
+              {t.about.kicker}
+            </div>
+            <h2 className="font-display text-[clamp(1.8rem,4vw,3.25rem)] font-light leading-tight tracking-tight text-ink">
+              {t.about.title}
+            </h2>
           </div>
-          <div className="space-y-6 text-lg font-light leading-relaxed text-foreground/85">
+          <div className="space-y-6 text-lg font-light leading-relaxed text-ink/85">
             {t.about.body.map((p, i) => (
               <Reveal key={i} delay={i * 120}>
                 <p>{p}</p>
