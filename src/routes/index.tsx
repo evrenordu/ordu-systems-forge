@@ -16,7 +16,8 @@ import {
   Users,
   ChevronDown,
 } from "lucide-react";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import heroPortraitAsset from "@/assets/evren-portrait.jpg.asset.json";
+const heroPortrait = heroPortraitAsset.url;
 import heroBg from "@/assets/hero-bg.jpg";
 import { translations, type Lang, type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
