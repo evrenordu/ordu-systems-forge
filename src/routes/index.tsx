@@ -356,7 +356,7 @@ function Hero({ t }: { t: Dict }) {
 
           <Reveal delay={100}>
             <div
-              className="font-display text-[clamp(2.4rem,6.6vw,5.2rem)] font-light leading-[1.02] tracking-[-0.015em] text-white"
+              className="font-display text-[clamp(2.4rem,6.6vw,5.2rem)] font-light leading-[1.02] tracking-[-0.015em] text-white lg:text-[clamp(3rem,6.9vw,5.45rem)]"
               style={{ textShadow: "0 2px 30px oklch(0.08 0.02 250 / 0.5)" }}
             >
               {t.hero.brand}
