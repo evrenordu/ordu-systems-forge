@@ -24,7 +24,7 @@ import {
   BookOpen,
   Baby,
 } from "lucide-react";
-import heroScene from "@/assets/hero-scene.jpg";
+import heroScene from "@/assets/evren-ordu-hero-frankfurt-v2.png.asset.json";
 import { translations, type Lang, type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -318,7 +318,7 @@ function Hero({ t }: { t: Dict }) {
         data-replaceable-asset="hero-scene"
       >
         <img
-          src={heroScene}
+          src={heroScene.url}
           alt="Evren Ordu on a Frankfurt blue-hour rooftop terrace"
           className="h-full w-full object-cover object-[68%_center] sm:object-[62%_center]"
           fetchPriority="high"
