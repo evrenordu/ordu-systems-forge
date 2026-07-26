@@ -796,20 +796,28 @@ function Cases({ t }: { t: Dict }) {
                       i % 2 === 1 ? "lg:order-2" : ""
                     }`}
                     style={{ background: CASE_GRADIENTS[i % CASE_GRADIENTS.length] }}
-                    aria-hidden
                   >
                     {/*
                       REPLACEABLE MEDIA SLOT — case-media-{i}
-                      To ship real assets, replace <CaseDiagram /> below with an
-                      <img src=".../bauerp-screenshot.jpg" /> or <video />.
-                      Keep the surrounding container for layout + blueprint overlay.
+                      Case 2 uses a real infographic; others still use CaseDiagram.
                     */}
-                    <div className="absolute inset-0 bg-blueprint opacity-25" />
-                    <CaseDiagram index={i} />
+                    <div className="absolute inset-0 bg-blueprint opacity-25" aria-hidden />
+                    {i === 2 ? (
+                      <img
+                        src={multisiteDiagram.url}
+                        alt="Multi-site transformation framework: Observe, Analyze, Clarity, Rethink, Redesign, Breakthrough, Design, Build, Performance, Unify, Empower, Scale"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover object-center"
+                      />
+                    ) : (
+                      <CaseDiagram index={i} />
+                    )}
                     <div className="absolute bottom-6 left-6 font-mono text-[10px] uppercase tracking-[0.28em] text-white/80">
                       {c.tag} · 0{i + 1}
                     </div>
                   </div>
+
 
                   {/* Copy side */}
                   <div className="flex flex-col justify-center p-8 lg:p-14">
