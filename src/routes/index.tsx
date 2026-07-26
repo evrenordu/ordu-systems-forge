@@ -24,7 +24,7 @@ import {
   BookOpen,
   Baby,
 } from "lucide-react";
-import heroScene from "@/assets/hero-scene.jpg";
+import heroScene from "@/assets/evren-ordu-hero-frankfurt-v2.png.asset.json";
 import { translations, type Lang, type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
