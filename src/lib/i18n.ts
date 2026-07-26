@@ -11,6 +11,7 @@ export const translations = {
       ideas: "Fikirler",
       contact: "İletişim",
       aboutPage: "Ben Kimim?",
+      bauerp: "BauERP",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
