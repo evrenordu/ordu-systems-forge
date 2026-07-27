@@ -223,6 +223,8 @@ export const translations = {
       hero: {
         eyebrow: "EVREN ORDU",
         title:
+          "Ben şirket kurmuyorum. Şirket kuran sistemler kuruyorum.",
+        positioning:
           "Mühendislik eğitimiyle başladım. Yönetici olarak büyüdüm. Sistem mimarlığını seçtim.",
         support:
           "Şirketleri yalnızca yönetmiyorum. Operasyon, finans, insanlar ve teknolojiyi birlikte çalıştıran sistemler kuruyorum.",
@@ -845,6 +847,8 @@ export const translations = {
       hero: {
         eyebrow: "EVREN ORDU",
         title:
+          "Ich baue keine Unternehmen. Ich baue Systeme, die Unternehmen bauen.",
+        positioning:
           "Ingenieur durch Ausbildung. Executive durch Erfahrung. Systemarchitekt aus Überzeugung.",
         support:
           "Ich führe Unternehmen nicht nur. Ich entwickle Systeme, die Operations, Finanzen, Menschen und Technologie miteinander verbinden.",
@@ -1466,6 +1470,8 @@ export const translations = {
       hero: {
         eyebrow: "EVREN ORDU",
         title:
+          "I don’t build companies. I build systems that build companies.",
+        positioning:
           "Engineer by education. Executive by experience. System Architect by choice.",
         support:
           "I do not only manage companies. I build systems that connect operations, finance, people and technology.",

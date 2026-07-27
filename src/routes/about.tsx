@@ -80,8 +80,13 @@ function AboutHero({ t }: { t: Dict }) {
             {a.hero.title}
           </h1>
         </Reveal>
-        <Reveal delay={220}>
-          <p className="mt-8 max-w-2xl text-[17px] font-light leading-[1.7] text-white/85">
+        <Reveal delay={180}>
+          <p className="mt-6 max-w-3xl font-display text-[clamp(1.05rem,1.9vw,1.35rem)] font-light leading-[1.4] tracking-tight text-electric">
+            {a.hero.positioning}
+          </p>
+        </Reveal>
+        <Reveal delay={260}>
+          <p className="mt-6 max-w-2xl text-[17px] font-light leading-[1.7] text-white/85">
             {a.hero.support}
           </p>
         </Reveal>
