@@ -1470,6 +1470,8 @@ export const translations = {
       hero: {
         eyebrow: "EVREN ORDU",
         title:
+          "I don’t build companies. I build systems that build companies.",
+        positioning:
           "Engineer by education. Executive by experience. System Architect by choice.",
         support:
           "I do not only manage companies. I build systems that connect operations, finance, people and technology.",
