@@ -223,6 +223,8 @@ export const translations = {
       hero: {
         eyebrow: "EVREN ORDU",
         title:
+          "Ben şirket kurmuyorum. Şirket kuran sistemler kuruyorum.",
+        positioning:
           "Mühendislik eğitimiyle başladım. Yönetici olarak büyüdüm. Sistem mimarlığını seçtim.",
         support:
           "Şirketleri yalnızca yönetmiyorum. Operasyon, finans, insanlar ve teknolojiyi birlikte çalıştıran sistemler kuruyorum.",
