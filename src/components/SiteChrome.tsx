@@ -137,6 +137,21 @@ export function SiteNav({
               aria-hidden
             />
           </Link>
+          <Link
+            to="/bauerp"
+            aria-current={location.pathname === "/bauerp" ? "page" : undefined}
+            className={`group relative whitespace-nowrap rounded-sm px-1 py-1 text-[12px] font-medium uppercase tracking-[0.13em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric ${
+              location.pathname === "/bauerp" ? "text-white" : "text-white/70 hover:text-white"
+            }`}
+          >
+            {t.nav.bauerp}
+            <span
+              className={`absolute -bottom-1.5 left-1 h-[2px] bg-electric shadow-[0_0_8px_var(--electric-glow)] transition-all duration-300 ${
+                location.pathname === "/bauerp" ? "w-[calc(100%-0.5rem)]" : "w-0 group-hover:w-1/2"
+              }`}
+              aria-hidden
+            />
+          </Link>
           {anchorItemsTail.map((i) => renderAnchor(i.id, i.label))}
         </nav>
 
@@ -169,6 +184,7 @@ export function SiteNav({
               const mobileItems: Array<{ kind: "anchor" | "route"; id: string; label: string; to?: string }> = [
                 ...anchorItems.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
                 { kind: "route", id: "aboutPage", label: t.nav.aboutPage, to: "/about" },
+                { kind: "route", id: "bauerp", label: t.nav.bauerp, to: "/bauerp" },
                 ...anchorItemsTail.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
               ];
               return mobileItems.map((i) => {
