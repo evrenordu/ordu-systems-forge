@@ -847,6 +847,8 @@ export const translations = {
       hero: {
         eyebrow: "EVREN ORDU",
         title:
+          "Ich baue keine Unternehmen. Ich baue Systeme, die Unternehmen bauen.",
+        positioning:
           "Ingenieur durch Ausbildung. Executive durch Erfahrung. Systemarchitekt aus Überzeugung.",
         support:
           "Ich führe Unternehmen nicht nur. Ich entwickle Systeme, die Operations, Finanzen, Menschen und Technologie miteinander verbinden.",
