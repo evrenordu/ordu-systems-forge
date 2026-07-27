@@ -184,6 +184,7 @@ export function SiteNav({
               const mobileItems: Array<{ kind: "anchor" | "route"; id: string; label: string; to?: string }> = [
                 ...anchorItems.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
                 { kind: "route", id: "aboutPage", label: t.nav.aboutPage, to: "/about" },
+                { kind: "route", id: "bauerp", label: t.nav.bauerp, to: "/bauerp" },
                 ...anchorItemsTail.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
               ];
               return mobileItems.map((i) => {
