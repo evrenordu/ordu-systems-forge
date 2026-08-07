@@ -1067,6 +1067,7 @@ function Contact({ t }: { t: Dict }) {
       label: t.contact.email,
       href: mailto,
       external: false,
+      latin: false,
       aria: `${t.contact.email} — evren.ordu@gmail.com`,
     },
     {
@@ -1074,6 +1075,7 @@ function Contact({ t }: { t: Dict }) {
       label: t.contact.linkedin,
       href: linkedinUrl,
       external: true,
+      latin: true,
       aria: `${t.contact.linkedin} — linkedin.com/in/evrenordu`,
     },
     {
@@ -1081,6 +1083,7 @@ function Contact({ t }: { t: Dict }) {
       label: t.contact.whatsapp,
       href: whatsappUrl,
       external: true,
+      latin: true,
       aria: `${t.contact.whatsapp} — WhatsApp`,
     },
   ] as const;
@@ -1174,7 +1177,7 @@ function Contact({ t }: { t: Dict }) {
                 className={cls}
               >
                 <b.icon className="h-4 w-4" strokeWidth={1.5} />
-                {b.label}
+                <span {...(b.latin ? { lang: "en" } : {})}>{b.label}</span>
               </a>
             );
           })}
