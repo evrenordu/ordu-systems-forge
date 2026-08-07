@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
 import { translations, type Lang } from "@/lib/i18n";
 
 const STORAGE_KEY = "evrenordu.lang";
@@ -35,27 +35,33 @@ function detectLang(): Lang {
 }
 
 function broadcast(l: Lang) {
+  if (currentLang === l) return;
   currentLang = l;
   listeners.forEach((fn) => fn(l));
 }
 
+function subscribe(listener: (l: Lang) => void) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function getSnapshot() {
+  return currentLang;
+}
+
+function getServerSnapshot(): Lang {
+  return "en";
+}
+
 export function useSiteLang() {
-  const [lang, setLangState] = useState<Lang>(currentLang);
+  const lang = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const t = useMemo(() => translations[lang], [lang]);
 
   useEffect(() => {
-    const listener = (l: Lang) => setLangState(l);
-    listeners.add(listener);
     if (!resolved) {
       resolved = true;
       broadcast(detectLang());
-    } else if (lang !== currentLang) {
-      setLangState(currentLang);
     }
-    return () => {
-      listeners.delete(listener);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -64,14 +70,14 @@ export function useSiteLang() {
     }
   }, [lang]);
 
-  const setLang = (l: Lang) => {
+  const setLang = useCallback((l: Lang) => {
     broadcast(l);
     try {
       localStorage.setItem(STORAGE_KEY, l);
     } catch {
       /* ignore */
     }
-  };
+  }, []);
 
   return { lang, setLang, t };
 }
