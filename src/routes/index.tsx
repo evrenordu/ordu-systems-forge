@@ -1177,7 +1177,7 @@ function Contact({ t }: { t: Dict }) {
                 className={cls}
               >
                 <b.icon className="h-4 w-4" strokeWidth={1.5} />
-                {b.label}
+                <span {...(b.latin ? { lang: "en" } : {})}>{b.label}</span>
               </a>
             );
           })}
