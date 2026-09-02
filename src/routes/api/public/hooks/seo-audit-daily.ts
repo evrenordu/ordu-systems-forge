@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { collectAudit, routePathsFromSource, type AuditReport } from "@/lib/seo-audit-core";
-import routeTreeSource from "@/routeTree.gen.ts?raw";
+import { collectAudit, DECLARED_ROUTES, type AuditReport } from "@/lib/seo-audit-core";
 import { sendAuditEmail } from "@/lib/seo-audit-email.server";
 
 /**
@@ -20,10 +19,7 @@ export const Route = createFileRoute("/api/public/hooks/seo-audit-daily")({
         }
 
         const origin = new URL(request.url).origin;
-        const report: AuditReport = await collectAudit(
-          origin,
-          routePathsFromSource(routeTreeSource),
-        );
+        const report: AuditReport = await collectAudit(origin, DECLARED_ROUTES);
 
         const counts = {
           critical: report.issues.filter((i) => i.severity === "critical").length,

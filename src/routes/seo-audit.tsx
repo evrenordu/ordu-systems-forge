@@ -2,9 +2,17 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { RefreshCw, ShieldCheck, LogOut } from "lucide-react";
+import { RefreshCw, ShieldCheck, LogOut, Download, Search } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { runSeoAudit, type AuditIssue, type Severity } from "@/lib/seo-audit.functions";
+import {
+  runSeoAudit,
+  listAuditRuns,
+  fetchIndexStatus,
+  type AuditIssue,
+  type Severity,
+  type AuditReport,
+} from "@/lib/seo-audit.functions";
+
 
 export const Route = createFileRoute("/seo-audit")({
   head: () => ({
@@ -40,12 +48,30 @@ function SeoAuditPage() {
   }, [authState, navigate]);
 
   const audit = useServerFn(runSeoAudit);
+  const runs = useServerFn(listAuditRuns);
+  const indexStatus = useServerFn(fetchIndexStatus);
+
   const { data, error, isFetching, refetch } = useQuery({
     queryKey: ["seo-audit"],
     queryFn: () => audit({}),
     enabled: authState === "in",
     retry: false,
     staleTime: 60_000,
+  });
+
+  const history = useQuery({
+    queryKey: ["seo-audit-runs"],
+    queryFn: () => runs({}),
+    enabled: authState === "in",
+    retry: false,
+  });
+
+  const gsc = useQuery({
+    queryKey: ["seo-audit-index-status"],
+    queryFn: () => indexStatus({}),
+    enabled: authState === "in",
+    retry: false,
+    staleTime: 15 * 60_000,
   });
 
   if (authState !== "in") {
@@ -55,6 +81,7 @@ function SeoAuditPage() {
       </div>
     );
   }
+
 
   const forbidden = !!error && /403|Forbidden|Unauthorized/i.test(String(error));
 
@@ -82,6 +109,21 @@ function SeoAuditPage() {
               <RefreshCw className={`h-3.5 w-3.5 ${isFetching ? "animate-spin" : ""}`} />
               Yeniden tara
             </button>
+            <button
+              onClick={() => data && downloadJson(data)}
+              disabled={!data}
+              className="inline-flex items-center gap-2 rounded-sm border border-white/20 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/85 hover:bg-white/5 disabled:opacity-40"
+            >
+              <Download className="h-3.5 w-3.5" /> JSON
+            </button>
+            <button
+              onClick={() => data && downloadCsv(data)}
+              disabled={!data}
+              className="inline-flex items-center gap-2 rounded-sm border border-white/20 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/85 hover:bg-white/5 disabled:opacity-40"
+            >
+              <Download className="h-3.5 w-3.5" /> CSV
+            </button>
+
             <button
               onClick={async () => {
                 await supabase.auth.signOut();
@@ -215,6 +257,143 @@ function SeoAuditPage() {
               </Panel>
             </section>
 
+            <section>
+              <h2 className="mb-3 font-mono text-[11px] uppercase tracking-[0.24em] text-white/50">
+                Sitemap Kapsam Denetimi
+              </h2>
+              <div className="overflow-x-auto rounded-sm border border-white/10">
+                <table className="w-full min-w-[640px] text-left text-xs">
+                  <thead className="bg-white/[0.03] text-white/50">
+                    <tr>
+                      {["Route", "Beklenen", "Sitemap'te", "Not"].map((h) => (
+                        <th key={h} className="px-3 py-2 font-medium uppercase tracking-wider">
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody className="text-white/75">
+                    {data.coverage.rows.map((r) => {
+                      const ok = r.expectation === "indexable" ? r.inSitemap : !r.inSitemap;
+                      return (
+                        <tr key={r.path} className="border-t border-white/5">
+                          <td className="px-3 py-2 font-mono">{r.path}</td>
+                          <td className="px-3 py-2">
+                            {r.expectation === "indexable" ? "İndekslenebilir" : "Hariç"}
+                          </td>
+                          <td className={`px-3 py-2 ${ok ? "text-emerald-300" : "text-red-300"}`}>
+                            {r.inSitemap ? "Var" : "Yok"}
+                          </td>
+                          <td className="px-3 py-2 text-white/50">{r.reason ?? "—"}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="mb-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.24em] text-white/50">
+                <Search className="h-3.5 w-3.5" /> Google İndeks Durumu
+              </h2>
+              {gsc.isFetching && !gsc.data ? (
+                <div className="rounded-sm border border-white/10 bg-white/[0.02] p-6 text-sm text-white/60">
+                  Search Console sorgulanıyor…
+                </div>
+              ) : gsc.data?.status === "ok" ? (
+                <div className="overflow-x-auto rounded-sm border border-white/10">
+                  <table className="w-full min-w-[860px] text-left text-xs">
+                    <thead className="bg-white/[0.03] text-white/50">
+                      <tr>
+                        {["Sayfa", "Sonuç", "Kapsam", "Robots", "Google canonical", "Son tarama"].map(
+                          (h) => (
+                            <th key={h} className="px-3 py-2 font-medium uppercase tracking-wider">
+                              {h}
+                            </th>
+                          ),
+                        )}
+                      </tr>
+                    </thead>
+                    <tbody className="text-white/75">
+                      {gsc.data.rows.map((r) => (
+                        <tr key={r.path} className="border-t border-white/5">
+                          <td className="px-3 py-2 font-mono">{r.path}</td>
+                          <td
+                            className={`px-3 py-2 ${r.verdict === "PASS" ? "text-emerald-300" : r.verdict === "FAIL" ? "text-red-300" : ""}`}
+                          >
+                            {r.error ? "Hata" : r.verdict}
+                          </td>
+                          <td className="px-3 py-2">{r.coverageState}</td>
+                          <td className="px-3 py-2">{r.robotsTxtState}</td>
+                          <td className="max-w-[220px] truncate px-3 py-2">
+                            {r.googleCanonical ?? "—"}
+                          </td>
+                          <td className="px-3 py-2">
+                            {r.lastCrawlTime
+                              ? new Date(r.lastCrawlTime).toLocaleString("tr-TR")
+                              : "—"}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="rounded-sm border border-amber-400/30 bg-amber-400/10 p-4 text-xs text-amber-100">
+                  {gsc.data?.message ??
+                    (gsc.error ? String((gsc.error as Error).message) : "Veri yok.")}
+                  {gsc.data?.candidates?.length ? (
+                    <ul className="mt-2 font-mono">
+                      {gsc.data.candidates.map((c) => (
+                        <li key={c}>{c}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              )}
+            </section>
+
+            <section>
+              <h2 className="mb-3 font-mono text-[11px] uppercase tracking-[0.24em] text-white/50">
+                Günlük Otomatik Çalıştırmalar
+              </h2>
+              {history.data && history.data.length > 0 ? (
+                <div className="overflow-x-auto rounded-sm border border-white/10">
+                  <table className="w-full min-w-[640px] text-left text-xs">
+                    <thead className="bg-white/[0.03] text-white/50">
+                      <tr>
+                        {["Tarih", "Kaynak", "Skor", "Kritik", "Uyarı", "E-posta"].map((h) => (
+                          <th key={h} className="px-3 py-2 font-medium uppercase tracking-wider">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="text-white/75">
+                      {history.data.map((r) => (
+                        <tr key={r.id} className="border-t border-white/5">
+                          <td className="px-3 py-2">
+                            {new Date(r.created_at).toLocaleString("tr-TR")}
+                          </td>
+                          <td className="px-3 py-2">{r.source}</td>
+                          <td className="px-3 py-2">{r.score}/100</td>
+                          <td className="px-3 py-2">{r.critical_count}</td>
+                          <td className="px-3 py-2">{r.warning_count}</td>
+                          <td className="px-3 py-2">{r.emailed_to ?? "—"}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <p className="rounded-sm border border-white/10 bg-white/[0.02] p-4 text-xs text-white/50">
+                  Henüz zamanlanmış çalıştırma kaydı yok. Otomatik denetim her gün 06:15 UTC'de
+                  çalışır.
+                </p>
+              )}
+            </section>
+
             <p className="text-[11px] text-white/35">
               Tarandı: {new Date(data.generatedAt).toLocaleString("tr-TR")} · Kaynak: {data.origin}
             </p>
@@ -228,6 +407,42 @@ function SeoAuditPage() {
 function count(issues: AuditIssue[], s: Severity) {
   return issues.filter((i) => i.severity === s).length;
 }
+
+function timestamp() {
+  return new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
+}
+
+function saveBlob(content: string, type: string, filename: string) {
+  const url = URL.createObjectURL(new Blob([content], { type }));
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function downloadJson(report: AuditReport) {
+  saveBlob(
+    JSON.stringify(report, null, 2),
+    "application/json",
+    `seo-audit-${timestamp()}.json`,
+  );
+}
+
+function csvCell(v: unknown) {
+  return `"${String(v ?? "").replace(/"/g, '""')}"`;
+}
+
+function downloadCsv(report: AuditReport) {
+  const lines = [
+    ["severity", "area", "page", "title", "detail", "fix"].join(","),
+    ...report.issues.map((i) =>
+      [i.severity, i.area, i.page, i.title, i.detail, i.fix].map(csvCell).join(","),
+    ),
+  ];
+  saveBlob(lines.join("\n"), "text/csv;charset=utf-8", `seo-audit-${timestamp()}.csv`);
+}
+
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
