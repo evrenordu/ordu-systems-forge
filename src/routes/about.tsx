@@ -23,6 +23,26 @@ export const Route = createFileRoute("/about")({
       { name: "twitter:description", content: META.description },
     ],
     links: [{ rel: "canonical", href: "https://www.evrenordu.com/about" }],
+    scripts: [
+      jsonLd({
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "@id": "https://www.evrenordu.com/about#webpage",
+        url: "https://www.evrenordu.com/about",
+        name: META.title,
+        description: META.description,
+        isPartOf: { "@id": "https://www.evrenordu.com/#website" },
+        about: { "@id": "https://www.evrenordu.com/#person" },
+        mainEntity: { "@id": "https://www.evrenordu.com/#person" },
+      }),
+      jsonLd(personSchema),
+      jsonLd(
+        breadcrumbSchema([
+          { name: "Home", url: "https://www.evrenordu.com/" },
+          { name: "Who I Am", url: "https://www.evrenordu.com/about" },
+        ]),
+      ),
+    ],
   }),
   component: AboutPage,
 });
