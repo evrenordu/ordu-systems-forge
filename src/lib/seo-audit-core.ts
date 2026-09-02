@@ -41,8 +41,8 @@ export interface AuditReport {
   score: number;
 }
 
-const AUDITED_PATHS = ["/", "/about", "/bauerp", "/portfolio"];
-const CANONICAL_HOST = "https://www.evrenordu.com";
+export const AUDITED_PATHS = ["/", "/about", "/bauerp", "/portfolio"];
+export const CANONICAL_HOST = "https://www.evrenordu.com";
 
 function metaContent(html: string, attr: "name" | "property", key: string): string | null {
   const re = new RegExp(
