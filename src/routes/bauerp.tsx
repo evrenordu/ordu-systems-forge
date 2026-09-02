@@ -22,6 +22,7 @@ import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
 import { useSiteLang } from "@/hooks/useSiteLang";
+import { jsonLd, organizationSchema, breadcrumbSchema } from "@/lib/structured-data";
 import { translations, type Dict } from "@/lib/i18n";
 
 // Default meta uses English; browser-detected language swaps runtime UI copy.
@@ -41,6 +42,33 @@ export const Route = createFileRoute("/bauerp")({
       { name: "twitter:description", content: META.description },
     ],
     links: [{ rel: "canonical", href: "https://www.evrenordu.com/bauerp" }],
+    scripts: [
+      jsonLd({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "https://www.evrenordu.com/bauerp#software",
+        name: "BauERP",
+        url: "https://www.evrenordu.com/bauerp",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description: META.description,
+        author: { "@id": "https://www.evrenordu.com/#person" },
+        creator: { "@id": "https://www.evrenordu.com/#person" },
+        publisher: { "@id": "https://www.evrenordu.com/#organization" },
+        featureList: [
+          "7 module groups",
+          "17 automated jobs",
+          "15+ core entities",
+        ],
+      }),
+      jsonLd(organizationSchema),
+      jsonLd(
+        breadcrumbSchema([
+          { name: "Home", url: "https://www.evrenordu.com/" },
+          { name: "BauERP", url: "https://www.evrenordu.com/bauerp" },
+        ]),
+      ),
+    ],
   }),
   component: BauerpPage,
 });

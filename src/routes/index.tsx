@@ -30,6 +30,12 @@ import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
 import { useSiteLang } from "@/hooks/useSiteLang";
+import {
+  jsonLd,
+  personSchema,
+  organizationSchema,
+  webSiteSchema,
+} from "@/lib/structured-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -68,32 +74,19 @@ export const Route = createFileRoute("/")({
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Evren Ordu",
-          alternateName: "The System Architect",
-          jobTitle: "Entrepreneur · System Architect · AI & Digital Transformation",
-          description:
-            "Frankfurt-based entrepreneur and system architect building AI-supported business operating systems for multi-company operations.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Frankfurt am Main",
-            addressCountry: "DE",
-          },
-          knowsAbout: [
-            "Digital Transformation",
-            "Enterprise Resource Planning",
-            "Artificial Intelligence",
-            "Operations Leadership",
-            "Multi-site Operations",
-            "Construction Technology",
-            "International Business Development",
-          ],
-        }),
-      },
+      jsonLd(personSchema),
+      jsonLd(organizationSchema),
+      jsonLd(webSiteSchema),
+      jsonLd({
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://www.evrenordu.com/#profilepage",
+        url: "https://www.evrenordu.com/",
+        name: "Evren Ordu — The System Architect",
+        isPartOf: { "@id": "https://www.evrenordu.com/#website" },
+        about: { "@id": "https://www.evrenordu.com/#person" },
+        mainEntity: { "@id": "https://www.evrenordu.com/#person" },
+      }),
     ],
   }),
   component: Index,
