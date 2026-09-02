@@ -1,9 +1,12 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-import { collectAudit, CANONICAL_HOST, AUDITED_PATHS } from "@/lib/seo-audit-core";
-import routeTreeSource from "@/routeTree.gen.ts?raw";
-import { routePathsFromSource } from "@/lib/seo-audit-core";
+import {
+  collectAudit,
+  CANONICAL_HOST,
+  AUDITED_PATHS,
+  DECLARED_ROUTES,
+} from "@/lib/seo-audit-core";
 
 export type {
   Severity,
@@ -21,7 +24,7 @@ export function requestOrigin(): string {
   return sandboxHost ? `https://${sandboxHost}` : url.origin;
 }
 
-export const declaredRoutePaths = () => routePathsFromSource(routeTreeSource);
+export const declaredRoutePaths = () => DECLARED_ROUTES;
 
 async function assertAdmin(context: { supabase: any; userId: string }) {
   const { data: roles, error } = await context.supabase
