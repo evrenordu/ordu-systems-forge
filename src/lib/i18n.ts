@@ -12,6 +12,7 @@ export const translations = {
       contact: "İletişim",
       aboutPage: "Ben Kimim?",
       bauerp: "BauERP",
+      portfolio: "Portföy",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
@@ -380,6 +381,145 @@ export const translations = {
         body: "Ne inşa etmek istediğinizi anlatın — sizinle konuşayım.",
       },
     },
+    portfolio: {
+      meta: {
+        title: "Portföy | AI Dönüşüm Projeleri — Evren Ordu",
+        description:
+          "Evren Ordu'nun AI destekli dönüşüm projeleri: BauERP, AIOS, çok lokasyonlu operasyon dönüşümü ve uluslararası büyüme sistemleri. Vaka çalışmaları ve ölçülebilir sonuçlar.",
+      },
+      hero: {
+        eyebrow: "PORTFÖY · AI DÖNÜŞÜM PROJELERİ",
+        title: "Kurulmuş sistemler. Kanıtlanmış dönüşüm.",
+        lead: "Her proje aynı yolu izler: kaosu gör, problemi yeniden çerçevele, sistemi tasarla, her şeyi tek işletim modelinde birleştir. Aşağıda bu yolun gerçek operasyonlardaki karşılığı var.",
+      },
+      metricsLabel: "Portföy Genelinde",
+      metrics: [
+        { n: "5", t: "Büyük Program" },
+        { n: "15+", t: "Şirket Yapısı" },
+        { n: "14", t: "Uluslararası Lokasyon" },
+        { n: "20+", t: "Yıl Liderlik" },
+      ],
+      labels: {
+        challenge: "Zorluk",
+        approach: "Yaklaşım",
+        aiLayer: "AI Katmanı",
+        outcome: "Sonuçlar",
+        stack: "Sistem Katmanları",
+      },
+      projects: [
+        {
+          id: "bauerp",
+          tag: "BauERP",
+          status: "Canlı Uygulama",
+          year: "2023 — Bugün",
+          title: "Bir şirket grubunun dijital omurgası.",
+          summary:
+            "Şantiye, satın alma, sözleşme, finans, gayrimenkul ve yönetişimi tek Business Operating System içinde birleştiren özel geliştirme.",
+          challenge:
+            "15'ten fazla GmbH/KG, üç dil ve ortak veri temeli olmayan bir düzine ayrı araç. Her rapor elle birleştiriliyordu.",
+          approach:
+            "Yedi ana modül grubu, 15+ çekirdek varlık ve 17 otomatik görevden oluşan entegre bir mimari. Rol, şirket ve portal izolasyonu ile denetime hazır kayıtlar.",
+          aiLayer:
+            "AI destekli şantiye raporlaması, doküman sınıflandırma ve otomatik özetleme; yöneticiye ham veri değil karar sunar.",
+          outcomes: [
+            "15+ şirket için tek veri temeli",
+            "Beş dakikada bir muhasebe senkronizasyonu",
+            "42 GB şantiye medyasının otomatik arşivlenmesi",
+            "Tekliften e-faturaya kesintisiz akış",
+          ],
+          stack: ["Finans & Muhasebe", "Proje & Şantiye", "Gayrimenkul", "İnsan & Yönetişim"],
+        },
+        {
+          id: "aios",
+          tag: "AIOS",
+          status: "Geliştirme Aşamasında",
+          year: "2025 — Bugün",
+          title: "Şirket bilgisini işletim sistemine dönüştürmek.",
+          summary:
+            "Kurumsal hafıza, SOP'lar, karar desteği ve iş akışlarını tek AI-native katmanda toplayan ürün çalışması.",
+          challenge:
+            "Bilgi insanlarda ve dağınık dosyalarda kalıyor; ayrılan her kişi ile şirket hafızası eksiliyor.",
+          approach:
+            "Şirket verisini yapılandırılmış bir bilgi grafiğine bağlayan, süreçleri yürütülebilir hâle getiren modüler bir katman.",
+          aiLayer:
+            "Bağlam farkında asistanlar, doküman anlama ve karar destek akışları; AI bir eklenti değil, yönetim katmanı olarak çalışır.",
+          outcomes: [
+            "Daha hızlı onboarding",
+            "Tutarlı ve izlenebilir kararlar",
+            "Kalıcı kurumsal hafıza",
+          ],
+          stack: ["Bilgi Grafiği", "SOP Motoru", "Karar Desteği", "İş Akışları"],
+        },
+        {
+          id: "multi-site",
+          tag: "Multi-Site Transformation",
+          status: "Tamamlandı",
+          year: "2016 — 2022",
+          title: "Bireysel lokasyonlardan tek işletim modeline.",
+          summary:
+            "Çok ülkeli bir operasyonu ortak KPI, planlama ve raporlama disiplininde birleştiren dönüşüm programı.",
+          challenge:
+            "14 lokasyon, 14 farklı çalışma biçimi. Karşılaştırılabilir veri ve merkezi kontrol yoktu.",
+          approach:
+            "Standart operasyon modeli, iş gücü planlaması, tek raporlama çatısı ve yönetişim ritmi.",
+          aiLayer:
+            "Talep tahmini ve performans anomali tespiti ile bölge yöneticilerine erken uyarı.",
+          outcomes: [
+            "14 lokasyonda karşılaştırılabilir KPI",
+            "+22% brüt marj artışı",
+            "400+ çalışan için tek planlama modeli",
+          ],
+          stack: ["KPI Çatısı", "İş Gücü Planlama", "Raporlama", "Yönetişim"],
+        },
+        {
+          id: "digital-transformation",
+          tag: "Digital Transformation Programs",
+          status: "Devam Ediyor",
+          year: "2019 — Bugün",
+          title: "Süreçlerin AI ile yeniden tasarlanması.",
+          summary:
+            "Orta ölçekli ve kurumsal şirketler için strateji, mimari ve uygulamayı birlikte yürüten yönetici liderliğinde dönüşüm.",
+          challenge:
+            "Dijitalleşme çoğu şirkette araç satın almakla karıştırılıyor; süreç aynı kalıyor.",
+          approach:
+            "Önce değer akışını yeniden çerçevele, sonra mimariyi tasarla, en son aracı seç. Uygulamayı sahada birlikte yürüt.",
+          aiLayer:
+            "Tekrarlayan bilgi işini otomatikleştiren AI iş akışları ve yöneticiye özet üreten raporlama katmanı.",
+          outcomes: [
+            "Ölçülebilir verim artışı",
+            "Araç değil süreç odaklı dönüşüm",
+            "Sahada benimsenen sistemler",
+          ],
+          stack: ["Strateji", "Süreç Mimarisi", "AI Otomasyon", "Değişim Yönetimi"],
+        },
+        {
+          id: "real-estate",
+          tag: "International Real Estate Marketing",
+          status: "Tamamlandı",
+          year: "2014 — 2019",
+          title: "Sınır ötesi bir satış operasyonu kurmak.",
+          summary:
+            "Uluslararası gayrimenkul portföyleri için pazarlama, satış ve müşteri yolculuğunu tek sistemde toplayan yapı.",
+          challenge:
+            "Farklı ülkelerde dağınık kanallar, ortak bir müşteri görünümü ve ölçülebilir dönüşüm hunisi yoktu.",
+          approach:
+            "Çok dilli içerik üretimi, tek CRM disiplini ve kaynaktan sözleşmeye izlenebilir satış hunisi.",
+          aiLayer:
+            "Kanal performansı ve lead skorlaması ile bütçenin dönüşen kaynaklara yönlendirilmesi.",
+          outcomes: [
+            "Tek müşteri görünümü",
+            "İzlenebilir satış hunisi",
+            "Çok dilli pazar erişimi",
+          ],
+          stack: ["Marka & İçerik", "CRM", "Satış Hunisi", "Analitik"],
+        },
+      ],
+      closing: {
+        title: "Sıradaki sistem sizinki olabilir.",
+        body: "Operasyonunuzu ölçeklemek, AI ile yeniden tasarlamak veya sıfırdan bir iş sistemi kurmak istiyorsanız konuşalım.",
+        cta: "Bir Görüşme Başlatın",
+      },
+    },
     bauerp: {
       meta: {
         title: "BauERP | Evren Ordu tarafından geliştirilen Business Operating System",
@@ -637,6 +777,7 @@ export const translations = {
       contact: "Kontakt",
       aboutPage: "Über mich",
       bauerp: "BauERP",
+      portfolio: "Portfolio",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
@@ -1004,6 +1145,145 @@ export const translations = {
         body: "Erzählen Sie, was Sie aufbauen wollen — sprechen wir.",
       },
     },
+    portfolio: {
+      meta: {
+        title: "Portfolio | KI-Transformationsprojekte — Evren Ordu",
+        description:
+          "KI-gestützte Transformationsprojekte von Evren Ordu: BauERP, AIOS, Multi-Site-Transformation und internationale Wachstumssysteme. Fallstudien mit messbaren Ergebnissen.",
+      },
+      hero: {
+        eyebrow: "PORTFOLIO · KI-TRANSFORMATIONSPROJEKTE",
+        title: "Gebaute Systeme. Bewiesene Transformation.",
+        lead: "Jedes Projekt folgt demselben Weg: das Chaos sehen, das Problem neu rahmen, das System entwerfen, alles in einem Betriebsmodell vereinen. Hier ist dieser Weg in realen Operationen.",
+      },
+      metricsLabel: "Über das Portfolio hinweg",
+      metrics: [
+        { n: "5", t: "Große Programme" },
+        { n: "15+", t: "Gesellschaften" },
+        { n: "14", t: "Internationale Standorte" },
+        { n: "20+", t: "Jahre Führung" },
+      ],
+      labels: {
+        challenge: "Herausforderung",
+        approach: "Ansatz",
+        aiLayer: "KI-Ebene",
+        outcome: "Ergebnisse",
+        stack: "Systemebenen",
+      },
+      projects: [
+        {
+          id: "bauerp",
+          tag: "BauERP",
+          status: "Live im Einsatz",
+          year: "2023 — heute",
+          title: "Das digitale Rückgrat einer Unternehmensgruppe.",
+          summary:
+            "Eine Eigenentwicklung, die Baustelle, Einkauf, Verträge, Finanzen, Immobilien und Governance in einem Business Operating System vereint.",
+          challenge:
+            "Über 15 GmbH/KG, drei Sprachen und ein Dutzend getrennter Werkzeuge ohne gemeinsame Datenbasis. Jeder Report wurde manuell zusammengesetzt.",
+          approach:
+            "Eine integrierte Architektur aus sieben Modulgruppen, 15+ Kernentitäten und 17 automatisierten Jobs — mit Rollen-, Mandanten- und Portaltrennung sowie prüfsicheren Spuren.",
+          aiLayer:
+            "KI-gestützte Baustellenberichte, Dokumentenklassifikation und automatische Zusammenfassungen liefern Entscheidungen statt Rohdaten.",
+          outcomes: [
+            "Eine Datenbasis für 15+ Gesellschaften",
+            "Buchhaltungs-Sync alle fünf Minuten",
+            "42 GB Baustellenmedien automatisch archiviert",
+            "Durchgängig vom Angebot zur E-Rechnung",
+          ],
+          stack: ["Finanzen", "Projekte & Baustelle", "Immobilien", "Menschen & Governance"],
+        },
+        {
+          id: "aios",
+          tag: "AIOS",
+          status: "In Entwicklung",
+          year: "2025 — heute",
+          title: "Unternehmenswissen wird zum Betriebssystem.",
+          summary:
+            "Eine Produktarbeit, die Unternehmensgedächtnis, SOPs, Entscheidungsunterstützung und Workflows in einer KI-nativen Ebene bündelt.",
+          challenge:
+            "Wissen bleibt in Köpfen und verstreuten Dateien; mit jedem Abgang verliert das Unternehmen Gedächtnis.",
+          approach:
+            "Eine modulare Ebene, die Unternehmensdaten in einen strukturierten Wissensgraphen überführt und Prozesse ausführbar macht.",
+          aiLayer:
+            "Kontextbewusste Assistenten und Entscheidungsflüsse — KI als Managementebene, nicht als Add-on.",
+          outcomes: [
+            "Schnelleres Onboarding",
+            "Konsistente, nachvollziehbare Entscheidungen",
+            "Dauerhaftes Unternehmensgedächtnis",
+          ],
+          stack: ["Wissensgraph", "SOP-Engine", "Entscheidungsunterstützung", "Workflows"],
+        },
+        {
+          id: "multi-site",
+          tag: "Multi-Site Transformation",
+          status: "Abgeschlossen",
+          year: "2016 — 2022",
+          title: "Von einzelnen Standorten zu einem Betriebsmodell.",
+          summary:
+            "Ein Transformationsprogramm, das eine länderübergreifende Operation auf gemeinsame KPIs, Planung und Reporting ausrichtet.",
+          challenge:
+            "14 Standorte, 14 Arbeitsweisen. Keine vergleichbaren Daten, keine zentrale Steuerung.",
+          approach:
+            "Standardisiertes Betriebsmodell, Personalplanung, ein Reporting-Rahmen und ein fester Governance-Rhythmus.",
+          aiLayer:
+            "Bedarfsprognosen und Anomalieerkennung geben Regionalleitern Frühwarnungen.",
+          outcomes: [
+            "Vergleichbare KPIs über 14 Standorte",
+            "+22% Rohertragssteigerung",
+            "Ein Planungsmodell für 400+ Mitarbeitende",
+          ],
+          stack: ["KPI-Rahmen", "Personalplanung", "Reporting", "Governance"],
+        },
+        {
+          id: "digital-transformation",
+          tag: "Digital Transformation Programs",
+          status: "Laufend",
+          year: "2019 — heute",
+          title: "Prozesse mit KI neu entworfen.",
+          summary:
+            "Von der Geschäftsleitung geführte Transformation für Mittelstand und Konzerne: Strategie, Architektur und Umsetzung in einem Zug.",
+          challenge:
+            "Digitalisierung wird oft mit Werkzeugkauf verwechselt — der Prozess bleibt derselbe.",
+          approach:
+            "Erst den Wertstrom neu rahmen, dann die Architektur entwerfen, zuletzt das Werkzeug wählen. Umsetzung gemeinsam im Betrieb.",
+          aiLayer:
+            "KI-Workflows automatisieren wiederkehrende Wissensarbeit und verdichten Reporting zu Führungsentscheidungen.",
+          outcomes: [
+            "Messbare Effizienzgewinne",
+            "Prozess- statt Werkzeugfokus",
+            "Systeme, die im Betrieb angenommen werden",
+          ],
+          stack: ["Strategie", "Prozessarchitektur", "KI-Automatisierung", "Change Management"],
+        },
+        {
+          id: "real-estate",
+          tag: "International Real Estate Marketing",
+          status: "Abgeschlossen",
+          year: "2014 — 2019",
+          title: "Eine grenzüberschreitende Vertriebsoperation aufbauen.",
+          summary:
+            "Ein System, das Marketing, Vertrieb und Customer Journey für internationale Immobilienportfolios zusammenführt.",
+          challenge:
+            "Verstreute Kanäle in mehreren Ländern, keine gemeinsame Kundensicht, kein messbarer Funnel.",
+          approach:
+            "Mehrsprachige Content-Produktion, eine CRM-Disziplin und ein von der Quelle bis zum Vertrag nachvollziehbarer Funnel.",
+          aiLayer:
+            "Kanalbewertung und Lead-Scoring lenken Budget auf konvertierende Quellen.",
+          outcomes: [
+            "Eine einheitliche Kundensicht",
+            "Nachvollziehbarer Vertriebsfunnel",
+            "Mehrsprachige Marktreichweite",
+          ],
+          stack: ["Marke & Content", "CRM", "Vertriebsfunnel", "Analytics"],
+        },
+      ],
+      closing: {
+        title: "Das nächste System könnte Ihres sein.",
+        body: "Wenn Sie Ihre Operation skalieren, mit KI neu entwerfen oder ein Geschäftssystem von Grund auf bauen wollen — sprechen wir.",
+        cta: "Gespräch beginnen",
+      },
+    },
     bauerp: {
       meta: {
         title: "BauERP | Business Operating System von Evren Ordu",
@@ -1261,6 +1541,7 @@ export const translations = {
       contact: "Contact",
       aboutPage: "Who I Am",
       bauerp: "BauERP",
+      portfolio: "Portfolio",
     },
     hero: {
       eyebrow: "EVREN ORDU · FRANKFURT",
@@ -1625,6 +1906,145 @@ export const translations = {
       cta: {
         title: "Let’s Build Something That Lasts.",
         body: "Tell me what you want to build — let’s talk.",
+      },
+    },
+    portfolio: {
+      meta: {
+        title: "Portfolio | AI Transformation Projects — Evren Ordu",
+        description:
+          "AI-powered transformation projects by Evren Ordu: BauERP, AIOS, multi-site operating model transformation and international growth systems. Case studies with measurable outcomes.",
+      },
+      hero: {
+        eyebrow: "PORTFOLIO · AI TRANSFORMATION PROJECTS",
+        title: "Systems built. Transformation proven.",
+        lead: "Every project follows the same path: see the chaos, reframe the problem, design the system, unify everything into one operating model. Below is that path applied to real operations.",
+      },
+      metricsLabel: "Across the portfolio",
+      metrics: [
+        { n: "5", t: "Major Programs" },
+        { n: "15+", t: "Company Entities" },
+        { n: "14", t: "International Locations" },
+        { n: "20+", t: "Years Leading" },
+      ],
+      labels: {
+        challenge: "Challenge",
+        approach: "Approach",
+        aiLayer: "AI Layer",
+        outcome: "Outcomes",
+        stack: "System Layers",
+      },
+      projects: [
+        {
+          id: "bauerp",
+          tag: "BauERP",
+          status: "Live in Production",
+          year: "2023 — Present",
+          title: "The digital backbone of a company group.",
+          summary:
+            "A custom build unifying construction sites, procurement, contracts, finance, real estate and governance into one Business Operating System.",
+          challenge:
+            "More than 15 GmbH/KG entities, three languages and a dozen disconnected tools with no shared data foundation. Every report was assembled by hand.",
+          approach:
+            "An integrated architecture of seven module groups, 15+ core entities and 17 automated jobs — with role, company and portal isolation plus audit-ready trails.",
+          aiLayer:
+            "AI-assisted site reporting, document classification and automatic summarisation deliver decisions instead of raw data.",
+          outcomes: [
+            "One data foundation across 15+ entities",
+            "Accounting sync every five minutes",
+            "42 GB of site media archived automatically",
+            "Unbroken flow from quote to e-invoice",
+          ],
+          stack: ["Finance", "Projects & Site", "Real Estate", "People & Governance"],
+        },
+        {
+          id: "aios",
+          tag: "AIOS",
+          status: "In Development",
+          year: "2025 — Present",
+          title: "Turning company knowledge into an operating system.",
+          summary:
+            "A product effort bringing corporate memory, SOPs, decision support and workflows into a single AI-native layer.",
+          challenge:
+            "Knowledge lives in people and scattered files; every departure erases part of the company's memory.",
+          approach:
+            "A modular layer that maps company data into a structured knowledge graph and makes processes executable.",
+          aiLayer:
+            "Context-aware assistants, document understanding and decision flows — AI as a management layer, not an add-on.",
+          outcomes: [
+            "Faster onboarding",
+            "Consistent, traceable decisions",
+            "Durable institutional memory",
+          ],
+          stack: ["Knowledge Graph", "SOP Engine", "Decision Support", "Workflows"],
+        },
+        {
+          id: "multi-site",
+          tag: "Multi-Site Transformation",
+          status: "Delivered",
+          year: "2016 — 2022",
+          title: "From individual locations to one operating model.",
+          summary:
+            "A transformation program aligning a cross-country operation on shared KPIs, planning and reporting discipline.",
+          challenge:
+            "14 locations, 14 ways of working. No comparable data and no central control.",
+          approach:
+            "A standard operating model, workforce planning, a single reporting frame and a fixed governance rhythm.",
+          aiLayer:
+            "Demand forecasting and performance anomaly detection give regional leaders early warning.",
+          outcomes: [
+            "Comparable KPIs across 14 locations",
+            "+22% gross margin improvement",
+            "One planning model for 400+ employees",
+          ],
+          stack: ["KPI Frame", "Workforce Planning", "Reporting", "Governance"],
+        },
+        {
+          id: "digital-transformation",
+          tag: "Digital Transformation Programs",
+          status: "Ongoing",
+          year: "2019 — Present",
+          title: "Redesigning processes with AI.",
+          summary:
+            "Executive-led transformation for mid-market and enterprise companies: strategy, architecture and execution carried together.",
+          challenge:
+            "Digitalisation is often mistaken for buying tools — the process stays exactly the same.",
+          approach:
+            "Reframe the value stream first, design the architecture second, choose the tool last. Then run the rollout on the floor.",
+          aiLayer:
+            "AI workflows automate repetitive knowledge work and compress reporting into executive decisions.",
+          outcomes: [
+            "Measurable efficiency gains",
+            "Process-first, not tool-first",
+            "Systems that are actually adopted",
+          ],
+          stack: ["Strategy", "Process Architecture", "AI Automation", "Change Management"],
+        },
+        {
+          id: "real-estate",
+          tag: "International Real Estate Marketing",
+          status: "Delivered",
+          year: "2014 — 2019",
+          title: "Building a cross-border sales operation.",
+          summary:
+            "A system bringing marketing, sales and the customer journey together for international real estate portfolios.",
+          challenge:
+            "Scattered channels across countries, no shared customer view and no measurable funnel.",
+          approach:
+            "Multilingual content production, one CRM discipline and a funnel traceable from source to contract.",
+          aiLayer:
+            "Channel scoring and lead qualification steer budget toward converting sources.",
+          outcomes: [
+            "A single customer view",
+            "Traceable sales funnel",
+            "Multilingual market reach",
+          ],
+          stack: ["Brand & Content", "CRM", "Sales Funnel", "Analytics"],
+        },
+      ],
+      closing: {
+        title: "The next system could be yours.",
+        body: "If you want to scale your operation, redesign it with AI, or build a business system from scratch — let's talk.",
+        cta: "Start a Conversation",
       },
     },
     bauerp: {
