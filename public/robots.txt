@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /auth
+Disallow: /seo-audit
 
 Sitemap: https://www.evrenordu.com/sitemap.xml
