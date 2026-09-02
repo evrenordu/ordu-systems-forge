@@ -765,6 +765,84 @@ export const translations = {
         body: "Konuşalım.",
       },
     },
+    aiBos: {
+      meta: {
+        title: "AI Business Operating System | Evren Ordu",
+        description:
+          "Parçalı ERP'den AI Business Operating System'e: ORDU yöntemiyle tasarlanan, BauERP ile canlı operasyonda kanıtlanmış AI destekli işletim sistemleri.",
+      },
+      hero: {
+        eyebrow: "AI BUSINESS OPERATING SYSTEM",
+        title:
+          "ERP'nin bittiği yerde başlayan sistem: AI Business Operating System.",
+        support:
+          "Şirketinizi yazılım yamalarıyla değil, tek bir işletim modeliyle yönetin. ORDU yöntemiyle tasarlanan AI destekli işletim sistemleri — BauERP ile 15'ten fazla şirketten oluşan bir grupta canlı kanıtlandı.",
+        ctaPrimary: "ORDU yöntemini görün",
+        ctaSecondary: "İletişim",
+      },
+      shift: {
+        kicker: "ERP'den AI İşletim Sistemine",
+        title: "Geleneksel ERP kayıt tutar. AI işletim sistemi işletir.",
+        body: [
+          "Klasik ERP projeleri aylarca sürer, operasyonu jenerik kalıplara sığdırmaya çalışır ve genelde raflarda kalan bir lisansla biter. Bilgi yine elektronik tablolara, e-postalara ve kişilerin hafızasına dağılır.",
+          "AI Business Operating System farklıdır: operasyonun gerçek akışının etrafına inşa edilir, veriyi tek bir omurgada birleştirir ve tekrar eden işi arka planda çalışan otomasyona devreder.",
+        ],
+        headOld: "Geleneksel ERP",
+        headNew: "AI Business Operating System",
+        rows: [
+          { old: "Departmanlar arasında dağınık veri", new: "Tek paylaşılan veri omurgası" },
+          { old: "Aylar süren uyarlama projeleri", new: "Operasyonun etrafında haftalar içinde kurulum" },
+          { old: "Manuel raporlama ve takip", new: "7/24 çalışan otomatik işler ve raporlar" },
+          { old: "Kişilere bağımlı bilgi", new: "Role bağlı, denetlenebilir süreç hafızası" },
+          { old: "Statik yazılım", new: "Gerçek operasyonla birlikte evrilen canlı sistem" },
+        ],
+        note: "Geçiş bir yazılım değişimi değil, işletim modeli değişimidir.",
+      },
+      method: {
+        kicker: "Yöntem",
+        title: "ORDU — her AI işletim sisteminin arkasındaki mimari.",
+        sub: "Dört aşama. Tek sonuç: SCALE.",
+        pillars: [
+          { k: "O", t: "Observe", d: "Operasyonu olduğu gibi izle: sahada, veride, insanların günlük akışında." },
+          { k: "R", t: "Reframe", d: "Sorunu doğru tanımla — çoğu zaman yazılım sorunu değil, model sorunudur." },
+          { k: "D", t: "Design", d: "Veri omurgasını, yetki matrisini ve otomasyon katmanını birlikte tasarla." },
+          { k: "U", t: "Unify", d: "Finans, proje, insan ve yönetişimi tek sistemde birleştir." },
+        ],
+        outcomeLabel: "Sonuç",
+        outcome:
+          "SCALE — ölçeklenebilirlik beşinci bir harf değil, doğru kurulmuş sistemin doğal sonucudur.",
+      },
+      proof: {
+        kicker: "Kanıt",
+        title: "Teori değil — canlı operasyonda çalışıyor.",
+        items: [
+          { n: "7", t: "Modül Grubu" },
+          { n: "17", t: "Otomatik Zamanlanmış İş" },
+          { n: "15+", t: "İzole GmbH/KG Varlığı" },
+          { n: "5 dk", t: "Muhasebe Senkronu" },
+        ],
+        casesLabel: "Canlı sistemler",
+        cases: [
+          {
+            name: "BauERP",
+            role: "İnşaat ve gayrimenkul grubunun işletim sistemi",
+            desc: "Tekliften e-faturaya, şantiyeden finansal kontrole uçtan uca tek mimari.",
+            to: "/bauerp",
+          },
+          {
+            name: "AIOS",
+            role: "AI destekli operasyon katmanı",
+            desc: "Saha iletişiminden günlük rapor üreten, medyayı arşivleyen AI otomasyonu.",
+            to: "/portfolio",
+          },
+        ],
+      },
+      cta: {
+        kicker: "Başlayalım",
+        title: "Şirketiniz için AI işletim sistemi tasarlayalım.",
+        body: "Kısa bir görüşmede operasyonunuzun hangi parçasının önce sisteme dönüşeceğini birlikte belirleyelim.",
+      },
+    },
   },
   de: {
     nav: {
@@ -1527,6 +1605,84 @@ export const translations = {
         title:
           "Braucht Ihr Unternehmen nicht nur eine neue Software, sondern ein neues Betriebsmodell?",
         body: "Sprechen wir.",
+      },
+    },
+    aiBos: {
+      meta: {
+        title: "AI Business Operating System | Evren Ordu",
+        description:
+          "Vom fragmentierten ERP zum AI Business Operating System: nach der ORDU-Methode gebaute, KI-gestützte Betriebssysteme — live bewiesen mit BauERP.",
+      },
+      hero: {
+        eyebrow: "AI BUSINESS OPERATING SYSTEM",
+        title:
+          "Das System, das beginnt, wo ERP endet: AI Business Operating System.",
+        support:
+          "Führen Sie Ihr Unternehmen nicht mit Software-Flickwerk, sondern mit einem einzigen Betriebsmodell. KI-gestützte Betriebssysteme nach der ORDU-Methode — live bewiesen in einer Gruppe mit mehr als 15 Gesellschaften.",
+        ctaPrimary: "Die ORDU-Methode ansehen",
+        ctaSecondary: "Kontakt",
+      },
+      shift: {
+        kicker: "Vom ERP zum AI-Betriebssystem",
+        title: "Klassisches ERP dokumentiert. Ein AI-Betriebssystem führt den Betrieb.",
+        body: [
+          "Klassische ERP-Projekte dauern Monate, pressen den Betrieb in generische Schablonen und enden oft als ungenutzte Lizenz. Wissen bleibt verteilt auf Tabellen, E-Mails und die Köpfe einzelner Mitarbeiter.",
+          "Ein AI Business Operating System ist anders: Es wird um den realen Ablauf des Betriebs herum gebaut, bündelt Daten in einem gemeinsamen Rückgrat und delegiert wiederkehrende Arbeit an Automatisierung im Hintergrund.",
+        ],
+        headOld: "Klassisches ERP",
+        headNew: "AI Business Operating System",
+        rows: [
+          { old: "Verstreute Daten zwischen Abteilungen", new: "Ein gemeinsames Datenrückgrat" },
+          { old: "Monatelange Anpassungsprojekte", new: "Aufbau rund um den Betrieb in Wochen" },
+          { old: "Manuelle Berichte und Nachverfolgung", new: "Automatisierte Jobs und Berichte rund um die Uhr" },
+          { old: "Personengebundenes Wissen", new: "Rollenbasiertes, prüfbares Prozessgedächtnis" },
+          { old: "Statische Software", new: "Ein lebendes System, das mit dem Betrieb wächst" },
+        ],
+        note: "Der Wechsel ist kein Softwarewechsel — er ist ein Wechsel des Betriebsmodells.",
+      },
+      method: {
+        kicker: "Die Methode",
+        title: "ORDU — die Architektur hinter jedem AI-Betriebssystem.",
+        sub: "Vier Schritte. Ein Ergebnis: SCALE.",
+        pillars: [
+          { k: "O", t: "Observe", d: "Den Betrieb beobachten, wie er ist: im Feld, in den Daten, im Alltag der Menschen." },
+          { k: "R", t: "Reframe", d: "Das Problem richtig rahmen — oft ist es kein Softwareproblem, sondern ein Modellproblem." },
+          { k: "D", t: "Design", d: "Datenrückgrat, Berechtigungsmatrix und Automatisierungsschicht gemeinsam entwerfen." },
+          { k: "U", t: "Unify", d: "Finanzen, Projekte, Menschen und Governance in einem System vereinen." },
+        ],
+        outcomeLabel: "Ergebnis",
+        outcome:
+          "SCALE — Skalierbarkeit ist kein fünfter Buchstabe, sondern das natürliche Ergebnis eines richtig gebauten Systems.",
+      },
+      proof: {
+        kicker: "Beweis",
+        title: "Keine Theorie — live im Betrieb bewiesen.",
+        items: [
+          { n: "7", t: "Modulgruppen" },
+          { n: "17", t: "Automatisierte Jobs" },
+          { n: "15+", t: "Isolierte GmbH/KG-Einheiten" },
+          { n: "5 Min", t: "Buchhaltungs-Sync" },
+        ],
+        casesLabel: "Laufende Systeme",
+        cases: [
+          {
+            name: "BauERP",
+            role: "Betriebssystem einer Bau- und Immobiliengruppe",
+            desc: "Vom Angebot bis zur E-Rechnung, von der Baustelle bis zur Finanzkontrolle — eine Architektur.",
+            to: "/bauerp",
+          },
+          {
+            name: "AIOS",
+            role: "KI-gestützte Betriebsebene",
+            desc: "KI-Automatisierung, die aus Feldkommunikation Tagesberichte erzeugt und Medien archiviert.",
+            to: "/portfolio",
+          },
+        ],
+      },
+      cta: {
+        kicker: "Loslegen",
+        title: "Entwerfen wir das AI-Betriebssystem für Ihr Unternehmen.",
+        body: "In einem kurzen Gespräch legen wir gemeinsam fest, welcher Teil Ihres Betriebs zuerst zum System wird.",
       },
     },
   },
