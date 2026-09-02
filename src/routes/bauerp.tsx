@@ -22,6 +22,7 @@ import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
 import { useSiteLang } from "@/hooks/useSiteLang";
+import { jsonLd, organizationSchema, breadcrumbSchema } from "@/lib/structured-data";
 import { translations, type Dict } from "@/lib/i18n";
 
 // Default meta uses English; browser-detected language swaps runtime UI copy.
