@@ -238,13 +238,34 @@ export const EXCLUDED_ROUTES: Record<string, string> = {
   "/.mcp/list-tools": "Makine uç noktası (MCP)",
   "/.mcp/invoke-tool/$tool": "Makine uç noktası (MCP)",
   "/.well-known/oauth-protected-resource": "Protokol meta verisi",
+  "/api/public/hooks/seo-audit-daily": "Zamanlanmış iş uç noktası",
 };
 
-/** Parses the generated route tree source for every declared route path. */
+/**
+ * Every route the app declares. Kept in sync with src/routeTree.gen.ts by the
+ * automated coverage test (src/lib/__tests__/route-coverage.test.ts), which
+ * fails as soon as a route is added or removed without updating this list.
+ */
+export const DECLARED_ROUTES: string[] = [
+  "/",
+  "/.mcp/invoke-tool/$tool",
+  "/.mcp/list-tools",
+  "/.well-known/oauth-protected-resource",
+  "/about",
+  "/api/public/hooks/seo-audit-daily",
+  "/auth",
+  "/bauerp",
+  "/mcp",
+  "/portfolio",
+  "/seo-audit",
+  "/sitemap.xml",
+];
+
+/** Parses a generated route tree source for every declared route path. */
 export function routePathsFromSource(source: string): string[] {
   const paths = new Set<string>();
   for (const m of source.matchAll(/^\s*path:\s*'([^']+)',$/gm)) paths.add(m[1]);
-  return [...paths].filter((p) => p !== "/" || true).sort();
+  return [...paths].sort();
 }
 
 export function buildCoverage(routePaths: string[], sitemapUrls: string[], host: string): CoverageReport {
