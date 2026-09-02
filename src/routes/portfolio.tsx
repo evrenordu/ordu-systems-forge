@@ -75,6 +75,7 @@ function PortfolioPage() {
         ))}
 
         <Closing p={p} />
+        <RelatedLinks lang={lang} current="portfolio" />
       </main>
 
       <SiteFooter t={t} />
