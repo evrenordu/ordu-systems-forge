@@ -44,13 +44,6 @@ export interface AuditReport {
 const AUDITED_PATHS = ["/", "/about", "/bauerp", "/portfolio"];
 const CANONICAL_HOST = "https://www.evrenordu.com";
 
-function requestOrigin(): string {
-  const req = getRequest();
-  const url = new URL(req.url);
-  const sandboxHost = url.hostname === "localhost" ? req.headers.get("x-forwarded-host") : null;
-  return sandboxHost ? `https://${sandboxHost}` : url.origin;
-}
-
 function metaContent(html: string, attr: "name" | "property", key: string): string | null {
   const re = new RegExp(
     `<meta[^>]*${attr}=["']${key}["'][^>]*>`,
