@@ -110,6 +110,21 @@ function SeoAuditPage() {
               Yeniden tara
             </button>
             <button
+              onClick={() => data && downloadJson(data)}
+              disabled={!data}
+              className="inline-flex items-center gap-2 rounded-sm border border-white/20 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/85 hover:bg-white/5 disabled:opacity-40"
+            >
+              <Download className="h-3.5 w-3.5" /> JSON
+            </button>
+            <button
+              onClick={() => data && downloadCsv(data)}
+              disabled={!data}
+              className="inline-flex items-center gap-2 rounded-sm border border-white/20 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/85 hover:bg-white/5 disabled:opacity-40"
+            >
+              <Download className="h-3.5 w-3.5" /> CSV
+            </button>
+
+            <button
               onClick={async () => {
                 await supabase.auth.signOut();
                 navigate({ to: "/auth" });
