@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://evrenordu.com/sitemap.xml
+Sitemap: https://www.evrenordu.com/sitemap.xml
