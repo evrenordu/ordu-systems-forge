@@ -9,6 +9,7 @@ import {
   personSchema,
   organizationSchema,
   breadcrumbSchema,
+  collectionPageSchema,
   SITE_URL,
 } from "@/lib/structured-data";
 import { translations, type Dict } from "@/lib/i18n";
@@ -31,31 +32,19 @@ export const Route = createFileRoute("/portfolio")({
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/portfolio` }],
     scripts: [
-      jsonLd({
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "@id": `${SITE_URL}/portfolio#webpage`,
-        url: `${SITE_URL}/portfolio`,
-        name: META.title,
-        description: META.description,
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${SITE_URL}/#person` },
-        mainEntity: {
-          "@type": "ItemList",
-          name: "AI Transformation Projects",
-          itemListElement: PROJECTS.map((p, i) => ({
-            "@type": "ListItem",
-            position: i + 1,
-            item: {
-              "@type": "CreativeWork",
-              name: p.tag,
-              headline: p.title,
-              description: p.summary,
-              creator: { "@id": `${SITE_URL}/#person` },
-            },
+      jsonLd(
+        collectionPageSchema({
+          path: "/portfolio",
+          name: META.title,
+          description: META.description,
+          listName: "AI Transformation Projects",
+          entries: PROJECTS.map((p) => ({
+            name: p.tag,
+            headline: p.title,
+            description: p.summary,
           })),
-        },
-      }),
+        }),
+      ),
       jsonLd(personSchema),
       jsonLd(organizationSchema),
       jsonLd(
