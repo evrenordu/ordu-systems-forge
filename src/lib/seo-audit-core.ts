@@ -41,7 +41,7 @@ export interface AuditReport {
   score: number;
 }
 
-export const AUDITED_PATHS = ["/", "/about", "/bauerp", "/portfolio"];
+export const AUDITED_PATHS = ["/", "/about", "/bauerp", "/portfolio", "/ai-business-operating-system"];
 export const CANONICAL_HOST = "https://www.evrenordu.com";
 
 function metaContent(html: string, attr: "name" | "property", key: string): string | null {
@@ -252,6 +252,7 @@ export const DECLARED_ROUTES: string[] = [
   "/.mcp/list-tools",
   "/.well-known/oauth-protected-resource",
   "/about",
+  "/ai-business-operating-system",
   "/api/public/hooks/seo-audit-daily",
   "/auth",
   "/bauerp",
