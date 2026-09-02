@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ordu-systems-forge.lovable.app/sitemap.xml
+Sitemap: https://evrenordu.com/sitemap.xml
