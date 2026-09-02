@@ -48,12 +48,30 @@ function SeoAuditPage() {
   }, [authState, navigate]);
 
   const audit = useServerFn(runSeoAudit);
+  const runs = useServerFn(listAuditRuns);
+  const indexStatus = useServerFn(fetchIndexStatus);
+
   const { data, error, isFetching, refetch } = useQuery({
     queryKey: ["seo-audit"],
     queryFn: () => audit({}),
     enabled: authState === "in",
     retry: false,
     staleTime: 60_000,
+  });
+
+  const history = useQuery({
+    queryKey: ["seo-audit-runs"],
+    queryFn: () => runs({}),
+    enabled: authState === "in",
+    retry: false,
+  });
+
+  const gsc = useQuery({
+    queryKey: ["seo-audit-index-status"],
+    queryFn: () => indexStatus({}),
+    enabled: authState === "in",
+    retry: false,
+    staleTime: 15 * 60_000,
   });
 
   if (authState !== "in") {
@@ -63,6 +81,7 @@ function SeoAuditPage() {
       </div>
     );
   }
+
 
   const forbidden = !!error && /403|Forbidden|Unauthorized/i.test(String(error));
 
