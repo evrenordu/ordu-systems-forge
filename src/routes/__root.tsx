@@ -95,6 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "format-detection", content: "telephone=no" },
       { name: "author", content: "Evren Ordu" },
       { name: "google-site-verification", content: "9bJNdKTmsLeBiLQvxbk9VQNr7Z_Q0xdeIynLPUZ4lfg" },
+      { name: "google-site-verification", content: "5olWPYvVUQNl1XWJkHVkNscEYKr3OrOhl6rY5iVcNTA" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Evren Ordu" },
       { name: "twitter:card", content: "summary_large_image" },
