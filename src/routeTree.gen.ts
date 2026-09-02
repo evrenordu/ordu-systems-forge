@@ -15,6 +15,7 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as BauerpRouteImport } from './routes/bauerp'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AiBusinessOperatingSystemRouteImport } from './routes/ai-business-operating-system'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
@@ -52,6 +53,12 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiBusinessOperatingSystemRoute =
+  AiBusinessOperatingSystemRouteImport.update({
+    id: '/ai-business-operating-system',
+    path: '/ai-business-operating-system',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -90,6 +97,7 @@ const ApiPublicHooksSeoAuditDailyRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-business-operating-system': typeof AiBusinessOperatingSystemRoute
   '/auth': typeof AuthRoute
   '/bauerp': typeof BauerpRoute
   '/mcp': typeof McpRoute
@@ -104,6 +112,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-business-operating-system': typeof AiBusinessOperatingSystemRoute
   '/auth': typeof AuthRoute
   '/bauerp': typeof BauerpRoute
   '/mcp': typeof McpRoute
@@ -119,6 +128,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-business-operating-system': typeof AiBusinessOperatingSystemRoute
   '/auth': typeof AuthRoute
   '/bauerp': typeof BauerpRoute
   '/mcp': typeof McpRoute
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ai-business-operating-system'
     | '/auth'
     | '/bauerp'
     | '/mcp'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ai-business-operating-system'
     | '/auth'
     | '/bauerp'
     | '/mcp'
@@ -163,6 +175,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/ai-business-operating-system'
     | '/auth'
     | '/bauerp'
     | '/mcp'
@@ -178,6 +191,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AiBusinessOperatingSystemRoute: typeof AiBusinessOperatingSystemRoute
   AuthRoute: typeof AuthRoute
   BauerpRoute: typeof BauerpRoute
   McpRoute: typeof McpRoute
@@ -234,6 +248,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-business-operating-system': {
+      id: '/ai-business-operating-system'
+      path: '/ai-business-operating-system'
+      fullPath: '/ai-business-operating-system'
+      preLoaderRoute: typeof AiBusinessOperatingSystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -282,6 +303,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AiBusinessOperatingSystemRoute: AiBusinessOperatingSystemRoute,
   AuthRoute: AuthRoute,
   BauerpRoute: BauerpRoute,
   McpRoute: McpRoute,
