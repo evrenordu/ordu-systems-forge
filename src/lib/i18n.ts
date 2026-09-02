@@ -2448,6 +2448,84 @@ export const translations = {
         body: "Let’s talk.",
       },
     },
+    aiBos: {
+      meta: {
+        title: "AI Business Operating System | Evren Ordu",
+        description:
+          "From fragmented ERP to an AI Business Operating System: AI-powered business systems designed with the ORDU method — proven live with BauERP.",
+      },
+      hero: {
+        eyebrow: "AI BUSINESS OPERATING SYSTEM",
+        title:
+          "The system that begins where ERP ends: the AI Business Operating System.",
+        support:
+          "Run your company not on software patches, but on a single operating model. AI-powered business systems designed with the ORDU method — proven live across a group of 15+ companies with BauERP.",
+        ctaPrimary: "See the ORDU method",
+        ctaSecondary: "Contact",
+      },
+      shift: {
+        kicker: "From ERP to AI Operating System",
+        title: "Traditional ERP keeps records. An AI operating system runs the business.",
+        body: [
+          "Classic ERP projects take months, force operations into generic templates, and often end as an unused license. Knowledge stays scattered across spreadsheets, emails and the memory of individual staff.",
+          "An AI Business Operating System is different: it is built around the real flow of operations, unifies data on a single backbone, and delegates recurring work to automation running in the background.",
+        ],
+        headOld: "Traditional ERP",
+        headNew: "AI Business Operating System",
+        rows: [
+          { old: "Data scattered across departments", new: "One shared data backbone" },
+          { old: "Months-long implementation projects", new: "Built around operations in weeks" },
+          { old: "Manual reporting and follow-up", new: "Automated jobs and reports around the clock" },
+          { old: "Knowledge tied to individuals", new: "Role-based, auditable process memory" },
+          { old: "Static software", new: "A living system that evolves with operations" },
+        ],
+        note: "The shift is not a software swap — it is an operating-model change.",
+      },
+      method: {
+        kicker: "The Method",
+        title: "ORDU — the architecture behind every AI business system.",
+        sub: "Four stages. One outcome: SCALE.",
+        pillars: [
+          { k: "O", t: "Observe", d: "Watch operations as they are: in the field, in the data, in people's daily flow." },
+          { k: "R", t: "Reframe", d: "Frame the problem correctly — it is rarely a software problem; it is a model problem." },
+          { k: "D", t: "Design", d: "Design the data backbone, permission matrix and automation layer together." },
+          { k: "U", t: "Unify", d: "Bring finance, projects, people and governance into one system." },
+        ],
+        outcomeLabel: "Outcome",
+        outcome:
+          "SCALE — scalability is not a fifth letter; it is the natural result of a correctly built system.",
+      },
+      proof: {
+        kicker: "Proof",
+        title: "Not theory — running in live operations.",
+        items: [
+          { n: "7", t: "Module Groups" },
+          { n: "17", t: "Automated Scheduled Jobs" },
+          { n: "15+", t: "Isolated GmbH/KG Entities" },
+          { n: "5 min", t: "Accounting Sync" },
+        ],
+        casesLabel: "Live systems",
+        cases: [
+          {
+            name: "BauERP",
+            role: "Operating system of a construction and real estate group",
+            desc: "From quote to e-invoice, from site to financial control — one architecture end to end.",
+            to: "/bauerp",
+          },
+          {
+            name: "AIOS",
+            role: "AI-powered operations layer",
+            desc: "AI automation that turns field communication into daily reports and archives media.",
+            to: "/portfolio",
+          },
+        ],
+      },
+      cta: {
+        kicker: "Get Started",
+        title: "Let's design the AI operating system for your company.",
+        body: "In a short call we identify together which part of your operation becomes a system first.",
+      },
+    },
   },
 };
 
