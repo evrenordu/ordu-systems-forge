@@ -3,6 +3,7 @@ import { ArrowUpRight, Mail, Sparkles, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
+import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import {
   jsonLd,
