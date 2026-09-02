@@ -2,9 +2,17 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { RefreshCw, ShieldCheck, LogOut } from "lucide-react";
+import { RefreshCw, ShieldCheck, LogOut, Download, Search } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { runSeoAudit, type AuditIssue, type Severity } from "@/lib/seo-audit.functions";
+import {
+  runSeoAudit,
+  listAuditRuns,
+  fetchIndexStatus,
+  type AuditIssue,
+  type Severity,
+  type AuditReport,
+} from "@/lib/seo-audit.functions";
+
 
 export const Route = createFileRoute("/seo-audit")({
   head: () => ({
