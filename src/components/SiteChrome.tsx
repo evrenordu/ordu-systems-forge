@@ -17,7 +17,7 @@ export function SiteNav({
   const location = useLocation();
   const isHome = location.pathname === "/";
   const isAbout = location.pathname === "/about";
-  
+  const isPortfolio = location.pathname === "/portfolio";
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -138,6 +138,21 @@ export function SiteNav({
             />
           </Link>
           <Link
+            to="/portfolio"
+            aria-current={isPortfolio ? "page" : undefined}
+            className={`group relative whitespace-nowrap rounded-sm px-1 py-1 text-[12px] font-medium uppercase tracking-[0.13em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric ${
+              isPortfolio ? "text-white" : "text-white/70 hover:text-white"
+            }`}
+          >
+            {t.nav.portfolio}
+            <span
+              className={`absolute -bottom-1.5 left-1 h-[2px] bg-electric shadow-[0_0_8px_var(--electric-glow)] transition-all duration-300 ${
+                isPortfolio ? "w-[calc(100%-0.5rem)]" : "w-0 group-hover:w-1/2"
+              }`}
+              aria-hidden
+            />
+          </Link>
+          <Link
             to="/bauerp"
             aria-current={location.pathname === "/bauerp" ? "page" : undefined}
             className={`group relative whitespace-nowrap rounded-sm px-1 py-1 text-[12px] font-medium uppercase tracking-[0.13em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric ${
@@ -184,12 +199,14 @@ export function SiteNav({
               const mobileItems: Array<{ kind: "anchor" | "route"; id: string; label: string; to?: string }> = [
                 ...anchorItems.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
                 { kind: "route", id: "aboutPage", label: t.nav.aboutPage, to: "/about" },
+                { kind: "route", id: "portfolio", label: t.nav.portfolio, to: "/portfolio" },
                 { kind: "route", id: "bauerp", label: t.nav.bauerp, to: "/bauerp" },
                 ...anchorItemsTail.map((i) => ({ kind: "anchor" as const, id: i.id, label: i.label })),
               ];
               return mobileItems.map((i) => {
                 if (i.kind === "route") {
-                  const on = i.to === "/about" ? isAbout : false;
+                  const on =
+                    i.to === "/about" ? isAbout : i.to === "/portfolio" ? isPortfolio : false;
                   return (
                     <Link
                       key={i.id}
