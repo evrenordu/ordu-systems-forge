@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import type { Lang } from "@/lib/i18n";
 
-export type RelatedKey = "home" | "about" | "portfolio" | "bauerp";
+export type RelatedKey = "home" | "about" | "portfolio" | "bauerp" | "aiBos";
 
 type Entry = { to: string; title: string; blurb: string };
 
@@ -31,6 +31,11 @@ const COPY: Record<Lang, { heading: string; items: Record<RelatedKey, Entry> }> 
         title: "BauERP",
         blurb: "İnşaat grubunun uçtan uca işletim sistemi: 7 modül grubu, 17 otomatik iş.",
       },
+      aiBos: {
+        to: "/ai-business-operating-system",
+        title: "AI Business Operating System",
+        blurb: "ERP'den AI işletim sistemine geçiş — ORDU yöntemi ve canlı kanıtlar.",
+      },
     },
   },
   de: {
@@ -55,6 +60,11 @@ const COPY: Record<Lang, { heading: string; items: Record<RelatedKey, Entry> }> 
         to: "/bauerp",
         title: "BauERP",
         blurb: "Das Betriebssystem einer Baugruppe: 7 Modulgruppen, 17 automatisierte Jobs.",
+      },
+      aiBos: {
+        to: "/ai-business-operating-system",
+        title: "AI Business Operating System",
+        blurb: "Vom ERP zum AI-Betriebssystem — die ORDU-Methode und der Live-Beweis.",
       },
     },
   },
@@ -81,6 +91,11 @@ const COPY: Record<Lang, { heading: string; items: Record<RelatedKey, Entry> }> 
         title: "BauERP",
         blurb: "A construction group's operating system: 7 module groups, 17 automated jobs.",
       },
+      aiBos: {
+        to: "/ai-business-operating-system",
+        title: "AI Business Operating System",
+        blurb: "From ERP to an AI operating system — the ORDU method with live proof.",
+      },
     },
   },
 };
@@ -95,7 +110,7 @@ export function RelatedLinks({
   light?: boolean;
 }) {
   const copy = COPY[lang];
-  const keys = (["home", "about", "portfolio", "bauerp"] as RelatedKey[]).filter(
+  const keys = (["home", "about", "portfolio", "bauerp", "aiBos"] as RelatedKey[]).filter(
     (k) => k !== current,
   );
 
@@ -114,7 +129,7 @@ export function RelatedLinks({
             {copy.heading}
           </h2>
         </Reveal>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {keys.map((k, i) => {
             const e = copy.items[k];
             return (
