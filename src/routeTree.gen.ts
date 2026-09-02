@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SeoAuditRouteImport } from './routes/seo-audit'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as BauerpRouteImport } from './routes/bauerp'
@@ -23,6 +24,11 @@ import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeoAuditRoute = SeoAuditRouteImport.update({
+  id: '/seo-audit',
+  path: '/seo-audit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/bauerp': typeof BauerpRoute
   '/mcp': typeof McpRoute
   '/portfolio': typeof PortfolioRoute
+  '/seo-audit': typeof SeoAuditRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/bauerp': typeof BauerpRoute
   '/mcp': typeof McpRoute
   '/portfolio': typeof PortfolioRoute
+  '/seo-audit': typeof SeoAuditRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/bauerp': typeof BauerpRoute
   '/mcp': typeof McpRoute
   '/portfolio': typeof PortfolioRoute
+  '/seo-audit': typeof SeoAuditRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/bauerp'
     | '/mcp'
     | '/portfolio'
+    | '/seo-audit'
     | '/sitemap.xml'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/bauerp'
     | '/mcp'
     | '/portfolio'
+    | '/seo-audit'
     | '/sitemap.xml'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/bauerp'
     | '/mcp'
     | '/portfolio'
+    | '/seo-audit'
     | '/sitemap.xml'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   BauerpRoute: typeof BauerpRoute
   McpRoute: typeof McpRoute
   PortfolioRoute: typeof PortfolioRoute
+  SeoAuditRoute: typeof SeoAuditRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -170,6 +183,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seo-audit': {
+      id: '/seo-audit'
+      path: '/seo-audit'
+      fullPath: '/seo-audit'
+      preLoaderRoute: typeof SeoAuditRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   BauerpRoute: BauerpRoute,
   McpRoute: McpRoute,
   PortfolioRoute: PortfolioRoute,
+  SeoAuditRoute: SeoAuditRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
