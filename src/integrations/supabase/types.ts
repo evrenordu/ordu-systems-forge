@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      seo_audit_runs: {
+        Row: {
+          created_at: string
+          critical_count: number
+          emailed_to: string | null
+          id: string
+          info_count: number
+          origin: string
+          report: Json
+          score: number
+          source: string
+          warning_count: number
+        }
+        Insert: {
+          created_at?: string
+          critical_count?: number
+          emailed_to?: string | null
+          id?: string
+          info_count?: number
+          origin: string
+          report: Json
+          score: number
+          source?: string
+          warning_count?: number
+        }
+        Update: {
+          created_at?: string
+          critical_count?: number
+          emailed_to?: string | null
+          id?: string
+          info_count?: number
+          origin?: string
+          report?: Json
+          score?: number
+          source?: string
+          warning_count?: number
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
