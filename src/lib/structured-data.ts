@@ -90,3 +90,49 @@ export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
     item: item.url,
   })),
 });
+
+export interface CollectionEntry {
+  name: string;
+  headline: string;
+  description: string;
+}
+
+/** CollectionPage carrying an ItemList of CreativeWork entries (used by /portfolio). */
+export const collectionPageSchema = ({
+  path,
+  name,
+  description,
+  listName,
+  entries,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  listName: string;
+  entries: CollectionEntry[];
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}${path}#webpage`,
+  url: `${SITE_URL}${path}`,
+  name,
+  description,
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#person` },
+  mainEntity: {
+    "@type": "ItemList",
+    name: listName,
+    numberOfItems: entries.length,
+    itemListElement: entries.map((entry, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "CreativeWork",
+        name: entry.name,
+        headline: entry.headline,
+        description: entry.description,
+        creator: { "@id": `${SITE_URL}/#person` },
+      },
+    })),
+  },
+});
