@@ -25,6 +25,7 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import { jsonLd, organizationSchema, breadcrumbSchema } from "@/lib/structured-data";
 import { translations, type Dict } from "@/lib/i18n";
+import { useEngagementTracking } from "@/hooks/useEngagementTracking";
 
 // Default meta uses English; browser-detected language swaps runtime UI copy.
 const META = translations.en.bauerp.meta;
@@ -75,6 +76,7 @@ export const Route = createFileRoute("/bauerp")({
 });
 
 function BauerpPage() {
+  useEngagementTracking();
   const { lang, setLang, t } = useSiteLang();
   const b = t.bauerp;
 
@@ -632,6 +634,7 @@ function CTA({ b, t }: { b: B; t: Dict }) {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <a
               href="mailto:evren.ordu@gmail.com"
+              data-contact-channel="email"
               className="inline-flex items-center gap-2 rounded-sm bg-electric px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-foreground shadow-[0_0_32px_-6px_var(--electric-glow)] transition-transform hover:-translate-y-0.5"
             >
               <Mail className="h-3.5 w-3.5" />
@@ -640,6 +643,7 @@ function CTA({ b, t }: { b: B; t: Dict }) {
             </a>
             <a
               href="https://www.linkedin.com/in/evrenordu/"
+              data-contact-channel="linkedin"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm border border-white/25 bg-white/[0.04] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:border-electric hover:text-electric"
