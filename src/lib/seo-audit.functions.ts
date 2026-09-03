@@ -1,5 +1,4 @@
 import { createServerFn } from "@tanstack/react-start";
-import { getRequest } from "@tanstack/react-start/server";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import {
   collectAudit,
@@ -17,13 +16,6 @@ export type {
   CoverageRow,
 } from "@/lib/seo-audit-core";
 
-export function requestOrigin(): string {
-  const req = getRequest();
-  const url = new URL(req.url);
-  const sandboxHost = url.hostname === "localhost" ? req.headers.get("x-forwarded-host") : null;
-  return sandboxHost ? `https://${sandboxHost}` : url.origin;
-}
-
 export const declaredRoutePaths = () => DECLARED_ROUTES;
 
 async function assertAdmin(context: { supabase: any; userId: string }) {
@@ -40,6 +32,7 @@ export const runSeoAudit = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
     await assertAdmin(context);
+    const { requestOrigin } = await import("@/lib/seo-audit-origin.server");
     return collectAudit(requestOrigin(), declaredRoutePaths());
   });
 
