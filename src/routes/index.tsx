@@ -245,7 +245,7 @@ function Hero({ t }: { t: Dict }) {
              floor at the feet, so both head clearance under the fixed nav
              and the shoes stay visible. Horizontal bias keeps the face off
              the left-side headline on narrow screens. */
-          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_50%] xl:object-[60%_55%] 2xl:object-[60%_60%]"
+          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_50%] xl:object-[60%_55%] 2xl:object-[60%_45%]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
