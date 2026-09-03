@@ -29,7 +29,7 @@ import { type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
-import { trackContactClick } from "@/lib/analytics";
+import { trackContactClick, trackEvent } from "@/lib/analytics";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import {
