@@ -76,6 +76,14 @@ function walk(entry: string) {
     seen.add(file);
     const code = readFileSync(file, "utf8");
 
+    // Generated integration modules and server routes are handled by the
+    // framework's own server boundary; they never reach the client bundle.
+    if (
+      file.includes(join("src", "integrations")) ||
+      file.includes(join("routes", "api"))
+    )
+      continue;
+
     for (const spec of staticImports(code)) {
       if (SERVER_ONLY_SPECIFIERS.includes(spec)) {
         violations.push(`${chain.map(rel).join(" -> ")} -> ${spec}`);
