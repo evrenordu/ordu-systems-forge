@@ -239,11 +239,13 @@ function Hero({ t }: { t: Dict }) {
           width={1528}
           height={1029}
           /* Focal-point-only cropping. No scale/translate stacked with the
-             parent's parallax transform. Vertical bias keeps the head clearly
-             below the fixed navigation on short desktop viewports (e.g. 828h),
-             and horizontal bias keeps the face off the left-side headline on
-             narrow screens. */
-          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_28%]"
+             parent's parallax transform. On wide desktop viewports (aspect >
+             image aspect) object-cover crops vertically; a ~55% vertical
+             focal point shares that crop between sky above the head and the
+             floor at the feet, so both head clearance under the fixed nav
+             and the shoes stay visible. Horizontal bias keeps the face off
+             the left-side headline on narrow screens. */
+          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_50%] xl:object-[60%_55%] 2xl:object-[60%_60%]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
