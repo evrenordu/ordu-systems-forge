@@ -653,6 +653,7 @@ function CTA({ b, t }: { b: B; t: Dict }) {
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=4915251512114&text=Hi%20Evren%2C%20I%27d%20like%20to%20talk%20about%20BauERP."
+              data-contact-channel="whatsapp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm border border-white/25 bg-white/[0.04] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:border-electric hover:text-electric"
