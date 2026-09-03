@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { trackContactFunnelStep, trackEvent, type ContactChannel } from "@/lib/analytics";
 
 const SCROLL_THRESHOLDS = [25, 50, 75, 100] as const;
 
@@ -61,9 +61,47 @@ export function useEngagementTracking(): void {
     );
     sections.forEach((s) => observer.observe(s));
 
+    // ---- contact funnel: step 1 (section seen) ----
+    const contactSection = document.querySelector("#contact");
+    let funnelObserver: IntersectionObserver | undefined;
+    if (contactSection) {
+      funnelObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            trackContactFunnelStep("contact_section_view");
+            funnelObserver?.disconnect();
+          }
+        },
+        { threshold: 0.4 },
+      );
+      funnelObserver.observe(contactSection);
+    }
+
+    // ---- contact funnel: step 2 (channel intent: hover / keyboard focus) ----
+    const firedIntent = new Set<string>();
+    const onIntent = (event: Event) => {
+      const el = (event.target as Element | null)?.closest?.(
+        "[data-contact-channel]",
+      ) as HTMLElement | null;
+      if (!el) return;
+      const channel = el.dataset["contactChannel"] as ContactChannel | undefined;
+      if (!channel || firedIntent.has(channel)) return;
+      firedIntent.add(channel);
+      trackContactFunnelStep("contact_channel_intent", {
+        channel,
+        destination: (el as HTMLAnchorElement).href || undefined,
+      });
+    };
+    document.addEventListener("pointerenter", onIntent, true);
+    document.addEventListener("focusin", onIntent, true);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       observer.disconnect();
+      funnelObserver?.disconnect();
+      document.removeEventListener("pointerenter", onIntent, true);
+      document.removeEventListener("focusin", onIntent, true);
     };
   }, []);
 }
