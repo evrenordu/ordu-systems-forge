@@ -29,7 +29,7 @@ import { type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
-import { trackContactClick } from "@/lib/analytics";
+import { trackContactClick, trackEvent } from "@/lib/analytics";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import {
@@ -329,6 +329,13 @@ function Hero({ t }: { t: Dict }) {
               <div className="mt-11 flex flex-wrap items-center gap-3.5 sm:gap-4">
                 <a
                   href="#cases"
+                  onClick={() =>
+                    trackEvent("hero_cta_click", {
+                      cta: "explore_work",
+                      destination: "#cases",
+                      page_path: "/",
+                    })
+                  }
                   className="group relative inline-flex min-h-[50px] items-center gap-2 overflow-hidden rounded-sm bg-[oklch(0.58_0.24_255)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_oklch(0.55_0.24_255_/_0.7)] transition-all hover:bg-[oklch(0.63_0.25_255)] hover:shadow-[0_0_44px_-6px_oklch(0.7_0.25_255_/_0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   <span>{t.hero.ctaPrimary}</span>
@@ -336,6 +343,13 @@ function Hero({ t }: { t: Dict }) {
                 </a>
                 <a
                   href="#contact"
+                  onClick={() =>
+                    trackEvent("hero_cta_click", {
+                      cta: "start_conversation",
+                      destination: "#contact",
+                      page_path: "/",
+                    })
+                  }
                   className="group inline-flex min-h-[50px] items-center gap-2 rounded-sm border border-white/70 bg-[oklch(0.14_0.03_250/0.55)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:border-white hover:bg-[oklch(0.14_0.03_250/0.7)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   <span>{t.hero.ctaSecondary}</span>
