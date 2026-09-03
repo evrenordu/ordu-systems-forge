@@ -228,6 +228,17 @@ function Hero({ t }: { t: Dict }) {
       id="top"
       className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[oklch(0.18_0.03_248)]"
     >
+      {/* Ultrawide backfill: same scene, blurred, covers the side gaps left
+          by the contained foreground image on aspect ratios wider than ~2:1.
+          Hidden on normal screens where the foreground covers everything. */}
+      <img
+        src={heroScene.url}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-30 hidden h-full w-full scale-110 object-cover opacity-70 blur-2xl [@media(min-aspect-ratio:2/1)]:block"
+        decoding="async"
+        loading="eager"
+      />
       <div
         className="pointer-events-none absolute inset-0 -z-30 will-change-transform"
         style={{ transform: `translate3d(0, ${p * 0.1}px, 0)` }}
@@ -244,8 +255,13 @@ function Hero({ t }: { t: Dict }) {
              focal point shares that crop between sky above the head and the
              floor at the feet, so both head clearance under the fixed nav
              and the shoes stay visible. Horizontal bias keeps the face off
-             the left-side headline on narrow screens. */
-          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_50%] xl:object-[60%_55%] 2xl:object-[60%_45%]"
+             the left-side headline on narrow screens.
+             On ultrawide monitors (aspect ≥ 2:1) cover-cropping would have to
+             remove so much of the top and bottom that head and shoes are cut
+             no matter the focal point — so we switch to object-contain: the
+             full figure stays visible head-to-toe and the blurred backfill
+             layer above fills the resulting side gaps. */
+          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_50%] xl:object-[60%_55%] 2xl:object-[60%_45%] [@media(min-aspect-ratio:2/1)]:object-contain [@media(min-aspect-ratio:2/1)]:object-[62%_center]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
