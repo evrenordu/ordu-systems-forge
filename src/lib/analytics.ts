@@ -45,7 +45,11 @@ export function trackEvent(name: string, params?: Record<string, string>): void 
   window.gtag?.("event", name, params);
 }
 
-/** Contact channel clicks (email / linkedin / whatsapp). */
+/** Contact channel clicks (email / linkedin / whatsapp).
+ *  Sends a shared `contact_click` event plus a channel-specific event
+ *  (`contact_email_click`, `contact_linkedin_click`, `contact_whatsapp_click`)
+ *  so each closing-section button is independently reportable in GA4. */
 export function trackContactClick(channel: "email" | "linkedin" | "whatsapp", page: string): void {
   trackEvent("contact_click", { channel, page_path: page });
+  trackEvent(`contact_${channel}_click`, { channel, page_path: page });
 }
