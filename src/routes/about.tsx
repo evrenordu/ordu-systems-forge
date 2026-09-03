@@ -7,6 +7,7 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import { jsonLd, personSchema, breadcrumbSchema } from "@/lib/structured-data";
 import { translations, type Dict } from "@/lib/i18n";
+import { useEngagementTracking } from "@/hooks/useEngagementTracking";
 
 // Default meta uses English; browser-detected language swaps runtime UI copy.
 const META = translations.en.aboutPage.meta;
@@ -50,6 +51,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  useEngagementTracking();
   const { lang, setLang, t } = useSiteLang();
   const a = t.aboutPage;
 

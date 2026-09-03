@@ -29,7 +29,7 @@ import { type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
-import { trackContactClick, trackEvent } from "@/lib/analytics";
+import { trackContactClick, trackHeroCta } from "@/lib/analytics";
 import { useEngagementTracking } from "@/hooks/useEngagementTracking";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
@@ -332,11 +332,7 @@ function Hero({ t }: { t: Dict }) {
                 <a
                   href="#cases"
                   onClick={() =>
-                    trackEvent("hero_cta_click", {
-                      cta: "explore_work",
-                      destination: "#cases",
-                      page_path: "/",
-                    })
+                    trackHeroCta("explore_work", "#cases")
                   }
                   className="group relative inline-flex min-h-[50px] items-center gap-2 overflow-hidden rounded-sm bg-[oklch(0.58_0.24_255)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_oklch(0.55_0.24_255_/_0.7)] transition-all hover:bg-[oklch(0.63_0.25_255)] hover:shadow-[0_0_44px_-6px_oklch(0.7_0.25_255_/_0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
@@ -346,11 +342,7 @@ function Hero({ t }: { t: Dict }) {
                 <a
                   href="#contact"
                   onClick={() =>
-                    trackEvent("hero_cta_click", {
-                      cta: "start_conversation",
-                      destination: "#contact",
-                      page_path: "/",
-                    })
+                    trackHeroCta("start_conversation", "#contact")
                   }
                   className="group inline-flex min-h-[50px] items-center gap-2 rounded-sm border border-white/70 bg-[oklch(0.14_0.03_250/0.55)] px-7 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:border-white hover:bg-[oklch(0.14_0.03_250/0.7)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
@@ -1141,7 +1133,8 @@ function Contact({ t }: { t: Dict }) {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
                 href={mailto}
-                onClick={() => trackContactClick("email", window.location.pathname)}
+                data-contact-channel="email"
+                onClick={() => trackContactClick("email", window.location.pathname, mailto)}
                 className="group inline-flex min-h-[52px] items-center gap-2.5 rounded-sm bg-electric px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-white transition-all hover:shadow-[0_0_44px_-8px_var(--electric-glow)]"
               >
                 {t.contact.cta}
@@ -1187,7 +1180,8 @@ function Contact({ t }: { t: Dict }) {
                 key={b.label}
                 href={b.href}
                 aria-label={b.aria}
-                onClick={() => trackContactClick(b.channel, window.location.pathname)}
+                data-contact-channel={b.channel}
+                onClick={() => trackContactClick(b.channel, window.location.pathname, b.href)}
                 {...(b.external
                   ? { target: "_blank" as const, rel: "noopener noreferrer" }
                   : {})}

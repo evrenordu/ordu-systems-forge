@@ -7,6 +7,7 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import { jsonLd, organizationSchema, breadcrumbSchema } from "@/lib/structured-data";
 import { translations, type Dict } from "@/lib/i18n";
+import { useEngagementTracking } from "@/hooks/useEngagementTracking";
 
 const URL = "https://www.evrenordu.com/ai-business-operating-system";
 // Default meta uses English; browser-detected language swaps runtime UI copy.
@@ -51,6 +52,7 @@ export const Route = createFileRoute("/ai-business-operating-system")({
 });
 
 function AiBosPage() {
+  useEngagementTracking();
   const { lang, setLang, t } = useSiteLang();
   const a = t.aiBos;
 
@@ -325,6 +327,7 @@ function CTA({ a }: { a: A }) {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="mailto:evren.ordu@gmail.com"
+              data-contact-channel="email"
               className="inline-flex items-center gap-2 rounded-sm bg-electric px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-foreground shadow-[0_0_28px_-6px_var(--electric-glow)] transition-transform hover:-translate-y-0.5"
             >
               <CheckCircle2 className="h-3.5 w-3.5" />
@@ -332,6 +335,7 @@ function CTA({ a }: { a: A }) {
             </a>
             <a
               href="https://www.linkedin.com/in/evrenordu/"
+              data-contact-channel="linkedin"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm border border-white/25 bg-white/[0.04] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:border-electric hover:text-electric"
@@ -341,6 +345,7 @@ function CTA({ a }: { a: A }) {
             </a>
             <a
               href={`https://api.whatsapp.com/send?phone=4915251512114&text=${encodeURIComponent("Hello Evren, I would like to discuss a possible collaboration.")}`}
+              data-contact-channel="whatsapp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm border border-white/25 bg-white/[0.04] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:border-electric hover:text-electric"

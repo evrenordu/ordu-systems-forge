@@ -14,6 +14,7 @@ import {
   SITE_URL,
 } from "@/lib/structured-data";
 import { translations, type Dict } from "@/lib/i18n";
+import { useEngagementTracking } from "@/hooks/useEngagementTracking";
 
 const META = translations.en.portfolio.meta;
 const PROJECTS = translations.en.portfolio.projects;
@@ -60,6 +61,7 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 function PortfolioPage() {
+  useEngagementTracking();
   const { lang, setLang, t } = useSiteLang();
   const p = t.portfolio;
 
@@ -414,6 +416,7 @@ function Closing({ p }: { p: P }) {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="mailto:evren.ordu@gmail.com"
+              data-contact-channel="email"
               className="group inline-flex min-h-[52px] items-center gap-2.5 rounded-sm bg-[oklch(0.58_0.24_255)] px-8 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_30px_-10px_oklch(0.55_0.24_255_/_0.7)] transition-all hover:bg-[oklch(0.63_0.25_255)] hover:shadow-[0_0_44px_-6px_oklch(0.7_0.25_255_/_0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric"
             >
               <Mail className="h-4 w-4" />
@@ -421,6 +424,7 @@ function Closing({ p }: { p: P }) {
             </a>
             <a
               href="https://www.linkedin.com/in/evrenordu/"
+              data-contact-channel="linkedin"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-[52px] items-center gap-2.5 rounded-sm border border-white/25 bg-white/[0.04] px-8 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:border-electric hover:text-electric focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric"
@@ -430,6 +434,7 @@ function Closing({ p }: { p: P }) {
             </a>
             <a
               href={`https://api.whatsapp.com/send?phone=4915251512114&text=${encodeURIComponent("Hello Evren, I would like to discuss a possible collaboration.")}`}
+              data-contact-channel="whatsapp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-[52px] items-center gap-2.5 rounded-sm border border-white/25 bg-white/[0.04] px-8 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:border-electric hover:text-electric focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric"
