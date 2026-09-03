@@ -29,6 +29,7 @@ import { type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
+import { trackContactClick } from "@/lib/analytics";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import {
@@ -1063,6 +1064,7 @@ function Contact({ t }: { t: Dict }) {
       href: mailto,
       external: false,
       latin: false,
+      channel: "email" as const,
       aria: `${t.contact.email} — evren.ordu@gmail.com`,
     },
     {
@@ -1071,6 +1073,7 @@ function Contact({ t }: { t: Dict }) {
       href: linkedinUrl,
       external: true,
       latin: true,
+      channel: "linkedin" as const,
       aria: `${t.contact.linkedin} — linkedin.com/in/evrenordu`,
     },
     {
@@ -1079,6 +1082,7 @@ function Contact({ t }: { t: Dict }) {
       href: whatsappUrl,
       external: true,
       latin: true,
+      channel: "whatsapp" as const,
       aria: `${t.contact.whatsapp} — WhatsApp`,
     },
   ] as const;
@@ -1121,6 +1125,7 @@ function Contact({ t }: { t: Dict }) {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
                 href={mailto}
+                onClick={() => trackContactClick("email", window.location.pathname)}
                 className="group inline-flex min-h-[52px] items-center gap-2.5 rounded-sm bg-electric px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-white transition-all hover:shadow-[0_0_44px_-8px_var(--electric-glow)]"
               >
                 {t.contact.cta}
@@ -1166,6 +1171,7 @@ function Contact({ t }: { t: Dict }) {
                 key={b.label}
                 href={b.href}
                 aria-label={b.aria}
+                onClick={() => trackContactClick(b.channel, window.location.pathname)}
                 {...(b.external
                   ? { target: "_blank" as const, rel: "noopener noreferrer" }
                   : {})}
