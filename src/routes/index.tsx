@@ -24,6 +24,7 @@ import {
   Baby,
 } from "lucide-react";
 import heroScene from "@/assets/evren-ordu-hero-frankfurt-v2.png.asset.json";
+import heroSceneWide from "@/assets/hero-frankfurt-wide.jpg";
 import multisiteDiagram from "@/assets/multisite-transformation.png.asset.json";
 import { type Dict } from "@/lib/i18n";
 import { Reveal } from "@/components/Reveal";
@@ -228,19 +229,20 @@ function Hero({ t }: { t: Dict }) {
       id="top"
       className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[oklch(0.18_0.03_248)]"
     >
-      {/* Ultrawide backfill: same scene, blurred, covers the side gaps left
-          by the contained foreground image on aspect ratios wider than ~2:1.
-          Hidden on normal screens where the foreground covers everything. */}
+      {/* Ultrawide variant (aspect ≥ 2:1): a purpose-built 21:9 render of the
+          same scene — full-bleed cover with no side gaps, and no heavy
+          vertical crop, so head and shoes both stay visible. */}
       <img
-        src={heroScene.url}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-30 hidden h-full w-full scale-110 object-cover opacity-70 blur-2xl [@media(min-aspect-ratio:2/1)]:block"
+        src={heroSceneWide}
+        alt="Evren Ordu walking on a Frankfurt rooftop terrace at blue hour, skyline behind him"
+        width={1920}
+        height={810}
+        className="pointer-events-none absolute inset-0 -z-30 hidden h-full w-full object-cover object-[62%_center] [@media(min-aspect-ratio:2/1)]:block"
         decoding="async"
         loading="eager"
       />
       <div
-        className="pointer-events-none absolute inset-0 -z-30 will-change-transform"
+        className="pointer-events-none absolute inset-0 -z-30 will-change-transform [@media(min-aspect-ratio:2/1)]:hidden"
         style={{ transform: `translate3d(0, ${p * 0.1}px, 0)` }}
         data-replaceable-asset="hero-scene"
       >
@@ -255,13 +257,9 @@ function Hero({ t }: { t: Dict }) {
              focal point shares that crop between sky above the head and the
              floor at the feet, so both head clearance under the fixed nav
              and the shoes stay visible. Horizontal bias keeps the face off
-             the left-side headline on narrow screens.
-             On ultrawide monitors (aspect ≥ 2:1) cover-cropping would have to
-             remove so much of the top and bottom that head and shoes are cut
-             no matter the focal point — so we switch to object-contain: the
-             full figure stays visible head-to-toe and the blurred backfill
-             layer above fills the resulting side gaps. */
-          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_50%] xl:object-[60%_55%] 2xl:object-[60%_45%] [@media(min-aspect-ratio:2/1)]:object-contain [@media(min-aspect-ratio:2/1)]:object-[62%_center]"
+             the left-side headline on narrow screens. Viewports wider than
+             2:1 use the purpose-built wide render above instead. */
+          className="h-full w-full object-cover object-[58%_top] sm:object-[62%_15%] md:object-[62%_22%] lg:object-[60%_50%] xl:object-[60%_55%] 2xl:object-[60%_45%]"
           fetchPriority="high"
           decoding="async"
           loading="eager"
