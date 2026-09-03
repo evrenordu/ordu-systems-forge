@@ -30,6 +30,7 @@ import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
 import { trackContactClick, trackEvent } from "@/lib/analytics";
+import { useEngagementTracking } from "@/hooks/useEngagementTracking";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { useSiteLang } from "@/hooks/useSiteLang";
 import {
@@ -110,6 +111,7 @@ const SECTION_IDS = [
 
 function Index() {
   const { lang, setLang, t } = useSiteLang();
+  useEngagementTracking();
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
