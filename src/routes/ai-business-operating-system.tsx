@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2, Linkedin, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SiteNav, SiteFooter } from "@/components/SiteChrome";
@@ -329,6 +329,24 @@ function CTA({ a }: { a: A }) {
             >
               <CheckCircle2 className="h-3.5 w-3.5" />
               evren.ordu@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/evrenordu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm border border-white/25 bg-white/[0.04] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:border-electric hover:text-electric"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              LinkedIn
+            </a>
+            <a
+              href={`https://api.whatsapp.com/send?phone=4915251512114&text=${encodeURIComponent("Hello Evren, I would like to discuss a possible collaboration.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm border border-white/25 bg-white/[0.04] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:border-electric hover:text-electric"
+            >
+              <MessageCircle className="h-3.5 w-3.5" />
+              WhatsApp
             </a>
             <Link
               to="/bauerp"
