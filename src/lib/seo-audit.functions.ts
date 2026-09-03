@@ -32,6 +32,7 @@ export const runSeoAudit = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
     await assertAdmin(context);
+    const { requestOrigin } = await import("@/lib/seo-audit-origin.server");
     return collectAudit(requestOrigin(), declaredRoutePaths());
   });
 
