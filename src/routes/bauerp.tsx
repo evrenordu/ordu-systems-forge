@@ -58,8 +58,8 @@ export const Route = createFileRoute("/bauerp")({
         creator: { "@id": "https://www.evrenordu.com/#person" },
         publisher: { "@id": "https://www.evrenordu.com/#organization" },
         featureList: [
-          "7 module groups",
-          "17 automated jobs",
+          "100 modules",
+          "40+ automated jobs",
           "15+ core entities",
         ],
       }),

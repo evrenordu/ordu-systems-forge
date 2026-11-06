@@ -29,7 +29,7 @@ const COPY: Record<Lang, { heading: string; items: Record<RelatedKey, Entry> }> 
       bauerp: {
         to: "/bauerp",
         title: "BauERP",
-        blurb: "İnşaat grubunun uçtan uca işletim sistemi: 7 modül grubu, 17 otomatik iş.",
+        blurb: "İnşaat grubunun uçtan uca işletim sistemi: 100 modül, 40+ otomatik iş.",
       },
       aiBos: {
         to: "/ai-business-operating-system",
@@ -59,7 +59,7 @@ const COPY: Record<Lang, { heading: string; items: Record<RelatedKey, Entry> }> 
       bauerp: {
         to: "/bauerp",
         title: "BauERP",
-        blurb: "Das Betriebssystem einer Baugruppe: 7 Modulgruppen, 17 automatisierte Jobs.",
+        blurb: "Das Betriebssystem einer Baugruppe: 100 Module, 40+ automatisierte Jobs.",
       },
       aiBos: {
         to: "/ai-business-operating-system",
@@ -89,7 +89,7 @@ const COPY: Record<Lang, { heading: string; items: Record<RelatedKey, Entry> }> 
       bauerp: {
         to: "/bauerp",
         title: "BauERP",
-        blurb: "A construction group's operating system: 7 module groups, 17 automated jobs.",
+        blurb: "A construction group's operating system: 100 modules, 40+ automated jobs.",
       },
       aiBos: {
         to: "/ai-business-operating-system",

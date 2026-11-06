@@ -21,7 +21,7 @@ export const translations = {
         "Şirketler için işletim sistemleri kurarım — ve etkisini gerçek operasyonlarda kanıtlarım.",
       role: "Girişimci · Sistem Mimarı · AI & Dijital Dönüşüm",
       support:
-        "AI’ı geliştirme ortağı olarak kullanarak 15’ten fazla şirketten oluşan bir grubun operasyonel omurgasını kurdum — tekliften e-faturaya, şantiyeden finansal kontrole kadar. Dönüşüm hakkında yalnızca konuşmam. Uygularım.",
+        "AI’ı geliştirme ortağı olarak kullanarak çok şirketli bir grubun operasyonel omurgasını kurdum — tekliften e-faturaya, şantiyeden finansal kontrole kadar. Dönüşüm hakkında yalnızca konuşmam. Uygularım.",
       ctaPrimary: "Çalışmalarımı Keşfedin",
       ctaSecondary: "Bir Görüşme Başlatın",
       scroll: "Kaydırın",
@@ -29,7 +29,7 @@ export const translations = {
     trusted: {
       kicker: "Kanıt",
       title: "Liderlikle İnşa Edilen Güven",
-      sub: "Perakende, franchise, teknoloji, inşaat ve uluslararası hizmet operasyonlarında 20+ yıllık sistem kurma ve liderlik deneyimi.",
+      sub: "Perakende, franchise, teknoloji, inşaat ve uluslararası hizmet operasyonlarında sistem kurma ve liderlik alanında, 14 yılı liderlik rollerinde olmak üzere 25+ yıllık profesyonel deneyim.",
       companies: [
         "Dogru Cosmetic Germany",
         "EM Europe",
@@ -39,7 +39,7 @@ export const translations = {
         "Soon Light & Project",
       ],
       metrics: [
-        { n: "20+", t: "Yıl Deneyim" },
+        { n: "25+", t: "Yıl Deneyim" },
         { n: "5M€+", t: "P&L Sorumluluğu" },
         { n: "400+", t: "Yönetilen Çalışan" },
         { n: "14", t: "Uluslararası Lokasyon" },
@@ -55,7 +55,7 @@ export const translations = {
       blocks: [
         {
           h: "Kaosu kabullenmeyen mühendis",
-          t: "Mühendislik eğitimi aldım, yaklaşık yirmi yıllık yönetim deneyimiyle şekillendim. İnşaat, gayrimenkul ve operasyonda aynı sorunla tekrar tekrar karşılaştım: En pahalı maliyet kalemi bilançoda görünmez — insanlar, süreçler ve sistemler arasındaki kaostur.",
+          t: "Mühendislik eğitimi aldım, liderlik rollerinde geçen 14 yılla şekillendim. İnşaat, gayrimenkul ve operasyonda aynı sorunla tekrar tekrar karşılaştım: En pahalı maliyet kalemi bilançoda görünmez — insanlar, süreçler ve sistemler arasındaki kaostur.",
         },
         {
           h: "Bu yüzden yeni bir sistem kurdum",
@@ -82,7 +82,7 @@ export const translations = {
     },
     exp: {
       kicker: "Deneyim",
-      title: "20 yıl. Birden fazla ülke. Tek bir disiplin.",
+      title: "25+ yıl. Birden fazla ülke. Tek bir disiplin.",
       items: [
         { y: "Formasyon", t: "Elektrik & Elektronik Mühendisi", d: "Sistem düşüncesinin ve mühendislik disiplininin temeli." },
         { y: "Yönetim", t: "Üst Düzey Yönetim & Genel Müdürlük", d: "Çok lokasyonlu operasyon, P&L sorumluluğu ve operasyonel kontrol." },
@@ -118,9 +118,9 @@ export const translations = {
           problem:
             "Şantiye, satın alma, sözleşmeler, bütçeler, muhasebe ve gayrimenkul yönetimi; bir düzineden fazla şirkette, üç dilde ve ortak veri temeli olmadan ayrı silolar hâlinde çalışıyordu.",
           system:
-            "Yedi ana modül grubu ve 17 otomatik görevden oluşan entegre bir iş işletim sistemi — tekliften e-faturaya, banka mutabakatından kiracı portalına, AI destekli şantiye raporlarından denetime hazır dokümantasyona kadar.",
+            "100 modül ve 40+ otomatik görevden oluşan entegre bir iş işletim sistemi — tekliften e-faturaya, banka mutabakatından kiracı portalına, AI destekli şantiye raporlarından denetime hazır dokümantasyona kadar.",
           impact:
-            "15’ten fazla GmbH/KG için tek veri temeli. Beş dakikada bir muhasebe senkronizasyonu. 42 GB şantiye medyasının otomatik olarak yapılandırılması ve arşivlenmesi. İzlenebilir denetim kayıtlarıyla rol, şirket ve portal izolasyonu.",
+            "Çok şirketli bir grup için tek veri temeli. Beş dakikada bir muhasebe senkronizasyonu. 42 GB şantiye medyasının otomatik olarak yapılandırılması ve arşivlenmesi. İzlenebilir denetim kayıtlarıyla rol, şirket ve portal izolasyonu.",
         },
         {
           tag: "AIOS",
@@ -142,9 +142,9 @@ export const translations = {
       proof: {
         label: "BauERP · Doğrulanmış Ölçek",
         items: [
-          { n: "7", t: "Ana Modül Grubu" },
-          { n: "17", t: "Otomatik Görev" },
-          { n: "15+", t: "GmbH/KG" },
+          { n: "100", t: "Modül" },
+          { n: "40+", t: "Otomatik Görev" },
+          { n: "Multi-entity", t: "GmbH/KG" },
           { n: "3", t: "Arayüz Dili" },
         ],
       },
@@ -155,7 +155,7 @@ export const translations = {
       ],
       note: "Detaylı bilgi talep üzerine paylaşılır.",
       bauerpSummary:
-        "Finans, projeler, gayrimenkul, insan ve yönetişimi 15+ şirket yapısında birleştiren canlı Business Operating System.",
+        "Finans, projeler, gayrimenkul, insan ve yönetişimi çok şirketli bir yapıda birleştiren canlı Business Operating System.",
       viewBauerp: "BauERP'yi İncele",
     },
     ideas: {
@@ -331,7 +331,7 @@ export const translations = {
         kicker: "Rakamlarla",
         title: "Sayılarla kanıt.",
         items: [
-          { n: "20+", t: "Yıl deneyim" },
+          { n: "25+", t: "Yıl deneyim" },
           { n: "5M€+", t: "P&L sorumluluğu" },
           { n: "400+", t: "Yönetilen çalışan" },
           { n: "14", t: "Uluslararası lokasyon" },
@@ -395,9 +395,9 @@ export const translations = {
       metricsLabel: "Portföy Genelinde",
       metrics: [
         { n: "5", t: "Büyük Program" },
-        { n: "15+", t: "Şirket Yapısı" },
+        { n: "Multi-entity", t: "Şirket Yapısı" },
         { n: "14", t: "Uluslararası Lokasyon" },
-        { n: "20+", t: "Yıl Liderlik" },
+        { n: "14", t: "Yıl Liderlik" },
       ],
       labels: {
         challenge: "Zorluk",
@@ -416,13 +416,13 @@ export const translations = {
           summary:
             "Şantiye, satın alma, sözleşme, finans, gayrimenkul ve yönetişimi tek Business Operating System içinde birleştiren özel geliştirme.",
           challenge:
-            "15'ten fazla GmbH/KG, üç dil ve ortak veri temeli olmayan bir düzine ayrı araç. Her rapor elle birleştiriliyordu.",
+            "Çok şirketli bir grup, üç dil ve ortak veri temeli olmayan bir düzine ayrı araç. Her rapor elle birleştiriliyordu.",
           approach:
-            "Yedi ana modül grubu, 15+ çekirdek varlık ve 17 otomatik görevden oluşan entegre bir mimari. Rol, şirket ve portal izolasyonu ile denetime hazır kayıtlar.",
+            "100 modül, 15+ çekirdek varlık ve 40+ otomatik görevden oluşan entegre bir mimari. Rol, şirket ve portal izolasyonu ile denetime hazır kayıtlar.",
           aiLayer:
             "AI destekli şantiye raporlaması, doküman sınıflandırma ve otomatik özetleme; yöneticiye ham veri değil karar sunar.",
           outcomes: [
-            "15+ şirket için tek veri temeli",
+            "Çok şirketli bir grup için tek veri temeli",
             "Beş dakikada bir muhasebe senkronizasyonu",
             "42 GB şantiye medyasının otomatik arşivlenmesi",
             "Tekliften e-faturaya kesintisiz akış",
@@ -524,7 +524,7 @@ export const translations = {
       meta: {
         title: "BauERP | Evren Ordu tarafından geliştirilen Business Operating System",
         description:
-          "BauERP — 15+ şirketten oluşan bir grup için canlı çalışan; finans, projeler, gayrimenkul, insan ve yönetişimi tek işletim modelinde birleştiren Business Operating System.",
+          "BauERP — çok şirketli bir grup için canlı çalışan; finans, projeler, gayrimenkul, insan ve yönetişimi tek işletim modelinde birleştiren Business Operating System.",
       },
       hero: {
         eyebrow: "CANLI BUSINESS OPERATING SYSTEM",
@@ -540,9 +540,9 @@ export const translations = {
       proof: {
         kicker: "Doğrulanmış Ölçek",
         items: [
-          { n: "7", t: "Ana Modül Grubu" },
-          { n: "17", t: "Otomatik Zamanlanmış Görev" },
-          { n: "15+", t: "İzole GmbH/KG" },
+          { n: "100", t: "Modül" },
+          { n: "40+", t: "Otomatik Zamanlanmış Görev" },
+          { n: "Multi-entity", t: "İzole GmbH/KG" },
           { n: "3", t: "Arayüz Dili · DE · TR · EN" },
           { n: "5 dk", t: "Muhasebe Senkronizasyonu" },
           { n: "Saatlik", t: "Banka Mutabakatı" },
@@ -560,7 +560,7 @@ export const translations = {
       },
       modules: {
         kicker: "İşletim Modeli",
-        title: "Tek mimari. Yedi modül grubu.",
+        title: "Tek mimari. 100 modül.",
         sub: "Farklı departmanları değil, aynı sistemin farklı yüzlerini yönetir.",
         items: [
           {
@@ -686,7 +686,7 @@ export const translations = {
         layers: [
           { t: "Kimlik Doğrulama", d: "Her erişim doğrulanmış oturumla başlar." },
           { t: "Rol Tabanlı İzin", d: "Kullanıcıya değil, role bağlı yetki matrisi." },
-          { t: "Şirket / Entity İzolasyonu", d: "15+ GmbH/KG verisi aynı sistemde ayrık kalır." },
+          { t: "Şirket / Entity İzolasyonu", d: "Grup şirketlerinin verisi aynı sistemde ayrık kalır." },
           { t: "Portal İzolasyonu", d: "Kiracı, personel ve yönetim ayrı erişim yüzeyleri." },
           { t: "Denetim Kaydı", d: "Kritik işlemler izlenebilir bir kayıt bırakır." },
           { t: "Finansal Görünürlük Kontrolleri", d: "Rakamlara kimin, hangi kapsamda ulaştığı tanımlıdır." },
@@ -696,7 +696,7 @@ export const translations = {
       },
       automation: {
         kicker: "Otomasyon Motoru",
-        title: "17 zamanlanmış görev, arka planda çalışır.",
+        title: "40+ otomatik görev, arka planda çalışır.",
         sub: "İnsan müdahalesi olmadan tetiklenen ve sistemi diri tutan işler.",
         examples: [
           "Saha iletişimi ve medyasından AI destekli günlük şantiye raporu",
@@ -740,8 +740,8 @@ export const translations = {
         kicker: "Gerçek Etki",
         title: "Teoride değil, canlı operasyonda.",
         items: [
-          "Tek bir izole mimaride yönetilen 15+ ayrı GmbH/KG",
-          "17 zamanlanmış otomatik görev",
+          "Tek bir izole mimaride yönetilen çok şirketli grup",
+          "40+ otomatik görev",
           "5 dakikada bir muhasebe senkronizasyonu",
           "Saatlik banka mutabakatı",
           "3 arayüz dili",
@@ -776,7 +776,7 @@ export const translations = {
         title:
           "ERP'nin bittiği yerde başlayan sistem: AI Business Operating System.",
         support:
-          "Şirketinizi yazılım yamalarıyla değil, tek bir işletim modeliyle yönetin. ORDU yöntemiyle tasarlanan AI destekli işletim sistemleri — BauERP ile 15'ten fazla şirketten oluşan bir grupta canlı kanıtlandı.",
+          "Şirketinizi yazılım yamalarıyla değil, tek bir işletim modeliyle yönetin. ORDU yöntemiyle tasarlanan AI destekli işletim sistemleri — BauERP ile çok şirketli bir grupta canlı kanıtlandı.",
         ctaPrimary: "ORDU yöntemini görün",
         ctaSecondary: "İletişim",
       },
@@ -816,9 +816,9 @@ export const translations = {
         kicker: "Kanıt",
         title: "Teori değil — canlı operasyonda çalışıyor.",
         items: [
-          { n: "7", t: "Modül Grubu" },
-          { n: "17", t: "Otomatik Zamanlanmış İş" },
-          { n: "15+", t: "İzole GmbH/KG Varlığı" },
+          { n: "100", t: "Modül" },
+          { n: "40+", t: "Otomatik İş" },
+          { n: "Multi-entity", t: "İzole GmbH/KG Varlığı" },
           { n: "5 dk", t: "Muhasebe Senkronu" },
         ],
         casesLabel: "Canlı sistemler",
@@ -864,7 +864,7 @@ export const translations = {
         "Ich entwickle Business Operating Systems für Unternehmen – und beweise ihre Wirkung in der Praxis.",
       role: "Unternehmer · Systemarchitekt · KI & Digitale Transformation",
       support:
-        "Mit KI als Entwicklungspartner habe ich das operative Rückgrat einer Unternehmensgruppe mit mehr als 15 Gesellschaften aufgebaut – vom Angebot bis zur E-Rechnung, von der Baustelle bis zur Finanzsteuerung. Ich rede nicht nur über Transformation. Ich setze sie um.",
+        "Mit KI als Entwicklungspartner habe ich das operative Rückgrat einer Unternehmensgruppe mit mehreren Gesellschaften aufgebaut – vom Angebot bis zur E-Rechnung, von der Baustelle bis zur Finanzsteuerung. Ich rede nicht nur über Transformation. Ich setze sie um.",
       ctaPrimary: "Projekte entdecken",
       ctaSecondary: "Gespräch starten",
       scroll: "Scrollen",
@@ -872,7 +872,7 @@ export const translations = {
     trusted: {
       kicker: "Nachweis",
       title: "Vertrauen durch Führung",
-      sub: "Über 20 Jahre Erfahrung im Aufbau und in der Führung von Systemen in Einzelhandel, Franchise, Technologie, Bau und internationalen Service-Operationen.",
+      sub: "25+ Jahre Berufserfahrung, davon 14 Jahre in Führungsrollen, im Aufbau und in der Führung von Systemen in Einzelhandel, Franchise, Technologie, Bau und internationalen Service-Operationen.",
       companies: [
         "Dogru Cosmetic Germany",
         "EM Europe",
@@ -882,7 +882,7 @@ export const translations = {
         "Soon Light & Project",
       ],
       metrics: [
-        { n: "20+", t: "Jahre Erfahrung" },
+        { n: "25+", t: "Jahre Erfahrung" },
         { n: "5M€+", t: "P&L-Verantwortung" },
         { n: "400+", t: "Mitarbeitende geführt" },
         { n: "14", t: "Internationale Standorte" },
@@ -898,7 +898,7 @@ export const translations = {
       blocks: [
         {
           h: "Der Ingenieur, der Chaos nicht akzeptierte",
-          t: "Ausgebildet als Ingenieur, geprägt durch fast zwei Jahrzehnte im Management. In Bau, Immobilien und Operations begegnete mir immer wieder dasselbe Problem: Der teuerste Kostenblock erscheint in keiner Bilanz – das Chaos zwischen Menschen, Prozessen und Systemen.",
+          t: "Ausgebildet als Ingenieur, geprägt durch 14 Jahre in Führungsrollen. In Bau, Immobilien und Operations begegnete mir immer wieder dasselbe Problem: Der teuerste Kostenblock erscheint in keiner Bilanz – das Chaos zwischen Menschen, Prozessen und Systemen.",
         },
         {
           h: "Also baute ich ein neues System",
@@ -925,7 +925,7 @@ export const translations = {
     },
     exp: {
       kicker: "Erfahrung",
-      title: "20 Jahre. Mehrere Länder. Eine Disziplin.",
+      title: "25+ Jahre. Mehrere Länder. Eine Disziplin.",
       items: [
         { y: "Fundament", t: "Elektro- & Elektronikingenieur", d: "Systemdenken und Ingenieursdisziplin als Basis." },
         { y: "Führung", t: "Senior Management & Geschäftsführung", d: "Standortübergreifende Operations, P&L-Verantwortung und operative Kontrolle." },
@@ -961,9 +961,9 @@ export const translations = {
           problem:
             "Baustelle, Einkauf, Verträge, Budgets, Buchhaltung und Immobilienverwaltung arbeiteten in getrennten Silos – über mehr als ein Dutzend Gesellschaften, in drei Sprachen und ohne gemeinsame Datenbasis.",
           system:
-            "Ein integriertes Business Operating System mit sieben Hauptmodulgruppen und 17 automatisierten Aufgaben – vom Angebot bis zur E-Rechnung, vom Bankabgleich bis zum Mieterportal und von KI-gestützten Baustellenberichten bis zur revisionsfähigen Dokumentation.",
+            "Ein integriertes Business Operating System mit 100 Modulen und 40+ automatisierten Jobs – vom Angebot bis zur E-Rechnung, vom Bankabgleich bis zum Mieterportal und von KI-gestützten Baustellenberichten bis zur revisionsfähigen Dokumentation.",
           impact:
-            "Eine gemeinsame Datenbasis für mehr als 15 GmbH/KG. Buchhaltungssynchronisation alle fünf Minuten. 42 GB Baustellenmedien automatisch strukturiert und archiviert. Rollen-, Firmen- und Portal-Isolation mit nachvollziehbaren Audit-Trails.",
+            "Eine gemeinsame Datenbasis für eine Unternehmensgruppe mit mehreren Gesellschaften. Buchhaltungssynchronisation alle fünf Minuten. 42 GB Baustellenmedien automatisch strukturiert und archiviert. Rollen-, Firmen- und Portal-Isolation mit nachvollziehbaren Audit-Trails.",
         },
         {
           tag: "AIOS",
@@ -985,9 +985,9 @@ export const translations = {
       proof: {
         label: "BauERP · Verifizierte Skalierung",
         items: [
-          { n: "7", t: "Hauptmodulgruppen" },
-          { n: "17", t: "Automatisierte Aufgaben" },
-          { n: "15+", t: "GmbH/KG" },
+          { n: "100", t: "Module" },
+          { n: "40+", t: "Automatisierte Jobs" },
+          { n: "Multi-entity", t: "GmbH/KG" },
           { n: "3", t: "Oberflächensprachen" },
         ],
       },
@@ -998,7 +998,7 @@ export const translations = {
       ],
       note: "Details auf Anfrage.",
       bauerpSummary:
-        "Ein produktives Business Operating System, das Finanzen, Projekte, Immobilien, Menschen und Governance über 15+ Gesellschaften verbindet.",
+        "Ein produktives Business Operating System, das Finanzen, Projekte, Immobilien, Menschen und Governance über mehrere Gesellschaften verbindet.",
       viewBauerp: "BauERP ansehen",
     },
     ideas: {
@@ -1173,7 +1173,7 @@ export const translations = {
         kicker: "In Zahlen",
         title: "Nachweis in Zahlen.",
         items: [
-          { n: "20+", t: "Jahre Erfahrung" },
+          { n: "25+", t: "Jahre Erfahrung" },
           { n: "5M€+", t: "P&L-Verantwortung" },
           { n: "400+", t: "Mitarbeitende geführt" },
           { n: "14", t: "Internationale Standorte" },
@@ -1237,9 +1237,9 @@ export const translations = {
       metricsLabel: "Über das Portfolio hinweg",
       metrics: [
         { n: "5", t: "Große Programme" },
-        { n: "15+", t: "Gesellschaften" },
+        { n: "Multi-entity", t: "Gesellschaften" },
         { n: "14", t: "Internationale Standorte" },
-        { n: "20+", t: "Jahre Führung" },
+        { n: "14", t: "Jahre Führung" },
       ],
       labels: {
         challenge: "Herausforderung",
@@ -1258,13 +1258,13 @@ export const translations = {
           summary:
             "Eine Eigenentwicklung, die Baustelle, Einkauf, Verträge, Finanzen, Immobilien und Governance in einem Business Operating System vereint.",
           challenge:
-            "Über 15 GmbH/KG, drei Sprachen und ein Dutzend getrennter Werkzeuge ohne gemeinsame Datenbasis. Jeder Report wurde manuell zusammengesetzt.",
+            "Mehrere GmbH/KG, drei Sprachen und ein Dutzend getrennter Werkzeuge ohne gemeinsame Datenbasis. Jeder Report wurde manuell zusammengesetzt.",
           approach:
-            "Eine integrierte Architektur aus sieben Modulgruppen, 15+ Kernentitäten und 17 automatisierten Jobs — mit Rollen-, Mandanten- und Portaltrennung sowie prüfsicheren Spuren.",
+            "Eine integrierte Architektur aus 100 Modulen, 15+ Kernentitäten und 40+ automatisierten Jobs — mit Rollen-, Mandanten- und Portaltrennung sowie prüfsicheren Spuren.",
           aiLayer:
             "KI-gestützte Baustellenberichte, Dokumentenklassifikation und automatische Zusammenfassungen liefern Entscheidungen statt Rohdaten.",
           outcomes: [
-            "Eine Datenbasis für 15+ Gesellschaften",
+            "Eine Datenbasis für die gesamte Unternehmensgruppe",
             "Buchhaltungs-Sync alle fünf Minuten",
             "42 GB Baustellenmedien automatisch archiviert",
             "Durchgängig vom Angebot zur E-Rechnung",
@@ -1366,7 +1366,7 @@ export const translations = {
       meta: {
         title: "BauERP | Business Operating System von Evren Ordu",
         description:
-          "BauERP — ein produktives Business Operating System für eine Gruppe aus 15+ Gesellschaften. Verbindet Finanzen, Projekte, Immobilien, Menschen und Governance in einem Betriebsmodell.",
+          "BauERP — ein produktives Business Operating System für eine Unternehmensgruppe mit mehreren Gesellschaften. Verbindet Finanzen, Projekte, Immobilien, Menschen und Governance in einem Betriebsmodell.",
       },
       hero: {
         eyebrow: "PRODUKTIVES BUSINESS OPERATING SYSTEM",
@@ -1382,9 +1382,9 @@ export const translations = {
       proof: {
         kicker: "Verifizierter Umfang",
         items: [
-          { n: "7", t: "Modulgruppen" },
-          { n: "17", t: "Automatisierte Jobs" },
-          { n: "15+", t: "Isolierte GmbH/KG" },
+          { n: "100", t: "Module" },
+          { n: "40+", t: "Automatisierte Jobs" },
+          { n: "Multi-entity", t: "Isolierte GmbH/KG" },
           { n: "3", t: "UI-Sprachen · DE · TR · EN" },
           { n: "5 Min.", t: "Buchhaltungs-Sync" },
           { n: "Stündlich", t: "Bankabgleich" },
@@ -1402,7 +1402,7 @@ export const translations = {
       },
       modules: {
         kicker: "Betriebsmodell",
-        title: "Eine Architektur. Sieben Modulgruppen.",
+        title: "Eine Architektur. 100 Module.",
         sub: "Verwaltet nicht getrennte Abteilungen, sondern verschiedene Facetten desselben Systems.",
         items: [
           {
@@ -1528,7 +1528,7 @@ export const translations = {
         layers: [
           { t: "Authentifizierung", d: "Jeder Zugriff beginnt mit einer verifizierten Session." },
           { t: "Rollenbasierte Berechtigung", d: "Rechte hängen an der Rolle, nicht am Nutzer." },
-          { t: "Gesellschafts-/Entity-Isolation", d: "Daten von 15+ GmbH/KG bleiben im selben System getrennt." },
+          { t: "Gesellschafts-/Entity-Isolation", d: "Daten der einzelnen GmbH/KG bleiben im selben System getrennt." },
           { t: "Portal-Isolation", d: "Mieter, Personal und Management arbeiten auf getrennten Oberflächen." },
           { t: "Audit-Log", d: "Kritische Aktionen hinterlassen einen nachvollziehbaren Eintrag." },
           { t: "Finanz-Sichtbarkeitskontrollen", d: "Wer welche Zahlen sieht, ist explizit definiert." },
@@ -1538,7 +1538,7 @@ export const translations = {
       },
       automation: {
         kicker: "Automatisierungs-Engine",
-        title: "17 geplante Jobs laufen im Hintergrund.",
+        title: "40+ automatisierte Jobs laufen im Hintergrund.",
         sub: "Aufgaben, die ohne menschlichen Eingriff das System am Leben halten.",
         examples: [
           "KI-gestützter täglicher Baubericht aus Feldkommunikation und Medien",
@@ -1582,8 +1582,8 @@ export const translations = {
         kicker: "Reale Wirkung",
         title: "Nicht in der Theorie, sondern im laufenden Betrieb.",
         items: [
-          "15+ separate GmbH/KG in einer isolierten Architektur verwaltet",
-          "17 geplante automatisierte Jobs",
+          "Mehrere separate GmbH/KG in einer isolierten Architektur verwaltet",
+          "40+ automatisierte Jobs",
           "Buchhaltungs-Sync alle 5 Minuten",
           "Stündlicher Bankabgleich",
           "3 UI-Sprachen",
@@ -1618,7 +1618,7 @@ export const translations = {
         title:
           "Das System, das beginnt, wo ERP endet: AI Business Operating System.",
         support:
-          "Führen Sie Ihr Unternehmen nicht mit Software-Flickwerk, sondern mit einem einzigen Betriebsmodell. KI-gestützte Betriebssysteme nach der ORDU-Methode — live bewiesen in einer Gruppe mit mehr als 15 Gesellschaften.",
+          "Führen Sie Ihr Unternehmen nicht mit Software-Flickwerk, sondern mit einem einzigen Betriebsmodell. KI-gestützte Betriebssysteme nach der ORDU-Methode — live bewiesen in einer Unternehmensgruppe mit mehreren Gesellschaften.",
         ctaPrimary: "Die ORDU-Methode ansehen",
         ctaSecondary: "Kontakt",
       },
@@ -1658,9 +1658,9 @@ export const translations = {
         kicker: "Beweis",
         title: "Keine Theorie — live im Betrieb bewiesen.",
         items: [
-          { n: "7", t: "Modulgruppen" },
-          { n: "17", t: "Automatisierte Jobs" },
-          { n: "15+", t: "Isolierte GmbH/KG-Einheiten" },
+          { n: "100", t: "Module" },
+          { n: "40+", t: "Automatisierte Jobs" },
+          { n: "Multi-entity", t: "Isolierte GmbH/KG-Einheiten" },
           { n: "5 Min", t: "Buchhaltungs-Sync" },
         ],
         casesLabel: "Laufende Systeme",
@@ -1706,7 +1706,7 @@ export const translations = {
         "I build operating systems for companies — and prove their impact in practice.",
       role: "Entrepreneur · System Architect · AI & Digital Transformation",
       support:
-        "With AI as a development partner, I built the operating backbone for a group of more than 15 companies — from quote to e-invoice, from the construction site to financial control. I do not just talk about transformation. I implement it.",
+        "With AI as a development partner, I built the operating backbone for a multi-entity group — from quote to e-invoice, from the construction site to financial control. I do not just talk about transformation. I implement it.",
       ctaPrimary: "Explore My Work",
       ctaSecondary: "Start a Conversation",
       scroll: "Scroll",
@@ -1714,7 +1714,7 @@ export const translations = {
     trusted: {
       kicker: "Proof",
       title: "Trusted Through Leadership",
-      sub: "20+ years of building and leading systems across retail, franchise, technology, construction and international service operations.",
+      sub: "25+ years of professional experience, 14 of them in leadership roles, building and leading systems across retail, franchise, technology, construction and international service operations.",
       companies: [
         "Dogru Cosmetic Germany",
         "EM Europe",
@@ -1724,7 +1724,7 @@ export const translations = {
         "Soon Light & Project",
       ],
       metrics: [
-        { n: "20+", t: "Years" },
+        { n: "25+", t: "Years" },
         { n: "5M€+", t: "P&L" },
         { n: "400+", t: "Employees" },
         { n: "14", t: "International Locations" },
@@ -1739,7 +1739,7 @@ export const translations = {
       blocks: [
         {
           h: "The engineer who refused to accept chaos",
-          t: "Trained as an engineer and shaped by nearly two decades in management, I kept seeing the same problem across construction, real estate and operations: the most expensive cost center never appears on the balance sheet — the chaos between people, processes and systems.",
+          t: "Trained as an engineer and shaped by 14 years in leadership roles, I kept seeing the same problem across construction, real estate and operations: the most expensive cost center never appears on the balance sheet — the chaos between people, processes and systems.",
         },
         {
           h: "So I built a new system",
@@ -1766,7 +1766,7 @@ export const translations = {
     },
     exp: {
       kicker: "Experience",
-      title: "20 years. Multiple countries. One discipline.",
+      title: "25+ years. Multiple countries. One discipline.",
       items: [
         { y: "Foundation", t: "Electrical & Electronics Engineer", d: "The base of systems thinking and engineering rigor." },
         { y: "Leadership", t: "Senior Management & General Management", d: "Multi-site operations, P&L ownership and operational control." },
@@ -1802,9 +1802,9 @@ export const translations = {
           problem:
             "Construction sites, procurement, contracts, budgets, accounting and property management operated in disconnected silos — across more than a dozen companies, in three languages and without a shared data foundation.",
           system:
-            "An integrated business operating system with seven core module groups and 17 automated jobs — from quote to e-invoice, bank reconciliation and tenant portals to AI-assisted site reports and audit-ready documentation.",
+            "An integrated business operating system with 100 modules and 40+ automated jobs — from quote to e-invoice, bank reconciliation and tenant portals to AI-assisted site reports and audit-ready documentation.",
           impact:
-            "One shared data foundation for more than 15 GmbH/KG entities. Accounting synchronization every five minutes. 42 GB of construction media automatically structured and archived. Role, company and portal isolation with traceable audit trails.",
+            "One shared data foundation for a multi-entity group. Accounting synchronization every five minutes. 42 GB of construction media automatically structured and archived. Role, company and portal isolation with traceable audit trails.",
         },
         {
           tag: "AIOS",
@@ -1826,9 +1826,9 @@ export const translations = {
       proof: {
         label: "BauERP · Verified Scale",
         items: [
-          { n: "7", t: "Core Module Groups" },
-          { n: "17", t: "Automated Jobs" },
-          { n: "15+", t: "GmbH/KG" },
+          { n: "100", t: "Modules" },
+          { n: "40+", t: "Automated Jobs" },
+          { n: "Multi-entity", t: "GmbH/KG" },
           { n: "3", t: "Interface Languages" },
         ],
       },
@@ -1839,7 +1839,7 @@ export const translations = {
       ],
       note: "Further details available on request.",
       bauerpSummary:
-        "A live Business Operating System connecting finance, projects, property, people and governance across 15+ companies.",
+        "A live Business Operating System connecting finance, projects, property, people and governance across a multi-entity group.",
       viewBauerp: "View BauERP",
     },
     ideas: {
@@ -2014,7 +2014,7 @@ export const translations = {
         kicker: "By the Numbers",
         title: "Proof in numbers.",
         items: [
-          { n: "20+", t: "Years of experience" },
+          { n: "25+", t: "Years of experience" },
           { n: "5M€+", t: "P&L responsibility" },
           { n: "400+", t: "Employees led" },
           { n: "14", t: "International locations" },
@@ -2078,9 +2078,9 @@ export const translations = {
       metricsLabel: "Across the portfolio",
       metrics: [
         { n: "5", t: "Major Programs" },
-        { n: "15+", t: "Company Entities" },
+        { n: "Multi-entity", t: "Company Entities" },
         { n: "14", t: "International Locations" },
-        { n: "20+", t: "Years Leading" },
+        { n: "14", t: "Years Leading" },
       ],
       labels: {
         challenge: "Challenge",
@@ -2099,13 +2099,13 @@ export const translations = {
           summary:
             "A custom build unifying construction sites, procurement, contracts, finance, real estate and governance into one Business Operating System.",
           challenge:
-            "More than 15 GmbH/KG entities, three languages and a dozen disconnected tools with no shared data foundation. Every report was assembled by hand.",
+            "A multi-entity group, three languages and a dozen disconnected tools with no shared data foundation. Every report was assembled by hand.",
           approach:
-            "An integrated architecture of seven module groups, 15+ core entities and 17 automated jobs — with role, company and portal isolation plus audit-ready trails.",
+            "An integrated architecture of 100 modules, 15+ core entities and 40+ automated jobs — with role, company and portal isolation plus audit-ready trails.",
           aiLayer:
             "AI-assisted site reporting, document classification and automatic summarisation deliver decisions instead of raw data.",
           outcomes: [
-            "One data foundation across 15+ entities",
+            "One data foundation across the group",
             "Accounting sync every five minutes",
             "42 GB of site media archived automatically",
             "Unbroken flow from quote to e-invoice",
@@ -2207,7 +2207,7 @@ export const translations = {
       meta: {
         title: "BauERP | The Business Operating System by Evren Ordu",
         description:
-          "BauERP — a live Business Operating System running a 15+ company group. Unifies finance, projects, real estate, people and governance into one operating model.",
+          "BauERP — a live Business Operating System running a multi-entity group. Unifies finance, projects, real estate, people and governance into one operating model.",
       },
       hero: {
         eyebrow: "LIVE BUSINESS OPERATING SYSTEM",
@@ -2223,9 +2223,9 @@ export const translations = {
       proof: {
         kicker: "Verified Scale",
         items: [
-          { n: "7", t: "Core Module Groups" },
-          { n: "17", t: "Automated Scheduled Jobs" },
-          { n: "15+", t: "Isolated GmbH/KG entities" },
+          { n: "100", t: "Modules" },
+          { n: "40+", t: "Automated Jobs" },
+          { n: "Multi-entity", t: "Isolated GmbH/KG entities" },
           { n: "3", t: "UI Languages · EN · DE · TR" },
           { n: "5 min", t: "Accounting Sync" },
           { n: "Hourly", t: "Bank Reconciliation" },
@@ -2243,7 +2243,7 @@ export const translations = {
       },
       modules: {
         kicker: "Operating Model",
-        title: "One architecture. Seven module groups.",
+        title: "One architecture. 100 modules.",
         sub: "Not separate departments — different faces of the same system.",
         items: [
           {
@@ -2369,7 +2369,7 @@ export const translations = {
         layers: [
           { t: "Authentication", d: "Every access starts from a verified session." },
           { t: "Role-Based Permission", d: "Rights attach to the role, not the individual." },
-          { t: "Company / Entity Isolation", d: "Data of 15+ GmbH/KG stays separated inside the same system." },
+          { t: "Company / Entity Isolation", d: "Data of each GmbH/KG stays separated inside the same system." },
           { t: "Portal Isolation", d: "Tenants, staff and management operate on separate surfaces." },
           { t: "Audit Log", d: "Critical actions leave a traceable record." },
           { t: "Financial Visibility Controls", d: "Who can see which numbers is explicitly defined." },
@@ -2379,7 +2379,7 @@ export const translations = {
       },
       automation: {
         kicker: "Automation Engine",
-        title: "17 scheduled jobs running in the background.",
+        title: "40+ automated jobs running in the background.",
         sub: "Tasks that keep the system alive without human intervention.",
         examples: [
           "AI-assisted daily construction report from field communication and media",
@@ -2423,8 +2423,8 @@ export const translations = {
         kicker: "Real Impact",
         title: "Not theoretical — running in live operations.",
         items: [
-          "15+ separate GmbH/KG managed inside a single isolated architecture",
-          "17 scheduled automated jobs",
+          "A multi-entity group managed inside a single isolated architecture",
+          "40+ automated jobs",
           "Accounting sync every 5 minutes",
           "Hourly bank reconciliation",
           "3 UI languages",
@@ -2459,7 +2459,7 @@ export const translations = {
         title:
           "The system that begins where ERP ends: the AI Business Operating System.",
         support:
-          "Run your company not on software patches, but on a single operating model. AI-powered business systems designed with the ORDU method — proven live across a group of 15+ companies with BauERP.",
+          "Run your company not on software patches, but on a single operating model. AI-powered business systems designed with the ORDU method — proven live across a multi-entity group with BauERP.",
         ctaPrimary: "See the ORDU method",
         ctaSecondary: "Contact",
       },
@@ -2499,9 +2499,9 @@ export const translations = {
         kicker: "Proof",
         title: "Not theory — running in live operations.",
         items: [
-          { n: "7", t: "Module Groups" },
-          { n: "17", t: "Automated Scheduled Jobs" },
-          { n: "15+", t: "Isolated GmbH/KG Entities" },
+          { n: "100", t: "Modules" },
+          { n: "40+", t: "Automated Jobs" },
+          { n: "Multi-entity", t: "Isolated GmbH/KG Entities" },
           { n: "5 min", t: "Accounting Sync" },
         ],
         casesLabel: "Live systems",

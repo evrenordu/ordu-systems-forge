@@ -9,8 +9,8 @@ const PROJECTS = [
     summary:
       "End-to-end ERP for construction and multi-site operations. Unifies projects, procurement, finance, HR, and field operations under one operating system.",
     highlights: [
-      "7 module groups",
-      "17 automated jobs",
+      "100 modules",
+      "40+ automated jobs",
       "15+ core entities",
     ],
     url: "https://evrenordu.com/bauerp",
